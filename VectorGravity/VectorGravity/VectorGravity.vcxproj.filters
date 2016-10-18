@@ -80,6 +80,9 @@
     <Filter Include="Main\Player\Gravity">
       <UniqueIdentifier>{079f3ca4-8589-437e-87cd-9305b4ee6a0b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\Collision">
+      <UniqueIdentifier>{2b950472-556b-4b1c-b35d-ee0a4248f630}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -157,6 +160,9 @@
     <ClCompile Include="Bullet\NormalBullet\NormalBullet.cpp">
       <Filter>Main\Bullet\NormalBullet</Filter>
     </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Main\Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player\Gravity\Gravity.h">
@@ -230,6 +236,9 @@
     </ClInclude>
     <ClInclude Include="Bullet\NormalBullet\NormalBullet.h">
       <Filter>Main\Bullet\NormalBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Main\Collision</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,16 +1,21 @@
 #include "DirectDrawTexture.h"
 #include "GraphicsDevice.h"
 
+/* : 以降はメンバイニシャライザと言うものです。
+わからない人は調べてください
+*/
 Texture::Texture() : m_pTexture(NULL), m_pD3Device(GraphicsDevice::getInstance().GetDevice())
 {
 
 }
 
+// デストラクタなので使ったものを解放している
 Texture::~Texture()
 {
 	Release();
 }
 
+// テクスチャを画面に張り付ける
 void Texture::SetTexture(CUSTOMVERTEX _setdraw[])
 {
 	m_pD3Device->SetTexture(0, m_pTexture);
@@ -19,6 +24,7 @@ void Texture::SetTexture(CUSTOMVERTEX _setdraw[])
 		_setdraw, sizeof(CUSTOMVERTEX));
 }
 
+// 引数の名前の画像を読み込む
 HRESULT Texture::LoadTexture(const char _filePath[])
 {
 	if (FAILED(D3DXCreateTextureFromFile(m_pD3Device, _filePath, &m_pTexture)))
@@ -31,6 +37,7 @@ HRESULT Texture::LoadTexture(const char _filePath[])
 	return S_OK;
 }
 
+// テクスチャオブジェクトを解放している
 void Texture::Release()
 {
 	m_pTexture->Release();

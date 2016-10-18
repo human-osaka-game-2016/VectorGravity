@@ -17,6 +17,7 @@
     <ClCompile Include="Bullet\NormalBullet\NormalBullet.cpp" />
     <ClCompile Include="Bullet\PierceBullet\PierceBullet.cpp" />
     <ClCompile Include="Camera\Camera.cpp" />
+    <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Enemy\Battery\Battery.cpp" />
     <ClCompile Include="Enemy\Enemy.cpp" />
     <ClCompile Include="Enemy\LastBoss\Bomb\Bomb.cpp" />
@@ -44,6 +45,7 @@
     <ClInclude Include="Bullet\NormalBullet\NormalBullet.h" />
     <ClInclude Include="Bullet\PierceBullet\PierceBullet.h" />
     <ClInclude Include="Camera\Camera.h" />
+    <ClInclude Include="Collision.h" />
     <ClInclude Include="Enemy\Battery\Battery.h" />
     <ClInclude Include="Enemy\Enemy.h" />
     <ClInclude Include="Enemy\LastBoss\Bomb\Bomb.h" />
