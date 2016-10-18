@@ -11,6 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Area1.cpp" />
+    <ClCompile Include="Area2.cpp" />
+    <ClCompile Include="Area3.cpp" />
+    <ClCompile Include="Area4.cpp" />
+    <ClCompile Include="Area5.cpp" />
+    <ClCompile Include="Area6.cpp" />
+    <ClCompile Include="Area7.cpp" />
+    <ClCompile Include="Area8.cpp" />
     <ClCompile Include="Bullet\Bullet.cpp" />
     <ClCompile Include="Bullet\GumBullet\GumBullet.cpp" />
     <ClCompile Include="Bullet\GumBullet\Vector\Vector.cpp" />
@@ -18,7 +26,7 @@
     <ClCompile Include="Bullet\PierceBullet\PierceBullet.cpp" />
     <ClCompile Include="Camera\Camera.cpp" />
     <ClCompile Include="Collision.cpp" />
-    <ClCompile Include="Enemy\Battery\Cannon.cpp" />
+    <ClCompile Include="Enemy\Battery\Battery.cpp" />
     <ClCompile Include="Enemy\Enemy.cpp" />
     <ClCompile Include="Enemy\LastBoss\Bomb\Bomb.cpp" />
     <ClCompile Include="Enemy\LastBoss\LastBoss.cpp" />
@@ -30,6 +38,7 @@
     <ClCompile Include="Enemy\Tank\Tank.cpp" />
     <ClCompile Include="Gimmck\Gimmck.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="Player\Gravity\Gravity.cpp" />
     <ClCompile Include="Player\Player.cpp" />
     <ClCompile Include="Scene\Scene.cpp" />
@@ -39,6 +48,14 @@
     <ClCompile Include="UI\UI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Area1.h" />
+    <ClInclude Include="Area2.h" />
+    <ClInclude Include="Area3.h" />
+    <ClInclude Include="Area4.h" />
+    <ClInclude Include="Area5.h" />
+    <ClInclude Include="Area6.h" />
+    <ClInclude Include="Area7.h" />
+    <ClInclude Include="Area8.h" />
     <ClInclude Include="Bullet\Bullet.h" />
     <ClInclude Include="Bullet\GumBullet\GumBullet.h" />
     <ClInclude Include="Bullet\GumBullet\Vector\Vector.h" />
@@ -46,7 +63,7 @@
     <ClInclude Include="Bullet\PierceBullet\PierceBullet.h" />
     <ClInclude Include="Camera\Camera.h" />
     <ClInclude Include="Collision.h" />
-    <ClInclude Include="Enemy\Battery\Cannon.h" />
+    <ClInclude Include="Enemy\Battery\Battery.h" />
     <ClInclude Include="Enemy\Enemy.h" />
     <ClInclude Include="Enemy\LastBoss\Bomb\Bomb.h" />
     <ClInclude Include="Enemy\LastBoss\LastBoss.h" />
@@ -57,6 +74,7 @@
     <ClInclude Include="Enemy\Soldier\Soldier.h" />
     <ClInclude Include="Enemy\Tank\Tank.h" />
     <ClInclude Include="Gimmck\Gimmck.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="Player\Gravity\Gravity.h" />
     <ClInclude Include="Player\Player.h" />
     <ClInclude Include="Scene\Scene.h" />

@@ -7,12 +7,6 @@
 
 #pragma comment(lib, "d3dx9.lib")
 
-GraphicsDevice::GraphicsDevice()
-{
-	m_pDirect3D = NULL;
-	m_pD3Device = NULL;
-}
-
 // DirectX‚Ì‰Šú‰»
 bool GraphicsDevice::InitDirect(HWND _hWnd)
 {
