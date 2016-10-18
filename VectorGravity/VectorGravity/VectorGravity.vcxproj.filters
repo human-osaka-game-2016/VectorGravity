@@ -41,9 +41,6 @@
     <Filter Include="Main\UI">
       <UniqueIdentifier>{a0116d4c-9976-442a-be48-f67f19791576}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\Enemy\Battery">
-      <UniqueIdentifier>{f565687e-4183-43ef-82ec-0b5b5cbc0d86}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Main\Enemy\LastBoss">
       <UniqueIdentifier>{fcef6a13-79b3-4abc-911f-4f629dfe956c}</UniqueIdentifier>
     </Filter>
@@ -82,6 +79,9 @@
     </Filter>
     <Filter Include="Main\Collision">
       <UniqueIdentifier>{2b950472-556b-4b1c-b35d-ee0a4248f630}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Enemy\Cannon">
+      <UniqueIdentifier>{f565687e-4183-43ef-82ec-0b5b5cbc0d86}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -136,9 +136,6 @@
     <ClCompile Include="Enemy\LastBoss\LastBoss.cpp">
       <Filter>Main\Enemy\LastBoss</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy\Battery\Battery.cpp">
-      <Filter>Main\Enemy\Battery</Filter>
-    </ClCompile>
     <ClCompile Include="Enemy\Enemy.cpp">
       <Filter>Main\Enemy</Filter>
     </ClCompile>
@@ -162,6 +159,9 @@
     </ClCompile>
     <ClCompile Include="Collision.cpp">
       <Filter>Main\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy\Battery\Cannon.cpp">
+      <Filter>Main\Enemy\Cannon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -213,9 +213,6 @@
     <ClInclude Include="Enemy\LastBoss\LastBoss.h">
       <Filter>Main\Enemy\LastBoss</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy\Battery\Battery.h">
-      <Filter>Main\Enemy\Battery</Filter>
-    </ClInclude>
     <ClInclude Include="Enemy\Enemy.h">
       <Filter>Main\Enemy</Filter>
     </ClInclude>
@@ -239,6 +236,9 @@
     </ClInclude>
     <ClInclude Include="Collision.h">
       <Filter>Main\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy\Battery\Cannon.h">
+      <Filter>Main\Enemy\Cannon</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
