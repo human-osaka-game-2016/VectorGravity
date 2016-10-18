@@ -38,9 +38,6 @@
     <Filter Include="Main\UI">
       <UniqueIdentifier>{a0116d4c-9976-442a-be48-f67f19791576}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\Enemy\Battery">
-      <UniqueIdentifier>{f565687e-4183-43ef-82ec-0b5b5cbc0d86}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Main\Enemy\LastBoss">
       <UniqueIdentifier>{fcef6a13-79b3-4abc-911f-4f629dfe956c}</UniqueIdentifier>
     </Filter>
@@ -110,6 +107,9 @@
     <Filter Include="Main\Map\Area8">
       <UniqueIdentifier>{064c8236-934d-4624-b0b7-018e13e779a4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\Enemy\Cannnon">
+      <UniqueIdentifier>{2f6cc33c-c381-4a28-8a8f-ae22a9d2cea4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -163,9 +163,6 @@
     <ClCompile Include="Enemy\LastBoss\LastBoss.cpp">
       <Filter>Main\Enemy\LastBoss</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy\Battery\Battery.cpp">
-      <Filter>Main\Enemy\Battery</Filter>
-    </ClCompile>
     <ClCompile Include="Enemy\Enemy.cpp">
       <Filter>Main\Enemy</Filter>
     </ClCompile>
@@ -187,35 +184,38 @@
     <ClCompile Include="Bullet\NormalBullet\NormalBullet.cpp">
       <Filter>Main\Bullet\NormalBullet</Filter>
     </ClCompile>
-    <ClCompile Include="Collision.cpp">
-      <Filter>Main\Collision</Filter>
-    </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Main\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="Area1.cpp">
+    <ClCompile Include="Map\Area1\Area1.cpp">
       <Filter>Main\Map\Area1</Filter>
     </ClCompile>
-    <ClCompile Include="Area2.cpp">
+    <ClCompile Include="Map\Area2\Area2.cpp">
       <Filter>Main\Map\Area2</Filter>
     </ClCompile>
-    <ClCompile Include="Area3.cpp">
+    <ClCompile Include="Map\Area3\Area3.cpp">
       <Filter>Main\Map\Area3</Filter>
     </ClCompile>
-    <ClCompile Include="Area4.cpp">
+    <ClCompile Include="Map\Area4\Area4.cpp">
       <Filter>Main\Map\Area4</Filter>
     </ClCompile>
-    <ClCompile Include="Area5.cpp">
+    <ClCompile Include="Map\Area5\Area5.cpp">
       <Filter>Main\Map\Area5</Filter>
     </ClCompile>
-    <ClCompile Include="Area6.cpp">
+    <ClCompile Include="Map\Area6\Area6.cpp">
       <Filter>Main\Map\Area6</Filter>
     </ClCompile>
-    <ClCompile Include="Area7.cpp">
+    <ClCompile Include="Map\Area7\Area7.cpp">
       <Filter>Main\Map\Area7</Filter>
     </ClCompile>
-    <ClCompile Include="Area8.cpp">
+    <ClCompile Include="Map\Area8\Area8.cpp">
       <Filter>Main\Map\Area8</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy\Cannon\Cannon.cpp">
+      <Filter>Main\Enemy\Cannnon</Filter>
+    </ClCompile>
+    <ClCompile Include="Map\Map.cpp">
+      <Filter>Main\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision\Collision.cpp">
+      <Filter>Main\Collision</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -267,9 +267,6 @@
     <ClInclude Include="Enemy\LastBoss\LastBoss.h">
       <Filter>Main\Enemy\LastBoss</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy\Battery\Battery.h">
-      <Filter>Main\Enemy\Battery</Filter>
-    </ClInclude>
     <ClInclude Include="Enemy\Enemy.h">
       <Filter>Main\Enemy</Filter>
     </ClInclude>
@@ -291,35 +288,38 @@
     <ClInclude Include="Bullet\NormalBullet\NormalBullet.h">
       <Filter>Main\Bullet\NormalBullet</Filter>
     </ClInclude>
-    <ClInclude Include="Collision.h">
-      <Filter>Main\Collision</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Main\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="Area1.h">
+    <ClInclude Include="Map\Area1\Area1.h">
       <Filter>Main\Map\Area1</Filter>
     </ClInclude>
-    <ClInclude Include="Area2.h">
+    <ClInclude Include="Map\Area2\Area2.h">
       <Filter>Main\Map\Area2</Filter>
     </ClInclude>
-    <ClInclude Include="Area3.h">
+    <ClInclude Include="Map\Area3\Area3.h">
       <Filter>Main\Map\Area3</Filter>
     </ClInclude>
-    <ClInclude Include="Area4.h">
+    <ClInclude Include="Map\Area4\Area4.h">
       <Filter>Main\Map\Area4</Filter>
     </ClInclude>
-    <ClInclude Include="Area5.h">
+    <ClInclude Include="Map\Area5\Area5.h">
       <Filter>Main\Map\Area5</Filter>
     </ClInclude>
-    <ClInclude Include="Area6.h">
+    <ClInclude Include="Map\Area6\Area6.h">
       <Filter>Main\Map\Area6</Filter>
     </ClInclude>
-    <ClInclude Include="Area7.h">
+    <ClInclude Include="Map\Area7\Area7.h">
       <Filter>Main\Map\Area7</Filter>
     </ClInclude>
-    <ClInclude Include="Area8.h">
+    <ClInclude Include="Map\Area8\Area8.h">
       <Filter>Main\Map\Area8</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy\Cannon\Cannon.h">
+      <Filter>Main\Enemy\Cannnon</Filter>
+    </ClInclude>
+    <ClInclude Include="Map\Map.h">
+      <Filter>Main\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision\Collision.h">
+      <Filter>Main\Collision</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

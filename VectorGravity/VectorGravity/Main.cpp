@@ -5,7 +5,7 @@
 #include <GraphicsDevice.h>
 #include <DirectInput.h>
 
-
+/*
 
 #define DISPLAY_WIDTH 1280
 #define DISPLAY_HIGHT 720
@@ -108,7 +108,7 @@ int WINAPI WinMain(HINSTANCE hinst, HINSTANCE hprevinst, LPSTR szstr, INT icmsho
 			NowTime = timeGetTime();
 			if (NowTime - OldTime >= GAME_FPS)
 			{
-				if (/*動的に確保したクラス->実行関数名*/)
+				if (動的に確保したクラス->実行関数名)
 				{
 					break;
 				}
@@ -120,3 +120,5 @@ int WINAPI WinMain(HINSTANCE hinst, HINSTANCE hprevinst, LPSTR szstr, INT icmsho
 	// 動的に確保したクラスをdeleteする
 
 	return (INT)msg.wParam;
+}
+*/
