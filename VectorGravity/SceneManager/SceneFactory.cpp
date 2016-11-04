@@ -9,27 +9,23 @@ Scene* SceneFactory::CreateScene(SceneID sceneID_)
 
 	switch (sceneID_)
 	{
-	case LOGOSCENE:
+	case LOGO_SCENE:
 		pScene = new LogoScene;
 		break;
 
-	case TITLESCENE:
+	case TITLE_SCENE:
 		pScene = new TitleScene;
 		break;
 
-	case GAMESCENE:
+	case GAME_SCENE:
 		pScene = new GameScene;
 		break;
 
-	case PAUSESCENE:
+	case RESULT_SCENE:
 
 		break;
 
-	case RESULTSCENE:
-
-		break;
-
-	case FINISHSCENE:
+	case FINISH_SCENE:
 		break;
 	default:
 		break;

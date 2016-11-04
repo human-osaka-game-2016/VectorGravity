@@ -2,9 +2,10 @@
 #include "SceneFactory.h"
 
 SceneManager::SceneManager() :
-m_pScene(NULL),
+m_pScene(nullptr),
 m_state(CREATE),
-m_nextSceneID(SceneID::GAMESCENE),
+m_currentSceneID(SceneID::LOGO_SCENE),
+m_nextSceneID(SceneID::LOGO_SCENE),
 m_pGraphicsDevice(&GraphicsDevice::GetInstance()),
 m_pInputKey(&InputKeyBorad::GetInstance()), 
 m_gameEnd(false)
@@ -38,11 +39,11 @@ bool SceneManager::Run()
 
 void SceneManager::Control()
 {
-	if (m_pScene == NULL)
+	if (m_pScene == nullptr)
 	{
 		m_currentSceneID = m_nextSceneID;
 
-		if (m_currentSceneID == FINISHSCENE)
+		if (m_currentSceneID == FINISH_SCENE)
 		{
 			m_gameEnd = true;
 			return;
@@ -91,7 +92,7 @@ void SceneManager::Render()
 		return;
 	}
 
-	if (!m_pScene == NULL)
+	if (m_pScene != nullptr)
 	{
 		m_pScene->Draw();
 	}
