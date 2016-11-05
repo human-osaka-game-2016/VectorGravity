@@ -1,7 +1,7 @@
 #include "LogoScene.h"
 #include "SceneFactory.h"
 
-LogoScene::LogoScene() : Scene(SceneID::LOGO_SCENE)
+LogoScene::LogoScene()
 {
 
 }

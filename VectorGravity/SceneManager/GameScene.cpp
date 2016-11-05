@@ -1,7 +1,7 @@
 #include "GameScene.h"
 #include "SceneFactory.h"
 
-GameScene::GameScene() : Scene(SceneID::GAME_SCENE)
+GameScene::GameScene()
 {
 
 }

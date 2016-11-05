@@ -1,7 +1,7 @@
 #include "TitleScene.h"
 #include "SceneFactory.h"
 
-TitleScene::TitleScene() : Scene(SceneID::TITLE_SCENE)
+TitleScene::TitleScene()
 {
 
 }

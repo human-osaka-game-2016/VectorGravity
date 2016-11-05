@@ -49,10 +49,6 @@ void SceneManager::Control()
 			return;
 		}
 	}
-	else
-	{
-		m_currentSceneID = m_pScene->GetSceneID();
-	}
 
 	switch (m_state)
 	{

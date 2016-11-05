@@ -12,16 +12,10 @@ enum SceneID;
 class Scene
 {
 public:
-	Scene(SceneID sceneID_);
+	Scene();
 	virtual ~Scene();
 	virtual SceneID Control() = 0;
 	virtual void Draw() = 0;
-
-	SceneID GetSceneID();
-
-protected:
-
-	SceneID m_sceneID;
 };
 
 #endif // !SCENE_H
