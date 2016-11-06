@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\Model">
+      <UniqueIdentifier>{90ba3118-c01c-4533-bd5a-e5756494317e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Model\ObjManager">
+      <UniqueIdentifier>{73bf37cc-8b6a-4d63-b36d-bbb9ceb82871}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Model\ObjManager\obj">
+      <UniqueIdentifier>{6f6c3375-6a97-417b-a530-1dd9137bdc6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Model\ObjManager\obj\robo">
+      <UniqueIdentifier>{2cde0982-f4c0-4998-94a8-71c840813ff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Model\ObjManager\obj\BackGround">
+      <UniqueIdentifier>{1ab3601c-c6f7-4f5d-a347-539b323cb4b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Model\ObjManager\obj\robo2">
+      <UniqueIdentifier>{2e262bb3-60e1-4fa0-aa4d-2dc6c57a1369}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Model\ObjManager\Collision">
+      <UniqueIdentifier>{68d537c5-9fe9-444c-b27a-4fbf819f1aa7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>ソース ファイル\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjManager.cpp">
+      <Filter>ソース ファイル\Model\ObjManager</Filter>
+    </ClCompile>
+    <ClCompile Include="robo.cpp">
+      <Filter>ソース ファイル\Model\ObjManager\obj\robo</Filter>
+    </ClCompile>
+    <ClCompile Include="obj.cpp">
+      <Filter>ソース ファイル\Model\ObjManager\obj</Filter>
+    </ClCompile>
+    <ClCompile Include="BackGround.cpp">
+      <Filter>ソース ファイル\Model\ObjManager\obj\BackGround</Filter>
+    </ClCompile>
+    <ClCompile Include="robo2.cpp">
+      <Filter>ソース ファイル\Model\ObjManager\obj\robo2</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>ソース ファイル\Model\ObjManager\Collision</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Model.h">
+      <Filter>ソース ファイル\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjManager.h">
+      <Filter>ソース ファイル\Model\ObjManager</Filter>
+    </ClInclude>
+    <ClInclude Include="robo.h">
+      <Filter>ソース ファイル\Model\ObjManager\obj\robo</Filter>
+    </ClInclude>
+    <ClInclude Include="obj.h">
+      <Filter>ソース ファイル\Model\ObjManager\obj</Filter>
+    </ClInclude>
+    <ClInclude Include="BackGround.h">
+      <Filter>ソース ファイル\Model\ObjManager\obj\BackGround</Filter>
+    </ClInclude>
+    <ClInclude Include="robo2.h">
+      <Filter>ソース ファイル\Model\ObjManager\obj\robo2</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>ソース ファイル\Model\ObjManager\Collision</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
