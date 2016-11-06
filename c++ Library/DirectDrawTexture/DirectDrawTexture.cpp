@@ -1,5 +1,5 @@
 #include "DirectDrawTexture.h"
-#include "GraphicsDevice.h"
+
 
 /* : 以降はメンバイニシャライザと言うものです。
 わからない人は調べてください

@@ -1,7 +1,7 @@
 #ifndef KEYINPUT
 #define KEYINPUT
 
-#include "InputDevice.h"
+#include "InputDevice\InputDevice.h"
 
 
 enum  KEYKIND

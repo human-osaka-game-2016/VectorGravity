@@ -2,9 +2,8 @@
 #include <stdio.h>
 #include <tchar.h>
 #include <mmsystem.h>
-#include <DirectDrawTexture.h>
-#include <GraphicsDevice.h>
-#include <DirectInput.h>
+#include <../c++ Library/DirectDrawTexture/DirectDrawTexture.h>
+#include <../c++ Library/Input/InputDevice/InputDevice.h>
 
 #include "SceneManager\SceneManager.h"
 

@@ -7,7 +7,7 @@
 #ifndef DRAWTEXTURE
 #define DRAWTEXTURE
 
-#include "GraphicsDevice.h"
+#include "../DirectDrawTexture/GraphicsDevice/GraphicsDevice.h"
 
 
 struct CUSTOMVERTEX

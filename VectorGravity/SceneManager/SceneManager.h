@@ -7,8 +7,8 @@
 #ifndef SCENEMANAGER_H
 #define SCENEMANAGER_H
 
-#include <DirectInput.h>
-#include <GraphicsDevice.h>
+#include <../c++ Library/DirectDrawTexture/DirectDrawTexture.h>
+#include <../c++ Library/Input/DirectInput.h>
 #include "Scene.h"
 
 #define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1)
