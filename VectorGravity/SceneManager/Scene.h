@@ -1,13 +1,13 @@
 /**
  * @file Scene.h
- * @breif シーンの基底クラスヘッダー
+ * @breif シーンの基底クラスのヘッダー
  * @author shibata
  */
 
 #ifndef SCENE_H
 #define SCENE_H
 
-enum SceneID;
+#include "SceneFactory.h"
 
 class Scene
 {

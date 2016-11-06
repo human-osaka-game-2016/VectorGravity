@@ -1,6 +1,6 @@
 /**
  * @file GameScene.h
- * @breif ゲームシーンのクラスヘッダー
+ * @breif ゲームシーンのクラスのヘッダー
  * @author shibata
  */
 
@@ -8,6 +8,8 @@
 #define GAMESCENE_H
 
 #include "Scene.h"
+
+class ObjectManager;
 
 class GameScene : public Scene
 {
@@ -18,6 +20,13 @@ public:
 
 	virtual SceneID Control();
 	virtual void Draw();
+	void PauseControl();
+	void PauseDraw();
+
+private:
+
+	ObjectManager* m_pObjectManager;
+	bool m_pauses;
 };
 
 #endif // !GAMESCENE_H

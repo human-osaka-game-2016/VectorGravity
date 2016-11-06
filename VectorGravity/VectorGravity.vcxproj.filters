@@ -175,6 +175,27 @@
     <ClCompile Include="SceneManager\SceneFactory.cpp">
       <Filter>Main\SceneManager\SceneFactory</Filter>
     </ClCompile>
+    <ClCompile Include="ObjectManager\ObjectManager.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletManager\BulletManager.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\BulletManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CharcterManager\CharcterManager.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager</Filter>
+    </ClCompile>
+    <ClCompile Include="StageManager\StageManager.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\StageManager</Filter>
+    </ClCompile>
+    <ClCompile Include="UiManager\UiManager.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\UiManager</Filter>
+    </ClCompile>
+    <ClCompile Include="StateManager\StateManager.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\StateManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugMode\DebugMode.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\DebugMode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneManager\SceneManager.h">
@@ -194,6 +215,27 @@
     </ClInclude>
     <ClInclude Include="SceneManager\SceneFactory.h">
       <Filter>Main\SceneManager\SceneFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager\ObjectManager.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletManager\BulletManager.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\BulletManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CharcterManager\CharcterManager.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager</Filter>
+    </ClInclude>
+    <ClInclude Include="StageManager\StageManager.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\StageManager</Filter>
+    </ClInclude>
+    <ClInclude Include="UiManager\UiManager.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\UiManager</Filter>
+    </ClInclude>
+    <ClInclude Include="StateManager\StateManager.h">
+      <Filter>Main\SceneManager\Scene\GameScene\StateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugMode\DebugMode.h">
+      <Filter>Main\SceneManager\Scene\GameScene\DebugMode</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

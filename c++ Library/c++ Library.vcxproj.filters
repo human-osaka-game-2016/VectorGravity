@@ -24,40 +24,40 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DirectDrawTexture.cpp">
+    <ClCompile Include="DirectDrawTexture\DirectDrawTexture.cpp">
       <Filter>DrawTexture</Filter>
     </ClCompile>
-    <ClCompile Include="DirectPlaybackSound.cpp">
-      <Filter>PlaybackSound</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectKeyBoardInput.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="GraphicsDevice.cpp">
+    <ClCompile Include="DirectDrawTexture\GraphicsDevice\GraphicsDevice.cpp">
       <Filter>DrawTexture\GraphicsDevice</Filter>
     </ClCompile>
-    <ClCompile Include="DirectContlloerInput.cpp">
+    <ClCompile Include="Input\InputDevice\InputDevice.cpp">
+      <Filter>Input\InputDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\DirectContlloerInput.cpp">
       <Filter>Input</Filter>
     </ClCompile>
-    <ClCompile Include="InputDevice.cpp">
-      <Filter>Input\InputDevice</Filter>
+    <ClCompile Include="Input\DirectKeyBoardInput.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="PlaybackSound\DirectPlaybackSound.cpp">
+      <Filter>PlaybackSound</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DirectPlaybackSound.h">
-      <Filter>PlaybackSound</Filter>
-    </ClInclude>
-    <ClInclude Include="GraphicsDevice.h">
+    <ClInclude Include="DirectDrawTexture\GraphicsDevice\GraphicsDevice.h">
       <Filter>DrawTexture\GraphicsDevice</Filter>
     </ClInclude>
-    <ClInclude Include="DirectDrawTexture.h">
+    <ClInclude Include="DirectDrawTexture\DirectDrawTexture.h">
       <Filter>DrawTexture</Filter>
     </ClInclude>
-    <ClInclude Include="DirectInput.h">
+    <ClInclude Include="Input\DirectInput.h">
       <Filter>Input</Filter>
     </ClInclude>
-    <ClInclude Include="InputDevice.h">
+    <ClInclude Include="Input\InputDevice\InputDevice.h">
       <Filter>Input\InputDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaybackSound\DirectPlaybackSound.h">
+      <Filter>PlaybackSound</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

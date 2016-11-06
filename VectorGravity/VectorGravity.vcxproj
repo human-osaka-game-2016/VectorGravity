@@ -11,21 +11,35 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BulletManager\BulletManager.cpp" />
+    <ClCompile Include="CharcterManager\CharcterManager.cpp" />
+    <ClCompile Include="DebugMode\DebugMode.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ObjectManager\ObjectManager.cpp" />
     <ClCompile Include="SceneManager\GameScene.cpp" />
     <ClCompile Include="SceneManager\LogoScene.cpp" />
     <ClCompile Include="SceneManager\Scene.cpp" />
     <ClCompile Include="SceneManager\SceneFactory.cpp" />
     <ClCompile Include="SceneManager\SceneManager.cpp" />
     <ClCompile Include="SceneManager\TitleScene.cpp" />
+    <ClCompile Include="StageManager\StageManager.cpp" />
+    <ClCompile Include="StateManager\StateManager.cpp" />
+    <ClCompile Include="UiManager\UiManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BulletManager\BulletManager.h" />
+    <ClInclude Include="CharcterManager\CharcterManager.h" />
+    <ClInclude Include="DebugMode\DebugMode.h" />
+    <ClInclude Include="ObjectManager\ObjectManager.h" />
     <ClInclude Include="SceneManager\GameScene.h" />
     <ClInclude Include="SceneManager\LogoScene.h" />
     <ClInclude Include="SceneManager\Scene.h" />
     <ClInclude Include="SceneManager\SceneFactory.h" />
     <ClInclude Include="SceneManager\SceneManager.h" />
     <ClInclude Include="SceneManager\TitleScene.h" />
+    <ClInclude Include="StageManager\StageManager.h" />
+    <ClInclude Include="StateManager\StateManager.h" />
+    <ClInclude Include="UiManager\UiManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9510F802-0E1D-404D-A478-7953E1D6AE18}</ProjectGuid>

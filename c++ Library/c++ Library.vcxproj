@@ -73,19 +73,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DirectContlloerInput.cpp" />
-    <ClCompile Include="DirectDrawTexture.cpp" />
-    <ClCompile Include="DirectKeyBoardInput.cpp" />
-    <ClCompile Include="DirectPlaybackSound.cpp" />
-    <ClCompile Include="GraphicsDevice.cpp" />
-    <ClCompile Include="InputDevice.cpp" />
+    <ClCompile Include="Input\DirectContlloerInput.cpp" />
+    <ClCompile Include="DirectDrawTexture\DirectDrawTexture.cpp" />
+    <ClCompile Include="Input\DirectKeyBoardInput.cpp" />
+    <ClCompile Include="PlaybackSound\DirectPlaybackSound.cpp" />
+    <ClCompile Include="DirectDrawTexture\GraphicsDevice\GraphicsDevice.cpp" />
+    <ClCompile Include="Input\InputDevice\InputDevice.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DirectDrawTexture.h" />
-    <ClInclude Include="DirectInput.h" />
-    <ClInclude Include="DirectPlaybackSound.h" />
-    <ClInclude Include="GraphicsDevice.h" />
-    <ClInclude Include="InputDevice.h" />
+    <ClInclude Include="DirectDrawTexture\DirectDrawTexture.h" />
+    <ClInclude Include="Input\DirectInput.h" />
+    <ClInclude Include="PlaybackSound\DirectPlaybackSound.h" />
+    <ClInclude Include="DirectDrawTexture\GraphicsDevice\GraphicsDevice.h" />
+    <ClInclude Include="Input\InputDevice\InputDevice.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

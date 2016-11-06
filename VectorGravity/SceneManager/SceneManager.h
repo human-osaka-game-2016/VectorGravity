@@ -1,6 +1,6 @@
 /**
  * @file SceneManager.h
- * @breif シーンの管理クラスヘッダー
+ * @breif シーンの管理クラスのヘッダー
  * @author shibata
  */
 

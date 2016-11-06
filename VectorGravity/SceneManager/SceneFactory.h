@@ -1,6 +1,6 @@
 /**
  * @file SceneFactory.h
- * @breif シーンファクトリーヘッダー
+ * @breif シーンファクトリーのクラスのヘッダー
  * @author shibata
  */
 
