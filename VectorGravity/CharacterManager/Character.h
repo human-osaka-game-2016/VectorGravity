@@ -1,11 +1,11 @@
 /**
- * @file Charcter.h
+ * @file Character.h
  * @breif 全てのキャラクターの親クラスヘッダー
  * @author shibata
  */
 
-#ifndef CHARCTER_H
-#define CHARCTER_H
+#ifndef CHARACTER_H
+#define CHARACTER_H
 
 #include <../c++ Library/DirectDrawTexture/DirectDrawTexture.h>
 

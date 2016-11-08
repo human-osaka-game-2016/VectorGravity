@@ -4,24 +4,24 @@
  * @author shibata
  */
 
-#ifndef CHARCTERMANAGER_H
-#define CHARCTERMANAGER_H
+#ifndef CHARACTERMANAGER_H
+#define CHARACTERMANAGER_H
 
-class Charcter;
+class Character;
 
-class CharcterManager
+class CharacterManager
 {
 public:
 
-	CharcterManager();
-	~CharcterManager();
+	CharacterManager();
+	~CharacterManager();
 
 	void Control();
 	void Draw();
 
 private:
 
-	Charcter* m_pCharcter;
+	Character* m_pCharcter;
 
 };
 

@@ -1,5 +1,5 @@
 /**
- * @file Charcter.h
+ * @file Character.h
  * @breif キャラクターの親クラスヘッダー
  * @author shibata
  */
