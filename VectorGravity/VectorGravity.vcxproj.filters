@@ -190,11 +190,11 @@
     <ClCompile Include="DebugMode\DebugMode.cpp">
       <Filter>Main\SceneManager\Scene\GameScene\DebugMode</Filter>
     </ClCompile>
-    <ClCompile Include="CharcterManager\Charcter.cpp">
-      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter</Filter>
-    </ClCompile>
     <ClCompile Include="CharcterManager\Player.cpp">
       <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="CharcterManager\Character.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -237,11 +237,11 @@
     <ClInclude Include="DebugMode\DebugMode.h">
       <Filter>Main\SceneManager\Scene\GameScene\DebugMode</Filter>
     </ClInclude>
-    <ClInclude Include="CharcterManager\Charcter.h">
-      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter</Filter>
-    </ClInclude>
     <ClInclude Include="CharcterManager\Player.h">
       <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CharcterManager\Character.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

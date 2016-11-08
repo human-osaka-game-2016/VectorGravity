@@ -12,7 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BulletManager\BulletManager.cpp" />
-    <ClCompile Include="CharcterManager\Charcter.cpp" />
+    <ClCompile Include="CharcterManager\Character.cpp" />
     <ClCompile Include="CharcterManager\CharcterManager.cpp" />
     <ClCompile Include="CharcterManager\Player.cpp" />
     <ClCompile Include="DebugMode\DebugMode.cpp" />
@@ -30,7 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BulletManager\BulletManager.h" />
-    <ClInclude Include="CharcterManager\Charcter.h" />
+    <ClInclude Include="CharcterManager\Character.h" />
     <ClInclude Include="CharcterManager\CharcterManager.h" />
     <ClInclude Include="CharcterManager\Player.h" />
     <ClInclude Include="DebugMode\DebugMode.h" />
