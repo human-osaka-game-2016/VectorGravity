@@ -26,4 +26,4 @@ private:
 };
 
 
-#endif // !CHARCTERMANAGER_H
+#endif // !CHARACTERMANAGER_H

@@ -25,6 +25,6 @@ private:
 	GraphicsDevice* m_pGraphicsDevice;
 };
 
-#endif // !CHARCTER_H
+#endif // !CHARACTER_H
 
 
