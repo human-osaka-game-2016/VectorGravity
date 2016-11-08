@@ -1,18 +1,14 @@
 #include "DirectInput.h"
 
-
 InputKeyBorad::InputKeyBorad() :
 m_pKeyDevice(InputDevice::GetInstance().GetKeyDevice())
 {
-	for (int i = 0; i < KEYMAX; i++)
-	{
-		m_PreKey[KEYMAX] = { OFF };
-	}
+	m_PreKey[KEYMAX] = { 0 };
 }
 
 InputKeyBorad::~InputKeyBorad()
 {
-
+	Release();
 }
 
 void InputKeyBorad::GetKeyBoradState()
@@ -27,15 +23,15 @@ void InputKeyBorad::GetKeyBoradState()
 
 void InputKeyBorad::KeyCheck(int _dik, KEYKIND _set)
 {
-	if ((m_diks[_dik] & 0x80))			
+	if ((m_diks[_dik] & 0x80))			// 先頭ビットがたっているかチェックしている
 	{
 		if (m_PreKey[_set] == 0)
 		{
-			m_Key[_set] = PUSH;			
+			m_Key[_set] = PUSH;			// 一瞬だけ押した
 		}
 		else
 		{
-			m_Key[_set] = ON;		
+			m_Key[_set] = ON;			// 押し続けている
 		}
 		m_PreKey[_set] = 1;
 	}
@@ -43,13 +39,18 @@ void InputKeyBorad::KeyCheck(int _dik, KEYKIND _set)
 	{
 		if (m_PreKey[_set] == 0)
 		{
-			m_Key[_set] = OFF;		
+			m_Key[_set] = OFF;			// 離し続けている
 		}
 		else
 		{
-			m_Key[_set] = RELEASE;		
+			m_Key[_set] = RELEASE;		// 一瞬だけ離した
 		}
 		m_PreKey[_set] = 0;
 	}
 
+}
+
+void InputKeyBorad::Release()
+{
+//	m_pKeyDevice->Release();
 }

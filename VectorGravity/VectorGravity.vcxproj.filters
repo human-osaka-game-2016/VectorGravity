@@ -41,6 +41,9 @@
     <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager">
       <UniqueIdentifier>{fca03c93-414f-418e-ba2c-d36797fbb36b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager">
+      <UniqueIdentifier>{66b6c9d5-6b28-4107-a7dc-f5b2eafe80ff}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\BulletManager">
       <UniqueIdentifier>{e184782d-b586-4086-be75-55e7fb3e7ef0}</UniqueIdentifier>
     </Filter>
@@ -110,40 +113,37 @@
     <Filter Include="Main\SceneManager\Scene\GameScene\DebugMode">
       <UniqueIdentifier>{1fc0a898-fe66-412b-beab-9776eca1b571}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager">
-      <UniqueIdentifier>{66b6c9d5-6b28-4107-a7dc-f5b2eafe80ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character">
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter">
       <UniqueIdentifier>{8e8230e1-d7f1-471c-9b7f-4028a320e72e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Player">
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Player">
       <UniqueIdentifier>{50019623-b123-42fc-aa47-69c96189d9bc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy">
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy">
       <UniqueIdentifier>{054c254e-9992-4d61-bf08-d51a5abe52db}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Soldeir">
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Soldeir">
       <UniqueIdentifier>{873df79f-4655-4eed-8172-19e33e2fc3df}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Soldeir\CloseSoldeir">
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Soldeir\CloseSoldeir">
       <UniqueIdentifier>{84c10121-4081-475b-b488-04f7264610ca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Soldeir\LongSoldeir">
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Soldeir\LongSoldeir">
       <UniqueIdentifier>{7b2e5d87-374f-4efb-8ebb-e36aa484bb18}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Soldeir\BarrierSoldeir">
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Soldeir\BarrierSoldeir">
       <UniqueIdentifier>{36c7b995-d281-4929-85af-6c368090dd94}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Cannon">
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Cannon">
       <UniqueIdentifier>{38912a61-edc8-4bb7-8621-33302fabd650}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Tank">
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Tank">
       <UniqueIdentifier>{d853ffcd-6bf0-4e8c-af3c-632c07265aad}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\SubBoss">
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\SubBoss">
       <UniqueIdentifier>{41c5e372-3701-4331-a94a-10ff1a70961a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\LastBoss">
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\LastBoss">
       <UniqueIdentifier>{f57c8d19-2a4c-4de0-9fe2-57256fa6c18f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -175,6 +175,9 @@
     <ClCompile Include="BulletManager\BulletManager.cpp">
       <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\BulletManager</Filter>
     </ClCompile>
+    <ClCompile Include="CharcterManager\CharcterManager.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager</Filter>
+    </ClCompile>
     <ClCompile Include="StageManager\StageManager.cpp">
       <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\StageManager</Filter>
     </ClCompile>
@@ -187,14 +190,11 @@
     <ClCompile Include="DebugMode\DebugMode.cpp">
       <Filter>Main\SceneManager\Scene\GameScene\DebugMode</Filter>
     </ClCompile>
-    <ClCompile Include="CharacterManager\Character.cpp">
-      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character</Filter>
+    <ClCompile Include="CharcterManager\Player.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Player</Filter>
     </ClCompile>
-    <ClCompile Include="CharacterManager\CharacterManager.cpp">
-      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterManager\Player.cpp">
-      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Player</Filter>
+    <ClCompile Include="CharcterManager\Character.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +222,9 @@
     <ClInclude Include="BulletManager\BulletManager.h">
       <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\BulletManager</Filter>
     </ClInclude>
+    <ClInclude Include="CharcterManager\CharcterManager.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager</Filter>
+    </ClInclude>
     <ClInclude Include="StageManager\StageManager.h">
       <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\StageManager</Filter>
     </ClInclude>
@@ -234,14 +237,11 @@
     <ClInclude Include="DebugMode\DebugMode.h">
       <Filter>Main\SceneManager\Scene\GameScene\DebugMode</Filter>
     </ClInclude>
-    <ClInclude Include="CharacterManager\Character.h">
-      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character</Filter>
+    <ClInclude Include="CharcterManager\Player.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Player</Filter>
     </ClInclude>
-    <ClInclude Include="CharacterManager\CharacterManager.h">
-      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager</Filter>
-    </ClInclude>
-    <ClInclude Include="CharacterManager\Player.h">
-      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Player</Filter>
+    <ClInclude Include="CharcterManager\Character.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

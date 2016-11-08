@@ -1,13 +1,14 @@
 /**
- * @file Character.h
+ * @file Charcter.h
  * @breif 全てのキャラクターの親クラスヘッダー
  * @author shibata
  */
 
-#ifndef CHARACTER_H
-#define CHARACTER_H
+#ifndef CHARCTER_H
+#define CHARCTER_H
 
-#include <../c++ Library/DirectDrawTexture/DirectDrawTexture.h>
+#include <DirectDrawTexture.h>
+
 
 class Character
 {
@@ -19,12 +20,8 @@ public:
 	virtual void Draw() = 0;
 	virtual void Attack() = 0;
 	virtual void Move() = 0;
-
-private:
-
-	GraphicsDevice* m_pGraphicsDevice;
 };
 
-#endif // !CHARACTER_H
+#endif // !CHARCTER_H
 
 

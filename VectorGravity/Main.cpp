@@ -1,12 +1,12 @@
 #include <Windows.h>
-#include <stdio.h>
-#include <tchar.h>
+#include <crtdbg.h>
 #include <mmsystem.h>
-#include <../c++ Library/DirectDrawTexture/DirectDrawTexture.h>
-#include <../c++ Library/Input/InputDevice/InputDevice.h>
+#include <DirectDrawTexture.h>
+#include <InputDevice.h>
 
 #include "SceneManager\SceneManager.h"
 
+#define TITLE TEXT("ベクトルグラビティー")
 #define DISPLAY_WIDTH 1280
 #define DISPLAY_HIGHT 720
 #define GAME_FPS (1000/60)
@@ -42,7 +42,10 @@ int WINAPI WinMain(HINSTANCE hinst, HINSTANCE hprevinst, LPSTR szstr, INT icmsho
 	InputDevice* pInputDevice;
 	SceneManager* pSceneManager;
 
-	static TCHAR* titlename = _T("ベクトルグラビティー");
+	// メモリリーク検出
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
+
 	WNDCLASSEX  wndclass;
 
 	wndclass.cbSize = sizeof(wndclass);
@@ -55,14 +58,14 @@ int WINAPI WinMain(HINSTANCE hinst, HINSTANCE hprevinst, LPSTR szstr, INT icmsho
 	wndclass.hCursor = LoadCursor(NULL, IDC_ARROW);
 	wndclass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 	wndclass.lpszMenuName = NULL;
-	wndclass.lpszClassName = titlename;
+	wndclass.lpszClassName = TITLE;
 	wndclass.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
 
 	RegisterClassEx(&wndclass);
 
 	hWnd = CreateWindow(
-		titlename,						
-		titlename, 							
+		TITLE,
+		TITLE,
 		WS_OVERLAPPEDWINDOW | WS_VISIBLE,	
 		CW_USEDEFAULT,						
 		CW_USEDEFAULT,						
@@ -79,13 +82,13 @@ int WINAPI WinMain(HINSTANCE hinst, HINSTANCE hprevinst, LPSTR szstr, INT icmsho
 	pGraphicsDevice = &GraphicsDevice::GetInstance();
 
 	pGraphicsDevice->InitDirect(hWnd);
+	pGraphicsDevice->InitDraw();
 
 	pInputDevice = &InputDevice::GetInstance();
 
 	pInputDevice->InitInput();
 	pInputDevice->InitInputKey(hWnd);
 
-	SetWindowText(hWnd, _T("ベクトルグラビティー"));
 
 	pSceneManager = new SceneManager;
 

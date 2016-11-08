@@ -12,9 +12,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BulletManager\BulletManager.cpp" />
-    <ClCompile Include="CharacterManager\Character.cpp" />
-    <ClCompile Include="CharacterManager\CharacterManager.cpp" />
-    <ClCompile Include="CharacterManager\Player.cpp" />
+    <ClCompile Include="CharcterManager\Character.cpp" />
+    <ClCompile Include="CharcterManager\CharcterManager.cpp" />
+    <ClCompile Include="CharcterManager\Player.cpp" />
     <ClCompile Include="DebugMode\DebugMode.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ObjectManager\ObjectManager.cpp" />
@@ -30,9 +30,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BulletManager\BulletManager.h" />
-    <ClInclude Include="CharacterManager\Character.h" />
-    <ClInclude Include="CharacterManager\CharacterManager.h" />
-    <ClInclude Include="CharacterManager\Player.h" />
+    <ClInclude Include="CharcterManager\Character.h" />
+    <ClInclude Include="CharcterManager\CharcterManager.h" />
+    <ClInclude Include="CharcterManager\Player.h" />
     <ClInclude Include="DebugMode\DebugMode.h" />
     <ClInclude Include="ObjectManager\ObjectManager.h" />
     <ClInclude Include="SceneManager\GameScene.h" />

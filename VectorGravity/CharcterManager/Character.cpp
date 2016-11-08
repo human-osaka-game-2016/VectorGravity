@@ -1,13 +1,13 @@
 /**
- * @file Character.h
+ * @file Charcter.cpp
  * @breif キャラクターの親クラスヘッダー
  * @author shibata
  */
 
 #include "Character.h"
+#include "Player.h"
 
-Character::Character() : 
-m_pGraphicsDevice(&GraphicsDevice::GetInstance())
+Character::Character()
 {
 
 }
@@ -31,7 +31,6 @@ void Character::Attack()
 {
 
 }
-
 
 void Character::Move()
 {

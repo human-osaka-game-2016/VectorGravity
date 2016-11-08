@@ -1,6 +1,5 @@
 #include "InputDevice.h"
 
-// Inputインターフェイスの生成
 HRESULT InputDevice::InitInput()
 {
 	if (FAILED(DirectInput8Create(GetModuleHandle(NULL), DIRECTINPUT_VERSION, IID_IDirectInput8, (VOID**)&m_pDinput, NULL)))
@@ -11,7 +10,6 @@ HRESULT InputDevice::InitInput()
 	return S_OK;
 }
 
-// キーボードデバイスの生成
 HRESULT InputDevice::InitInputKey(HWND _hWnd)
 {
 	m_hWnd = _hWnd;

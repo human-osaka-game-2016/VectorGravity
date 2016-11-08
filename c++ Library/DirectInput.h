@@ -1,7 +1,7 @@
 #ifndef KEYINPUT
 #define KEYINPUT
 
-#include "InputDevice\InputDevice.h"
+#include "InputDevice.h"
 
 
 enum  KEYKIND
@@ -39,7 +39,6 @@ enum  KEYKIND
 	SHIFT,
 	SPACE,
 	ENTER,
-	LCONTROL,
 	KEYMAX,		///<Ši”[‚µ‚Ä‚éƒL[‚ÌÅ‘å’l
 };
 
@@ -76,6 +75,7 @@ public:
 
 	void GetKeyBoradState();
 	void KeyCheck(int _dik, KEYKIND _set);
+	void Release();
 
 };
 

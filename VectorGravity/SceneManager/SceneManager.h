@@ -7,8 +7,8 @@
 #ifndef SCENEMANAGER_H
 #define SCENEMANAGER_H
 
-#include <../c++ Library/DirectDrawTexture/DirectDrawTexture.h>
-#include <../c++ Library/Input/DirectInput.h>
+#include <DirectDrawTexture.h>
+#include <DirectInput.h>
 
 class Scene;
 

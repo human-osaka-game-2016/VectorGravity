@@ -8,7 +8,7 @@
 #define OBJECTMANAGER_H
 
 class BulletManager;
-class CharacterManager;
+class CharcterManager;
 class StageManager;
 class UiManager;
 
@@ -25,7 +25,7 @@ public:
 private:
 
 	BulletManager*		m_pBulletManager;
-	CharacterManager*	m_pCharacterManager;
+	CharcterManager*	m_pCharcterManager;
 	StageManager*		m_pStageManager;
 	UiManager*			m_pUiManager;
 

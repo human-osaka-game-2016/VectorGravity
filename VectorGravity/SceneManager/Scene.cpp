@@ -16,13 +16,3 @@ Scene::~Scene()
 {
 
 }
-
-SceneID Scene::Control()
-{
-
-}
-
-void Scene::Draw()
-{
-
-}
