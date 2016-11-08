@@ -9,8 +9,6 @@ private:
 
 
 	GraphicsDevice(){}
-	GraphicsDevice(const GraphicsDevice &other){}
-	GraphicsDevice &operator = (const GraphicsDevice &other){}
 
 	IDirect3D9*	m_pDirect3D;
 	IDirect3DDevice9* m_pD3Device;

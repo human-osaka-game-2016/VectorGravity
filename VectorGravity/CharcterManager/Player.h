@@ -25,10 +25,6 @@ public:
 	virtual void Attack();
 	virtual void Move();
 
-private:
-	GraphicsDevice* m_pGD;
-	Texture m_texture;
-
 };
 
 

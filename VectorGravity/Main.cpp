@@ -82,7 +82,6 @@ int WINAPI WinMain(HINSTANCE hinst, HINSTANCE hprevinst, LPSTR szstr, INT icmsho
 	pGraphicsDevice = &GraphicsDevice::GetInstance();
 
 	pGraphicsDevice->InitDirect(hWnd);
-	pGraphicsDevice->InitDraw();
 
 	pInputDevice = &InputDevice::GetInstance();
 

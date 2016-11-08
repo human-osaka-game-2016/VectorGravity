@@ -9,9 +9,9 @@
 
 #include "Player.h"
 
-Player::Player() : m_pGD(&GraphicsDevice::GetInstance())
+Player::Player() 
 {
-	m_texture.LoadTexture("Resource/Texture/player_É¿.png");
+	m_pTexture.LoadTexture("Resource/Texture/player_É¿.png");
 }
 
 Player::~Player()

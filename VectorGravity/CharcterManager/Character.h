@@ -20,6 +20,10 @@ public:
 	virtual void Draw() = 0;
 	virtual void Attack() = 0;
 	virtual void Move() = 0;
+
+protected:
+
+	Texture m_pTexture;
 };
 
 #endif // !CHARCTER_H
