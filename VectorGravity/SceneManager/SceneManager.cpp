@@ -1,11 +1,18 @@
+/**
+ * @file SceneManager.cpp
+ * @breif シーンマネージャーのクラス実装
+ * @author shibata
+ */
+
 #include "SceneManager.h"
 #include "SceneFactory.h"
+#include "Scene.h"
 
 SceneManager::SceneManager() :
 m_pScene(nullptr),
 m_state(CREATE),
-m_currentSceneID(SceneID::LOGO_SCENE),
-m_nextSceneID(SceneID::LOGO_SCENE),
+m_currentSceneID(SceneID::GAME_SCENE),
+m_nextSceneID(SceneID::GAME_SCENE),
 m_pGraphicsDevice(&GraphicsDevice::GetInstance()),
 m_pInputKey(&InputKeyBorad::GetInstance()), 
 m_gameEnd(false)

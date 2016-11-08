@@ -1,3 +1,9 @@
+/**
+ * @file SceneFactory.cpp
+ * @breif シーンファクトリーのクラス実装
+ * @author shibata
+ */
+
 #include "SceneFactory.h"
 #include "LogoScene.h"
 #include "TitleScene.h"

@@ -1,6 +1,6 @@
 /**
  * @file GameScene.h
- * @breif ゲームシーンのクラスのヘッダー
+ * @breif ゲームシーンのクラスヘッダー
  * @author shibata
  */
 

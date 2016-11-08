@@ -3,7 +3,8 @@
 #include "../ObjectManager/ObjectManager.h"
 
 GameScene::GameScene() : 
-m_pObjectManager(new ObjectManager)
+m_pObjectManager(new ObjectManager),
+m_pauses(false)
 {
 
 }

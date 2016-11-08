@@ -1,6 +1,6 @@
 /**
  * @file SceneFactory.h
- * @breif シーンファクトリーのクラスのヘッダー
+ * @breif シーンファクトリーのクラスヘッダー
  * @author shibata
  */
 
@@ -32,7 +32,7 @@ public:
 
 	Scene* CreateScene(SceneID sceneID_);
 
-	virtual ~SceneFactory(){}
+	~SceneFactory(){}
 
 private:
 

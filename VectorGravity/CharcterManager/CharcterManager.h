@@ -7,6 +7,8 @@
 #ifndef CHARCTERMANAGER_H
 #define CHARCTERMANAGER_H
 
+class Charcter;
+
 class CharcterManager
 {
 public:
@@ -16,6 +18,10 @@ public:
 
 	void Control();
 	void Draw();
+
+private:
+
+	Charcter* m_pCharcter;
 
 };
 
