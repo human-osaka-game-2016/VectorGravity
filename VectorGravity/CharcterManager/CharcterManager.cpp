@@ -1,15 +1,17 @@
 #include "CharcterManager.h"
 #include "Player.h"
+#include"Tank.h"
 
 CharcterManager::CharcterManager() : 
 m_pPlayer(new Player)
 {
-
+	m_pTank = new Tank;
 }
 
 CharcterManager::~CharcterManager()
 {
 	delete m_pPlayer;
+	delete m_pTank;
 }
 
 void CharcterManager::Control()
@@ -27,12 +29,12 @@ void CharcterManager::Control()
 
 void CharcterManager::Draw()
 {
-	Character* charaDrawList[1] =
+	Character* charaDrawList[] =
 	{
-		m_pPlayer
+		m_pPlayer, m_pTank
 	};
 
-	for (int i = 0; i < 1; i++)
+	for (int i = 0; i < 2; i++)
 	{
 		charaDrawList[i]->Draw();
 	}

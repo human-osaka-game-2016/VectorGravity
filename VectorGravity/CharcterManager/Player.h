@@ -28,4 +28,4 @@ public:
 };
 
 
-#endif // !PLAYER_H
+#endif PLAYER_H

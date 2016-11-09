@@ -7,6 +7,7 @@
 #ifndef CHARCTER_H
 #define CHARCTER_H
 
+#include <windows.h>
 #include <DirectDrawTexture.h>
 
 
@@ -26,6 +27,6 @@ protected:
 	Texture m_pTexture;
 };
 
-#endif // !CHARCTER_H
+#endif CHARCTER_H
 
 

@@ -9,6 +9,7 @@
 
 class Character;
 class Player;
+class Tank;
 
 class CharcterManager
 {
@@ -24,9 +25,9 @@ private:
 
 	Character*	m_pCharacter;
 	Player*		m_pPlayer;
-
+	Tank* m_pTank;
 
 };
 
 
-#endif // !CHARCTERMANAGER_H
+#endif CHARCTERMANAGER_H

@@ -90,7 +90,7 @@ void SceneManager::Control()
 
 void SceneManager::Render()
 {
-	if (m_state == RUN)
+	if (m_state != RUN)
 	{
 		return;
 	}

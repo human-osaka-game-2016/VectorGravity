@@ -146,6 +146,12 @@
     <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\LastBoss">
       <UniqueIdentifier>{f57c8d19-2a4c-4de0-9fe2-57256fa6c18f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\SceneManager\Scene\GameScene\CollisionManager">
+      <UniqueIdentifier>{447abf71-7971-44b1-a44a-5196540a63dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\SceneManager\Scene\GameScene\CollisionManager\Collision">
+      <UniqueIdentifier>{2f6af581-930d-4b99-b6a9-7c17a36bd4dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -196,6 +202,12 @@
     <ClCompile Include="CharcterManager\Character.cpp">
       <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter</Filter>
     </ClCompile>
+    <ClCompile Include="CharcterManager\Tank.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Tank</Filter>
+    </ClCompile>
+    <ClCompile Include="CharcterManager\Collision.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\CollisionManager\Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneManager\SceneManager.h">
@@ -243,5 +255,16 @@
     <ClInclude Include="CharcterManager\Character.h">
       <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter</Filter>
     </ClInclude>
+    <ClInclude Include="CharcterManager\Tank.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Tank</Filter>
+    </ClInclude>
+    <ClInclude Include="CharcterManager\Collision.h">
+      <Filter>Main\SceneManager\Scene\GameScene\CollisionManager\Collision</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\ベクトルグラビティー11.08\VectorGravity\Tank.png">
+      <Filter>Main\SceneManager\Scene\GameScene</Filter>
+    </Image>
   </ItemGroup>
 </Project>
