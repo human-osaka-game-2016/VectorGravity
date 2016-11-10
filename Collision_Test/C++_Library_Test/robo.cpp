@@ -4,7 +4,7 @@ Robo::Robo() : Obj(), m_inputkeydevice(&InputKeyBorad::GetInstance())//, m_colli
 {
 	m_texture.LoadTexture("Lupus.jpg");
 
-	m_robo = {100, 100, 200, 200};
+	m_robo = {100, 150, 200, 200};
 	//m_robo = Collision::getInstance().GetRoboRect();
 
 	//// サイズ計算

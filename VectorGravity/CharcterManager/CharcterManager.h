@@ -7,7 +7,6 @@
 #ifndef CHARCTERMANAGER_H
 #define CHARCTERMANAGER_H
 
-class Character;
 class Player;
 class Tank;
 
@@ -23,11 +22,10 @@ public:
 
 private:
 
-	Character*	m_pCharacter;
 	Player*		m_pPlayer;
 	Tank* m_pTank;
 
 };
 
 
-#endif CHARCTERMANAGER_H
+#endif // !CHARCTERMANAGER_H

@@ -11,12 +11,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BulletManager\Bullet.cpp" />
     <ClCompile Include="BulletManager\BulletManager.cpp" />
+    <ClCompile Include="BulletManager\NormalBullet.cpp" />
     <ClCompile Include="CharcterManager\Character.cpp" />
     <ClCompile Include="CharcterManager\CharcterManager.cpp" />
-    <ClCompile Include="CharcterManager\Collision.cpp" />
     <ClCompile Include="CharcterManager\Player.cpp" />
-    <ClCompile Include="CharcterManager\Tank.cpp" />
+    <ClCompile Include="CollisionManager\Collision.cpp" />
     <ClCompile Include="DebugMode\DebugMode.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ObjectManager\ObjectManager.cpp" />
@@ -31,12 +32,13 @@
     <ClCompile Include="UiManager\UiManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BulletManager\Bullet.h" />
     <ClInclude Include="BulletManager\BulletManager.h" />
+    <ClInclude Include="BulletManager\NormalBullet.h" />
     <ClInclude Include="CharcterManager\Character.h" />
     <ClInclude Include="CharcterManager\CharcterManager.h" />
-    <ClInclude Include="CharcterManager\Collision.h" />
     <ClInclude Include="CharcterManager\Player.h" />
-    <ClInclude Include="CharcterManager\Tank.h" />
+    <ClInclude Include="CollisionManager\Collision.h" />
     <ClInclude Include="DebugMode\DebugMode.h" />
     <ClInclude Include="ObjectManager\ObjectManager.h" />
     <ClInclude Include="SceneManager\GameScene.h" />
@@ -48,9 +50,6 @@
     <ClInclude Include="StageManager\StageManager.h" />
     <ClInclude Include="StateManager\StateManager.h" />
     <ClInclude Include="UiManager\UiManager.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\ベクトルグラビティー11.08\VectorGravity\Tank.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9510F802-0E1D-404D-A478-7953E1D6AE18}</ProjectGuid>

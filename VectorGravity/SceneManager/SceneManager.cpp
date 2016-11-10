@@ -64,6 +64,7 @@ void SceneManager::Control()
 		m_pScene = SceneFactory::Instance().CreateScene(m_currentSceneID);
 
 		m_state = RUN;
+		break;
 
 	case RUN:
 

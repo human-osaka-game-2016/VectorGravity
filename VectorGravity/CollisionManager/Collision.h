@@ -11,15 +11,15 @@ public:
 	static Collision& getInstance()
 	{
 		static Collision collision;
-	
+
 		return collision;
 	}
 
 	~Collision();
 
 	void SetObjectRect(RECT object1_)		//SetObjectRectは自キャラなどのControl関数の最後に置くことで、そのキャラの移動後の座標を毎フレーム取得することが出来ます。
-	{		
-											//Objectには衝突する２つの物体を定義するため、名前は変更される可能性があります。
+	{
+		//Objectには衝突する２つの物体を定義するため、名前は変更される可能性があります。
 	}
 
 private:

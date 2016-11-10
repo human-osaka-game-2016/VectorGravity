@@ -8,6 +8,7 @@
 #define SCENE_H
 
 enum SceneID;
+
 class Scene
 {
 public:

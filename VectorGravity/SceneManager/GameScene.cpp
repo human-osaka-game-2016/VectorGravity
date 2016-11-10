@@ -18,6 +18,8 @@ SceneID GameScene::Control()
 {
 	SceneID nextScene = SceneID::GAME_SCENE;
 
+
+
 	if (!m_pauses)
 	{
 		m_pObjectManager->Control();

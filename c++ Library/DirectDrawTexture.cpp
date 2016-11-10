@@ -33,9 +33,5 @@ HRESULT Texture::LoadTexture(const char _filePath[])
 
 void Texture::Release()
 {
-	if (m_pTexture != NULL)
-	{
-		m_pTexture->Release();
-	}
-	
+	m_pTexture->Release();
 }

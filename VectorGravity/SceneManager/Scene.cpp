@@ -16,3 +16,8 @@ Scene::~Scene()
 {
 
 }
+
+void Scene::Draw()
+{
+
+}

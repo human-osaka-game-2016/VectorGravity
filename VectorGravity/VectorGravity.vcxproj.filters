@@ -146,11 +146,8 @@
     <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\LastBoss">
       <UniqueIdentifier>{f57c8d19-2a4c-4de0-9fe2-57256fa6c18f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\CollisionManager">
-      <UniqueIdentifier>{447abf71-7971-44b1-a44a-5196540a63dd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\CollisionManager\Collision">
-      <UniqueIdentifier>{2f6af581-930d-4b99-b6a9-7c17a36bd4dd}</UniqueIdentifier>
+    <Filter Include="Main\SceneManager\Scene\GameScene\Collision">
+      <UniqueIdentifier>{caedc680-579f-4de0-bc02-fe32eb649c6e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -202,11 +199,14 @@
     <ClCompile Include="CharcterManager\Character.cpp">
       <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter</Filter>
     </ClCompile>
-    <ClCompile Include="CharcterManager\Tank.cpp">
-      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Tank</Filter>
+    <ClCompile Include="BulletManager\NormalBullet.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\BulletManager\Bullet\NormalBullet</Filter>
     </ClCompile>
-    <ClCompile Include="CharcterManager\Collision.cpp">
-      <Filter>Main\SceneManager\Scene\GameScene\CollisionManager\Collision</Filter>
+    <ClCompile Include="BulletManager\Bullet.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\BulletManager\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager\Collision.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\Collision</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -255,16 +255,14 @@
     <ClInclude Include="CharcterManager\Character.h">
       <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter</Filter>
     </ClInclude>
-    <ClInclude Include="CharcterManager\Tank.h">
-      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Tank</Filter>
+    <ClInclude Include="BulletManager\Bullet.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\BulletManager\Bullet</Filter>
     </ClInclude>
-    <ClInclude Include="CharcterManager\Collision.h">
-      <Filter>Main\SceneManager\Scene\GameScene\CollisionManager\Collision</Filter>
+    <ClInclude Include="BulletManager\NormalBullet.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\BulletManager\Bullet\NormalBullet</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\ベクトルグラビティー11.08\VectorGravity\Tank.png">
-      <Filter>Main\SceneManager\Scene\GameScene</Filter>
-    </Image>
+    <ClInclude Include="CollisionManager\Collision.h">
+      <Filter>Main\SceneManager\Scene\GameScene\Collision</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

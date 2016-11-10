@@ -7,13 +7,16 @@
 #ifndef CHARCTER_H
 #define CHARCTER_H
 
-#include <windows.h>
 #include <DirectDrawTexture.h>
+#include <DirectInput.h>
 
+#define CHARACTER_SIZE 128.0f
+#define MOVE_SPEED 10
 
 class Character
 {
 public:
+
 	Character();
 	virtual ~Character();
 
@@ -24,9 +27,11 @@ public:
 
 protected:
 
-	Texture m_pTexture;
+	Texture m_texture;
+	float m_posX;
+	float m_posY;
 };
 
-#endif CHARCTER_H
+#endif // !CHARCTER_H
 
 

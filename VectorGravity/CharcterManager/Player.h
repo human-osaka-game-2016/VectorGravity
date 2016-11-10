@@ -17,6 +17,7 @@
 class Player : public Character
 {
 public:
+
 	Player();
 	virtual ~Player();
 
@@ -25,7 +26,12 @@ public:
 	virtual void Attack();
 	virtual void Move();
 
+private:
+
+	InputKeyBorad* m_pInputKey;
+	RECT m_playerRect;
+
 };
 
 
-#endif PLAYER_H
+#endif // !PLAYER_H
