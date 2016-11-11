@@ -8,6 +8,7 @@
 #define NORMALBULLET_H
 
 #include "Bullet.h"
+#include <DirectInput.h>
 
 class NormalBullet : public Bullet
 {
@@ -22,6 +23,7 @@ public:
 
 private:
 
+	InputKeyBorad* m_pInputKey;
 	RECT m_normalBulletRect;
 };
 
