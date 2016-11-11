@@ -22,7 +22,7 @@ public:
 
 	RECT GetTankRect()
 	{
-		return m_tank;
+		return m_hitRect;
 	}
 
 private:
@@ -30,6 +30,7 @@ private:
 	InputKeyBorad* m_pInputKey;
 
 	RECT m_tank;
+	RECT m_hitRect;
 
 	bool m_hits;
 	int m_hitCount;

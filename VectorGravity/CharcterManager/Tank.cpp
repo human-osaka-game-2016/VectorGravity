@@ -6,6 +6,8 @@ Tank::Tank() : Character(), m_pInputKey(&InputKeyBorad::GetInstance())
 
 	m_tank = { 600, 430, 600 + TANKWIDTH, 430 + TANKHEIGHT };
 
+	m_hitRect = { 723, 430, 723 + TANKWIDTH, 430 + TANKHEIGHT };
+
 	m_hitCount = 0;
 	m_hits = false;
 }
