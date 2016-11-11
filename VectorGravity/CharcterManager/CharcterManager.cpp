@@ -16,12 +16,12 @@ CharcterManager::~CharcterManager()
 
 void CharcterManager::Control()
 {
-	Character* charaControlList[1] = 
+	Character* charaControlList[2] = 
 	{
-		m_pPlayer
+		m_pPlayer, m_pTank
 	};
 
-	for (int i = 0; i < 1; i++)
+	for (int i = 0; i < 2; i++)
 	{
 		charaControlList[i]->Control();
 	}
@@ -29,7 +29,7 @@ void CharcterManager::Control()
 
 void CharcterManager::Draw()
 {
-	Character* charaDrawList[] =
+	Character* charaDrawList[2] =
 	{
 		m_pPlayer, m_pTank
 	};

@@ -8,6 +8,9 @@ Collision::Collision()
 
 	この処理は（今は暫定的にplayerとしていますが）、衝突する物体の初期位置を取得することができます。
 	*/
+
+	Tank tank;
+	tank.GetTankRect();
 }
 
 Collision::~Collision()
