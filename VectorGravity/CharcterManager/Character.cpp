@@ -5,7 +5,6 @@
  */
 
 #include "Character.h"
-#include "Player.h"
 
 
 Character::Character()

@@ -8,8 +8,13 @@
  */
 
 #include "Player.h"
+#include"../BulletManager/BulletManager.h"
+#include "../StateManager/StateManager.h"
 
-Player::Player() : m_pInputKey(&InputKeyBorad::GetInstance())
+Player::Player() : 
+m_pInputKey(&InputKeyBorad::GetInstance()),
+m_bulletManager(new BulletManager),
+m_pStateManager(&StateManager::GetInstance())
 {
 	m_texture.LoadTexture("Resource/Texture/player_ƒÀ.png");
 	m_playerRect = { 0, 572, 128, 682};		// ‚Ç‚¤‚É‚©‚µ‚Ä‚Ù‚©‚Ì•`‰æ•û–@‚ð’T‚·
@@ -17,15 +22,24 @@ Player::Player() : m_pInputKey(&InputKeyBorad::GetInstance())
 
 Player::~Player()
 {
-
+	delete m_bulletManager;
 }
 
 void Player::Control()
 {
 	m_pInputKey->KeyCheck(DIK_A, A);
 	m_pInputKey->KeyCheck(DIK_D, D);
+	m_pInputKey->KeyCheck(DIK_SPACE, SPACE);
+	m_pInputKey->KeyCheck(DIK_UP, UP);
+	m_pInputKey->KeyCheck(DIK_DOWN, DOWN);
+	m_pInputKey->KeyCheck(DIK_LEFT, LEFT);
+	m_pInputKey->KeyCheck(DIK_RIGHT, RIGHT);
 
+	m_bulletManager->Control();
 	Move();
+	VectorOrient();
+	m_pStateManager->SetVectorDirection(m_vectorDirection);
+	Attack();
 
 }
 
@@ -38,13 +52,17 @@ void Player::Draw()
 		{ m_playerRect.right, m_playerRect.bottom, 1.f, 1.f, 0xFFFFFFFF, 1.f, 1.f },
 		{ m_playerRect.left, m_playerRect.bottom, 1.f, 1.f, 0xFFFFFFFF, 0.f, 1.f }
 	};
+	m_bulletManager->Draw();
 
 	m_texture.SetTexture(player);
 }
 
 void Player::Attack()
 {
-
+	if (m_pInputKey->m_Key[SPACE] == ON)
+	{
+		m_bulletManager->Create();
+	}
 }
 
 void Player::Move()
@@ -59,4 +77,31 @@ void Player::Move()
 		m_playerRect.right += MOVE_SPEED;
 		m_playerRect.left += MOVE_SPEED;
 	}
+
+
+}
+
+VectorDirection Player::VectorOrient()
+{
+	if (m_pInputKey->m_Key[UP] == ON)
+	{
+		m_vectorDirection = Vector_Up;
+	}
+
+	if (m_pInputKey->m_Key[DOWN] == ON)
+	{
+		m_vectorDirection = Vector_Down;
+	}
+
+	if (m_pInputKey->m_Key[LEFT] == ON)
+	{
+		m_vectorDirection = Vector_Left;
+	}
+
+	if (m_pInputKey->m_Key[RIGHT] == ON)
+	{
+		m_vectorDirection = Vector_Right;
+	}
+
+	return m_vectorDirection;
 }

@@ -3,6 +3,7 @@
 
 #include "Character.h"
 #include "../CollisionManager/Collision.h"
+#include <DirectInput.h>
 
 #define TANKWIDTH  512
 #define TANKHEIGHT 256

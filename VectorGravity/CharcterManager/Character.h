@@ -8,7 +8,6 @@
 #define CHARCTER_H
 
 #include <DirectDrawTexture.h>
-#include <DirectInput.h>
 
 #define CHARACTER_SIZE 128.0f
 #define MOVE_SPEED 10

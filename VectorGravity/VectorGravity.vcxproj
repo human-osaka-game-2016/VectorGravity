@@ -85,6 +85,10 @@
     <IncludePath>$(DXSDK_DIR)Include;../c++ Library;$(IncludePath)</IncludePath>
     <LibraryPath>../Debug;$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>../c++ Library;$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>../Release;$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -108,6 +112,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>c++ Library.lib;dxguid.lib;dinput8.lib;winmm.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

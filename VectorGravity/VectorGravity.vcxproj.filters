@@ -41,9 +41,6 @@
     <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager">
       <UniqueIdentifier>{fca03c93-414f-418e-ba2c-d36797fbb36b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager">
-      <UniqueIdentifier>{66b6c9d5-6b28-4107-a7dc-f5b2eafe80ff}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\BulletManager">
       <UniqueIdentifier>{e184782d-b586-4086-be75-55e7fb3e7ef0}</UniqueIdentifier>
     </Filter>
@@ -113,6 +110,12 @@
     <Filter Include="Main\SceneManager\Scene\GameScene\DebugMode">
       <UniqueIdentifier>{1fc0a898-fe66-412b-beab-9776eca1b571}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\SceneManager\Scene\GameScene\Collision">
+      <UniqueIdentifier>{caedc680-579f-4de0-bc02-fe32eb649c6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager">
+      <UniqueIdentifier>{66b6c9d5-6b28-4107-a7dc-f5b2eafe80ff}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter">
       <UniqueIdentifier>{8e8230e1-d7f1-471c-9b7f-4028a320e72e}</UniqueIdentifier>
     </Filter>
@@ -134,9 +137,6 @@
     <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Soldeir\BarrierSoldeir">
       <UniqueIdentifier>{36c7b995-d281-4929-85af-6c368090dd94}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Cannon">
-      <UniqueIdentifier>{38912a61-edc8-4bb7-8621-33302fabd650}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Tank">
       <UniqueIdentifier>{d853ffcd-6bf0-4e8c-af3c-632c07265aad}</UniqueIdentifier>
     </Filter>
@@ -146,8 +146,8 @@
     <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\LastBoss">
       <UniqueIdentifier>{f57c8d19-2a4c-4de0-9fe2-57256fa6c18f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\SceneManager\Scene\GameScene\Collision">
-      <UniqueIdentifier>{caedc680-579f-4de0-bc02-fe32eb649c6e}</UniqueIdentifier>
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Cannon">
+      <UniqueIdentifier>{38912a61-edc8-4bb7-8621-33302fabd650}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
