@@ -7,6 +7,8 @@
 #ifndef OBJECTMANAGER_H
 #define OBJECTMANAGER_H
 
+#include <DirectDrawTexture.h>
+
 class CharcterManager;
 class StageManager;
 class UiManager;
@@ -27,6 +29,7 @@ private:
 	StageManager*		m_pStageManager;
 	UiManager*			m_pUiManager;
 
+	Texture m_texture;
 };
 
 #endif // !OBJECTMANAGER_H

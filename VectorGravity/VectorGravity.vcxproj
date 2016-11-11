@@ -30,7 +30,9 @@
     <ClCompile Include="SceneManager\TitleScene.cpp" />
     <ClCompile Include="StageManager\StageManager.cpp" />
     <ClCompile Include="StateManager\StateManager.cpp" />
+    <ClCompile Include="UiManager\Ui.cpp" />
     <ClCompile Include="UiManager\UiManager.cpp" />
+    <ClCompile Include="UiManager\VectorIcon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BulletManager\Bullet.h" />
@@ -51,7 +53,9 @@
     <ClInclude Include="SceneManager\TitleScene.h" />
     <ClInclude Include="StageManager\StageManager.h" />
     <ClInclude Include="StateManager\StateManager.h" />
+    <ClInclude Include="UiManager\Ui.h" />
     <ClInclude Include="UiManager\UiManager.h" />
+    <ClInclude Include="UiManager\VectorIcon.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9510F802-0E1D-404D-A478-7953E1D6AE18}</ProjectGuid>

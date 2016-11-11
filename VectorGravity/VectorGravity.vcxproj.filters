@@ -149,6 +149,9 @@
     <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Cannon">
       <UniqueIdentifier>{38912a61-edc8-4bb7-8621-33302fabd650}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\VectorIcon">
+      <UniqueIdentifier>{cb31cbac-73ca-41b3-b97c-62def49edeef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -211,6 +214,12 @@
     <ClCompile Include="CharcterManager\Tank.cpp">
       <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Tank</Filter>
     </ClCompile>
+    <ClCompile Include="UiManager\Ui.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="UiManager\VectorIcon.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\VectorIcon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneManager\SceneManager.h">
@@ -269,6 +278,12 @@
     </ClInclude>
     <ClInclude Include="CharcterManager\Tank.h">
       <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Tank</Filter>
+    </ClInclude>
+    <ClInclude Include="UiManager\Ui.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="UiManager\VectorIcon.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\VectorIcon</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

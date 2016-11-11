@@ -37,7 +37,7 @@ void Player::Control()
 
 	m_bulletManager->Control();
 	Move();
-	VectorOrient();
+	m_vectorDirection = VectorOrient();
 	m_pStateManager->SetVectorDirection(m_vectorDirection);
 	Attack();
 

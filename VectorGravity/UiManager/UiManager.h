@@ -7,6 +7,8 @@
 #ifndef UIMANAGER_H
 #define UIMANAGER_H
 
+class VectorIcon;
+
 class UiManager
 {
 public:
@@ -17,6 +19,9 @@ public:
 	void Control();
 	void Draw();
 
+private:
+
+	VectorIcon* m_pVectorIcon;
 };
 
 #endif // !UIMANAGER_H

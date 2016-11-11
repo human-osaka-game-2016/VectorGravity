@@ -3,7 +3,7 @@
 NormalBullet::NormalBullet() : 
 m_pInputKey(&InputKeyBorad::GetInstance())
 {
-	m_texture.LoadTexture("Resource/Texture/bekutoru_Shoot.png");
+	m_texture.LoadTexture("Resource/Texture/Vector_Shoot.png");
 	m_normalBulletRect = { 128, 590, 160,  620};
 	m_hits = false;
 }

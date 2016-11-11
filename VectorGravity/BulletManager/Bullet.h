@@ -14,7 +14,7 @@ class Bullet
 public:
 
 	Bullet();
-	~Bullet();
+	virtual ~Bullet();
 
 	virtual void Control() = 0;
 	virtual void Draw() = 0;
