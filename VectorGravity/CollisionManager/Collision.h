@@ -2,6 +2,7 @@
 #define COLLISION_H
 
 #include <windows.h>
+#include "../CharcterManager/Tank.h"
 
 class Collision
 {
@@ -18,12 +19,14 @@ public:
 	~Collision();
 
 	void SetObjectRect(RECT object1_)		//SetObjectRectは自キャラなどのControl関数の最後に置くことで、そのキャラの移動後の座標を毎フレーム取得することが出来ます。
-	{
-		//Objectには衝突する２つの物体を定義するため、名前は変更される可能性があります。
+	{										//Objectには衝突する２つの物体を定義するため、名前は変更される可能性があります。
+		m_object1 = object1_;
 	}
 
 private:
 	Collision();
+
+	Tank m_tank;
 
 	RECT m_object1;			//Objectには衝突する２つの物体を定義するため、名前は変更される可能性があります。
 	RECT m_object2;			//Objectには衝突する２つの物体を定義するため、名前は変更される可能性があります。

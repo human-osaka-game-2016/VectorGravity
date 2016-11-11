@@ -208,6 +208,9 @@
     <ClCompile Include="CollisionManager\Collision.cpp">
       <Filter>Main\SceneManager\Scene\GameScene\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="CharcterManager\Tank.cpp">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Tank</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneManager\SceneManager.h">
@@ -263,6 +266,9 @@
     </ClInclude>
     <ClInclude Include="CollisionManager\Collision.h">
       <Filter>Main\SceneManager\Scene\GameScene\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CharcterManager\Tank.h">
+      <Filter>Main\SceneManager\Scene\GameScene\ObjectManager\CharcterManager\Charcter\Enemy\Tank</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

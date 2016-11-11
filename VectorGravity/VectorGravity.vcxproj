@@ -17,6 +17,7 @@
     <ClCompile Include="CharcterManager\Character.cpp" />
     <ClCompile Include="CharcterManager\CharcterManager.cpp" />
     <ClCompile Include="CharcterManager\Player.cpp" />
+    <ClCompile Include="CharcterManager\Tank.cpp" />
     <ClCompile Include="CollisionManager\Collision.cpp" />
     <ClCompile Include="DebugMode\DebugMode.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -38,6 +39,7 @@
     <ClInclude Include="CharcterManager\Character.h" />
     <ClInclude Include="CharcterManager\CharcterManager.h" />
     <ClInclude Include="CharcterManager\Player.h" />
+    <ClInclude Include="CharcterManager\Tank.h" />
     <ClInclude Include="CollisionManager\Collision.h" />
     <ClInclude Include="DebugMode\DebugMode.h" />
     <ClInclude Include="ObjectManager\ObjectManager.h" />
