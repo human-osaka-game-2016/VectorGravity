@@ -2,7 +2,7 @@
 #define TANK_H
 
 #include "Character.h"
-#include "Collision.h"
+#include "../CollisionManager/Collision.h"
 
 #define TANKWIDTH  512
 #define TANKHEIGHT 256
@@ -27,7 +27,6 @@ public:
 private:
 
 	InputKeyBorad* m_pInputKey;
-	Texture m_texture;
 
 	RECT m_tank;
 

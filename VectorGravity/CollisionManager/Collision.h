@@ -2,7 +2,8 @@
 #define COLLISION_H
 
 #include <windows.h>
-#include "../CharcterManager/Tank.h"
+
+class Tank;
 
 class Collision
 {
@@ -26,7 +27,7 @@ public:
 private:
 	Collision();
 
-	Tank m_tank;
+	Tank* m_pTank;
 
 	RECT m_object1;			//Objectには衝突する２つの物体を定義するため、名前は変更される可能性があります。
 	RECT m_object2;			//Objectには衝突する２つの物体を定義するため、名前は変更される可能性があります。
