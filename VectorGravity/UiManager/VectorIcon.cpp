@@ -4,7 +4,7 @@
 VectorIcon::VectorIcon() : m_pStateManager(&StateManager::GetInstance())
 {
 	m_texture.LoadTexture("Resource/Texture/VectorIcon.png");
-	m_vecrotIcon = { 0, 0, 64, 64};
+	m_vecrotIcon = { 106, 0, 170, 64};
 }
 
 VectorIcon::~VectorIcon()
