@@ -1,20 +1,20 @@
-#include "CharcterManager.h"
+#include "CharacterManager.h"
 #include "Player.h"
 #include"Tank.h"
 
-CharcterManager::CharcterManager() : 
+CharacterManager::CharacterManager() : 
 m_pPlayer(new Player)
 {
 	m_pTank = new Tank;
 }
 
-CharcterManager::~CharcterManager()
+CharacterManager::~CharacterManager()
 {
 	delete m_pPlayer;
 	delete m_pTank;
 }
 
-void CharcterManager::Control()
+void CharacterManager::Control()
 {
 	Character* charaControlList[2] = 
 	{
@@ -27,7 +27,7 @@ void CharcterManager::Control()
 	}
 }
 
-void CharcterManager::Draw()
+void CharacterManager::Draw()
 {
 	Character* charaDrawList[2] =
 	{

@@ -10,7 +10,7 @@
 #include <DirectDrawTexture.h>
 #include "Ui.h"
 
-#include "../CharcterManager/Player.h"
+#include "../CharacterManager/Player.h"
 
 
 class StateManager;

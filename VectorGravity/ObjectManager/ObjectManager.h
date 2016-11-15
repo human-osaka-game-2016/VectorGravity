@@ -9,7 +9,7 @@
 
 #include <DirectDrawTexture.h>
 
-class CharcterManager;
+class CharacterManager;
 class StageManager;
 class UiManager;
 
@@ -25,7 +25,7 @@ public:
 
 private:
 
-	CharcterManager*	m_pCharcterManager;
+	CharacterManager*	m_pCharacterManager;
 	StageManager*		m_pStageManager;
 	UiManager*			m_pUiManager;
 

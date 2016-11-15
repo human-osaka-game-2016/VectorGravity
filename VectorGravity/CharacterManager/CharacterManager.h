@@ -4,18 +4,18 @@
  * @author shibata
  */
 
-#ifndef CHARCTERMANAGER_H
-#define CHARCTERMANAGER_H
+#ifndef CHARACTERMANAGER_H
+#define CHARACTERMANAGER_H
 
 class Player;
 class Tank;
 
-class CharcterManager
+class CharacterManager
 {
 public:
 
-	CharcterManager();
-	~CharcterManager();
+	CharacterManager();
+	~CharacterManager();
 
 	void Control();
 	void Draw();
@@ -28,4 +28,4 @@ private:
 };
 
 
-#endif // !CHARCTERMANAGER_H
+#endif // !CHARACTERMANAGER_H
