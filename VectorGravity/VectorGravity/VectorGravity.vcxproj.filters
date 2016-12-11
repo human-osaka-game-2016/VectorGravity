@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="main\SceneManager">
+      <UniqueIdentifier>{2ef46558-36dd-46dd-8901-5d9e47571473}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\SceneFactory">
+      <UniqueIdentifier>{6a881800-9431-47ce-a52d-81a0ab03440e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene">
+      <UniqueIdentifier>{b8600090-ec2d-463d-889f-5b80df63e9ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\LogoScene">
+      <UniqueIdentifier>{7e7acf52-63d8-4aa1-8b28-aa32749cb9be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\TitleScene">
+      <UniqueIdentifier>{340a01c5-88b9-437e-8901-b011e62dd517}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene">
+      <UniqueIdentifier>{cf219048-89c1-4813-bb2b-c58d606fc4d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\ResultScene">
+      <UniqueIdentifier>{10cac487-166f-4834-94c6-de35ff10393f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\CreditRollScene">
+      <UniqueIdentifier>{c80ffc88-bee0-4b4d-80d3-97ba0ce9eebe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\StateManager">
+      <UniqueIdentifier>{8e18b505-090a-4d19-8704-0897769dbfba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager">
+      <UniqueIdentifier>{31a73f0a-8b56-498f-8680-b76bb7f0d0e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager">
+      <UniqueIdentifier>{4430411d-cf17-43d3-88d5-a40551047489}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character">
+      <UniqueIdentifier>{cf76c742-bdc4-4916-a581-f855dadbe8f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager">
+      <UniqueIdentifier>{b6325a6c-b294-4dba-8185-e7402cc816fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy">
+      <UniqueIdentifier>{83091535-a750-4eff-b261-3cda2df039a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Player">
+      <UniqueIdentifier>{2da3d99e-6d60-4320-8774-6b037886a247}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\UiManager">
+      <UniqueIdentifier>{0669fbb8-271d-4a5d-8f5b-0db6c24e35f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui">
+      <UniqueIdentifier>{e59de5d3-f1f3-4397-bc43-984ed3aba5ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\Gauge">
+      <UniqueIdentifier>{28155e3b-8f18-4d79-92c6-31846c098a08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\NewFilter3">
+      <UniqueIdentifier>{6f73bba6-b412-40bd-ae68-60ab84cb428e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\NewFilter4">
+      <UniqueIdentifier>{00daa64a-5f65-4042-ad7e-301b2cb86598}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\NewFilter5">
+      <UniqueIdentifier>{d1d71ee2-6d63-459e-b9dd-10acec720a0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\PlayerBulletManager">
+      <UniqueIdentifier>{176714a3-8f7a-4f76-b8fd-8be7e1d8a2b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\PlayerBulletManager\NormalBullet">
+      <UniqueIdentifier>{dc60d651-9fc6-4e3a-b93f-4262fc973c64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\PlayerBulletManager\GumBullet">
+      <UniqueIdentifier>{dc3561fa-bf9a-481d-bf69-260f4e026090}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\PlayerBulletManager\penetratingBullet">
+      <UniqueIdentifier>{ec169170-bbca-4af8-8692-bad8ee25c44d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\EnemyBulletManager">
+      <UniqueIdentifier>{22abc1f5-8fa6-422f-b6bb-a1bece14c14e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\EnemyBulletManager\TankBullet">
+      <UniqueIdentifier>{3db1353e-131e-41bd-8609-f8f744719226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\EnemyBulletManager\SoldeirBullet">
+      <UniqueIdentifier>{5a837885-6d73-425a-834f-d5f9660f3a0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\EnemyBulletManager\CannonBullet">
+      <UniqueIdentifier>{6d105695-4d6c-485f-b61d-ec5e52b0d1c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\VectorIcon">
+      <UniqueIdentifier>{a94967ad-821b-42f1-b5b3-ce56ef4919ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\BulletIcon">
+      <UniqueIdentifier>{f793e76c-892c-45f0-bc80-90702a6402d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\Score">
+      <UniqueIdentifier>{b5349156-ce48-4a97-888b-594ad98a3a38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\ShotLine">
+      <UniqueIdentifier>{8e36646f-e22c-42cb-a9bd-4ff78a1849e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ColliderManager">
+      <UniqueIdentifier>{36a05518-41f2-436d-a970-f45bb9fb53f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ColliderManager\Collider">
+      <UniqueIdentifier>{2035cfc8-c6cd-4d27-acf6-c4907dabbd36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Tank">
+      <UniqueIdentifier>{a6761544-fdb9-45f5-a9e8-2921751380d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Cannon">
+      <UniqueIdentifier>{8ffb931b-ec27-4190-aee5-89d6a0436765}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>main\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneFactory.cpp">
+      <Filter>main\SceneManager\SceneFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>main\SceneManager\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="LogoScene.cpp">
+      <Filter>main\SceneManager\Scene\LogoScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>main\SceneManager\Scene\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CreditRollScene.cpp">
+      <Filter>main\SceneManager\Scene\CreditRollScene</Filter>
+    </ClCompile>
+    <ClCompile Include="ResultScene.cpp">
+      <Filter>main\SceneManager\Scene\ResultScene</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>main\SceneManager\Scene\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="StateManager.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\StateManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ColliderManager\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="ColliderManager.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ColliderManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterManager.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="UiManager.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletManager.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerBulletManager.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\PlayerBulletManager</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBulletManager.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\EnemyBulletManager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SceneManager.h">
+      <Filter>main\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneFactory.h">
+      <Filter>main\SceneManager\SceneFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>main\SceneManager\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="LogoScene.h">
+      <Filter>main\SceneManager\Scene\LogoScene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>main\SceneManager\Scene\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CreditRollScene.h">
+      <Filter>main\SceneManager\Scene\CreditRollScene</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultScene.h">
+      <Filter>main\SceneManager\Scene\ResultScene</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>main\SceneManager\Scene\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="StateManager.h">
+      <Filter>main\SceneManager\Scene\GameScene\StateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>main\SceneManager\Scene\GameScene\ColliderManager\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="ColliderManager.h">
+      <Filter>main\SceneManager\Scene\GameScene\ColliderManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterManager.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="UiManager.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletManager.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBulletManager.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\PlayerBulletManager</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBulletManager.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\EnemyBulletManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

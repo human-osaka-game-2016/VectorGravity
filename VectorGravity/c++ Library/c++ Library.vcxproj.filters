@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Font">
+      <UniqueIdentifier>{9ce2aa21-86d7-4498-a3ae-fba9840aad93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsDevice">
+      <UniqueIdentifier>{70755256-807e-4350-b13e-ccfaab68d370}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputContlloer">
+      <UniqueIdentifier>{2aeeba35-da72-4145-a6a2-8eab05a0a637}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputDevice">
+      <UniqueIdentifier>{3ccd5012-a984-4257-9c82-4c43eb220dcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputKey">
+      <UniqueIdentifier>{ae9d82b3-85fa-444d-afac-e5505e96688a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{986c13ae-76e1-4159-86a3-87036f84f4c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vertex">
+      <UniqueIdentifier>{8d135299-1ace-47e5-9133-c13ef8907402}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Texture">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="WindowCreate">
+      <UniqueIdentifier>{04c15f8d-6ca6-49d9-b8bc-549a21b8cd98}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GraphicsDevice.cpp">
+      <Filter>GraphicsDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="InputDevice.cpp">
+      <Filter>InputDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>Font</Filter>
+    </ClCompile>
+    <ClCompile Include="InputContlloer.cpp">
+      <Filter>InputContlloer</Filter>
+    </ClCompile>
+    <ClCompile Include="InputKey.cpp">
+      <Filter>InputKey</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowCreate.cpp">
+      <Filter>WindowCreate</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>Vertex</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GraphicsDevice.h">
+      <Filter>GraphicsDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="InputDevice.h">
+      <Filter>InputDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>Font</Filter>
+    </ClInclude>
+    <ClInclude Include="InputContlloer.h">
+      <Filter>InputContlloer</Filter>
+    </ClInclude>
+    <ClInclude Include="InputKey.h">
+      <Filter>InputKey</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowCreate.h">
+      <Filter>WindowCreate</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
