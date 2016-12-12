@@ -1,10 +1,16 @@
+/**
+ * @file	main.cpp
+ * @breif	エントリーポイント
+ * @auhtor	shibata
+ */
+
 #include <Windows.h>
 #include <crtdbg.h>
 #include <mmsystem.h>
 #include <GraphicsDevice.h>
 #include <InputDevice.h>
 #include <WindowCreate.h>
-#include "SceneManager.h"
+#include "Scene\SceneManager.h"
 
 #pragma comment ( lib, "dsound.lib" )
 #pragma comment(lib, "dxguid.lib")
