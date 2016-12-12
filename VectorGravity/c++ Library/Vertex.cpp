@@ -28,7 +28,7 @@ void Vertex::SetTextureSize(float width_, float height_, float maxtu_, float max
 	m_textureMinTv	= mintv_;
 }
 
-void Vertex::DrawLeftTop(float posx_, float posy_)
+void Vertex::DrawLeftTop(float posx_, float posy_, Texture* ptexture_)
 {
 	CUSTOMVERTEX vertex[4] = 
 	{
@@ -44,13 +44,13 @@ void Vertex::DrawLeftTop(float posx_, float posy_)
 		vertex[i].y += posy_;
 	}
 
-	m_pD3Device->SetTexture(0, m_pTexture->GetTextureData());
+	m_pD3Device->SetTexture(0, ptexture_->GetTextureData());
 
 	m_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, vertex, sizeof(CUSTOMVERTEX));
 
 }
 
-void Vertex::DrawCenter(float posx_, float posy_)
+void Vertex::DrawCenter(float posx_, float posy_, Texture* ptexture_)
 {
 	CUSTOMVERTEX vertex[4] = 
 	{
@@ -66,7 +66,7 @@ void Vertex::DrawCenter(float posx_, float posy_)
 		vertex[i].y += posy_;
 	}
 
-	m_pD3Device->SetTexture(0, m_pTexture->GetTextureData());
+	m_pD3Device->SetTexture(0, ptexture_->GetTextureData());
 
 	m_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, vertex, sizeof(CUSTOMVERTEX));
 }

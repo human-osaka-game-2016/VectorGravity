@@ -53,7 +53,7 @@ public:
 	 * @param [in] posy_		左上座標のy軸の値
 	 * @param [in] pTexture_	現在のテクスチャ情報
 	 */
-	void DrawLeftTop(float posx_, float posy_);
+	void DrawLeftTop(float posx_, float posy_, Texture* ptexture_);
 
 	/**
 	 * 中心から描画する関数
@@ -61,7 +61,7 @@ public:
 	 * @param [in] posy_		中心座標のy軸の値
 	 * @param [in] pTexture_	現在のテクスチャ情報
 	 */
-	void DrawCenter(float posx_, float posy_);
+	void DrawCenter(float posx_, float posy_, Texture* ptexture_);
 
 
 private:
