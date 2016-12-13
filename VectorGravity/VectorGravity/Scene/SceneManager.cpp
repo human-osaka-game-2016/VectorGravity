@@ -18,7 +18,7 @@ m_currentSceneID(SceneID::GAME_SCENE),
 m_nextSceneID(SceneID::GAME_SCENE),
 m_pGraphicsDevice(&GraphicsDevice::Instance()),
 m_pInputDevice(&InputDevice::Instance()),
-m_pInputKey(new InputKey),
+m_pInputKey(&InputKey::Instance()),
 m_isGameEnd(false)
 {
 }

@@ -53,13 +53,15 @@ class InputKey
 {
 public:
 
-	BYTE     m_diks[256];		//!< DirectInoputKeyを格納する変数
+	BYTE		m_diks[256];	//!< DirectInoputKeyを格納する変数
 	ButtonState m_key[KEYMAX];	//!< 各キーを格納する変数
 
-	/**
-	 * コンストラクタ
-	 */
-	InputKey();
+	static InputKey& Instance()
+	{
+		static InputKey inputKey;
+
+		return inputKey;
+	}
 
 	/**
 	 * デストラクタ
@@ -79,6 +81,11 @@ public:
 	void CheckKey(int dik_, KeyKind set_);
 
 private:
+
+	/**
+	* コンストラクタ
+	*/
+	InputKey();
 
 	LPDIRECTINPUTDEVICE8	m_pKeyDevice;		//!< キーボード用デバイス
 	int						m_preKey[KEYMAX];	//!< キーの状態を格納する変数
