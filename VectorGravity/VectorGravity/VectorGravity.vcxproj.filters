@@ -100,12 +100,6 @@
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Cannon">
       <UniqueIdentifier>{8ffb931b-ec27-4190-aee5-89d6a0436765}</UniqueIdentifier>
     </Filter>
-    <Filter Include="main\SceneManager\Scene\GameScene\ColliderManager">
-      <UniqueIdentifier>{36a05518-41f2-436d-a970-f45bb9fb53f0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="main\SceneManager\Scene\GameScene\ColliderManager\Collider">
-      <UniqueIdentifier>{2035cfc8-c6cd-4d27-acf6-c4907dabbd36}</UniqueIdentifier>
-    </Filter>
     <Filter Include="main\SceneManager\Scene\LogoScene\TeamLogo">
       <UniqueIdentifier>{9f40a0a3-794b-4cd0-a0fd-55d4c23ac180}</UniqueIdentifier>
     </Filter>
@@ -154,6 +148,12 @@
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\PenetratingBullet">
       <UniqueIdentifier>{ec169170-bbca-4af8-8692-bad8ee25c44d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\CollisionManager">
+      <UniqueIdentifier>{36a05518-41f2-436d-a970-f45bb9fb53f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\CollisionManager\Collider">
+      <UniqueIdentifier>{2035cfc8-c6cd-4d27-acf6-c4907dabbd36}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -195,11 +195,8 @@
     <ClCompile Include="Scene\TitleBackground.cpp">
       <Filter>main\SceneManager\Scene\TitleScene\TitleBackground</Filter>
     </ClCompile>
-    <ClCompile Include="Collider\ColliderManager.cpp">
-      <Filter>main\SceneManager\Scene\GameScene\ColliderManager</Filter>
-    </ClCompile>
     <ClCompile Include="Collider\Collider.cpp">
-      <Filter>main\SceneManager\Scene\GameScene\ColliderManager\Collider</Filter>
+      <Filter>main\SceneManager\Scene\GameScene\CollisionManager\Collider</Filter>
     </ClCompile>
     <ClCompile Include="ObjectManager\ObjectManager.cpp">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager</Filter>
@@ -261,6 +258,12 @@
     <ClCompile Include="Bullet\Bullet.cpp">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet</Filter>
     </ClCompile>
+    <ClCompile Include="Character\Tank.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Tank</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider\CollisionManager.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\CollisionManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene\SceneManager.h">
@@ -299,11 +302,8 @@
     <ClInclude Include="Scene\TitleBackground.h">
       <Filter>main\SceneManager\Scene\TitleScene\TitleBackground</Filter>
     </ClInclude>
-    <ClInclude Include="Collider\ColliderManager.h">
-      <Filter>main\SceneManager\Scene\GameScene\ColliderManager</Filter>
-    </ClInclude>
     <ClInclude Include="Collider\Collider.h">
-      <Filter>main\SceneManager\Scene\GameScene\ColliderManager\Collider</Filter>
+      <Filter>main\SceneManager\Scene\GameScene\CollisionManager\Collider</Filter>
     </ClInclude>
     <ClInclude Include="ObjectManager\ObjectManager.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager</Filter>
@@ -364,6 +364,12 @@
     </ClInclude>
     <ClInclude Include="Bullet\Bullet.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Tank.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Tank</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider\CollisionManager.h">
+      <Filter>main\SceneManager\Scene\GameScene\CollisionManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

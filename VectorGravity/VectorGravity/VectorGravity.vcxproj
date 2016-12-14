@@ -87,8 +87,9 @@
     <ClCompile Include="Character\CharacterManager.cpp" />
     <ClCompile Include="Character\Enemy.cpp" />
     <ClCompile Include="Character\Player.cpp" />
+    <ClCompile Include="Character\Tank.cpp" />
     <ClCompile Include="Collider\Collider.cpp" />
-    <ClCompile Include="Collider\ColliderManager.cpp" />
+    <ClCompile Include="Collider\CollisionManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjectManager\ObjectManager.cpp" />
     <ClCompile Include="Scene\CreditRollScene.cpp" />
@@ -124,8 +125,9 @@
     <ClInclude Include="Character\CharacterManager.h" />
     <ClInclude Include="Character\Enemy.h" />
     <ClInclude Include="Character\Player.h" />
+    <ClInclude Include="Character\Tank.h" />
     <ClInclude Include="Collider\Collider.h" />
-    <ClInclude Include="Collider\ColliderManager.h" />
+    <ClInclude Include="Collider\CollisionManager.h" />
     <ClInclude Include="ObjectManager\ObjectManager.h" />
     <ClInclude Include="Scene\CreditRollScene.h" />
     <ClInclude Include="Scene\GameClear.h" />
