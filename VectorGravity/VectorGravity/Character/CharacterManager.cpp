@@ -6,31 +6,40 @@
 
 #include "CharacterManager.h"
 #include "Character.h"
+#include "Tank.h"
 
-CharacterManager::CharacterManager()
+CharacterManager::CharacterManager() :
+m_pTank(new Tank)
 {
 }
 
 CharacterManager::~CharacterManager()
 {
-	for (unsigned int charaNumber = 0; charaNumber < m_pCharacter.size(); charaNumber++)
-	{
-		delete m_pCharacter[charaNumber];
-	}
+	delete m_pTank;
 }
 
 void CharacterManager::Control()
 {
-	for (unsigned int charaNumber = 0; charaNumber < m_pCharacter.size(); charaNumber++)
+	Character* charaControlList[1] =
 	{
-		m_pCharacter[charaNumber]->Control();
+		m_pTank
+	};
+
+	for (int i = 0; i < 1; i++)
+	{
+		charaControlList[i]->Control();
 	}
 }
 
 void CharacterManager::Draw()
 {
-	for (unsigned int charaNumber = 0; charaNumber < m_pCharacter.size(); charaNumber++)
+	Character* characterDrawList[1] = 
 	{
-		m_pCharacter[charaNumber]->Draw();
+		m_pTank
+	};
+
+	for (int i = 0; i < 1; i++)
+	{
+		characterDrawList[i]->Draw();
 	}
 }

@@ -88,6 +88,7 @@
     <ClCompile Include="Character\CharacterManager.cpp" />
     <ClCompile Include="Character\Enemy.cpp" />
     <ClCompile Include="Character\Player.cpp" />
+    <ClCompile Include="Character\Tank.cpp" />
     <ClCompile Include="Collider\Collider.cpp" />
     <ClCompile Include="Collider\CollisionManager.cpp" />
     <ClCompile Include="DataManager\DataManager.cpp" />
@@ -132,6 +133,7 @@
     <ClInclude Include="Character\CharacterManager.h" />
     <ClInclude Include="Character\Enemy.h" />
     <ClInclude Include="Character\Player.h" />
+    <ClInclude Include="Character\Tank.h" />
     <ClInclude Include="Collider\Collider.h" />
     <ClInclude Include="Collider\CollisionManager.h" />
     <ClInclude Include="DataManager\DataManager.h" />

@@ -10,6 +10,7 @@
 #include <vector>
 
 class Character;
+class Tank;
 
 class CharacterManager
 {
@@ -24,6 +25,7 @@ public:
 private:
 
 	std::vector<Character*>		m_pCharacter;
+	Tank* m_pTank;
 
 };
 
