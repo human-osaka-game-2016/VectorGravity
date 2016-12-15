@@ -8,6 +8,7 @@
 #define CHARCTER_H
 
 class Texture;
+class Vertex;
 
 class Character
 {
@@ -22,6 +23,7 @@ public:
 protected:
 
 	Texture*	m_pTexture;
+	Vertex*		m_pVertex;
 	float		m_posX;
 	float		m_posY;
 	bool		m_isDeath;

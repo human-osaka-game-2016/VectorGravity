@@ -73,6 +73,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BasePoint\BasePoint.cpp" />
     <ClCompile Include="Bullet\Bullet.cpp" />
     <ClCompile Include="Bullet\BulletManager.cpp" />
     <ClCompile Include="Bullet\CannonBullet.cpp" />
@@ -81,15 +82,15 @@
     <ClCompile Include="Bullet\NormalBullet.cpp" />
     <ClCompile Include="Bullet\PenetratingBullet.cpp" />
     <ClCompile Include="Bullet\PlayerBulletManager.cpp" />
-    <ClCompile Include="Bullet\SoldeirBullet.cpp" />
+    <ClCompile Include="Bullet\SoldierBullet.cpp" />
     <ClCompile Include="Bullet\TankBullet.cpp" />
     <ClCompile Include="Character\Character.cpp" />
     <ClCompile Include="Character\CharacterManager.cpp" />
     <ClCompile Include="Character\Enemy.cpp" />
     <ClCompile Include="Character\Player.cpp" />
-    <ClCompile Include="Character\Tank.cpp" />
     <ClCompile Include="Collider\Collider.cpp" />
     <ClCompile Include="Collider\CollisionManager.cpp" />
+    <ClCompile Include="DataManager\DataManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjectManager\ObjectManager.cpp" />
     <ClCompile Include="Scene\CreditRollScene.cpp" />
@@ -97,20 +98,26 @@
     <ClCompile Include="Scene\GameOver.cpp" />
     <ClCompile Include="Scene\GameScene.cpp" />
     <ClCompile Include="Scene\LogoScene.cpp" />
+    <ClCompile Include="Scene\MenuButton.cpp" />
     <ClCompile Include="Scene\ResultScene.cpp" />
     <ClCompile Include="Scene\Scene.cpp" />
     <ClCompile Include="Scene\SceneFactory.cpp" />
     <ClCompile Include="Scene\SceneManager.cpp" />
     <ClCompile Include="Scene\TeamLogo.cpp" />
-    <ClCompile Include="Scene\TitleBackground.cpp" />
+    <ClCompile Include="Scene\TitleLogo.cpp" />
     <ClCompile Include="Scene\TitleScene.cpp" />
     <ClCompile Include="Stage\Stage.cpp" />
     <ClCompile Include="Stage\StageManager.cpp" />
     <ClCompile Include="StateManager\StateManager.cpp" />
+    <ClCompile Include="Ui\BulletIcon.cpp" />
+    <ClCompile Include="Ui\Gauge.cpp" />
+    <ClCompile Include="Ui\Score.cpp" />
     <ClCompile Include="Ui\Ui.cpp" />
     <ClCompile Include="Ui\UiManager.cpp" />
+    <ClCompile Include="Ui\VectorIcon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BasePoint\BasePoint.h" />
     <ClInclude Include="Bullet\Bullet.h" />
     <ClInclude Include="Bullet\BulletManager.h" />
     <ClInclude Include="Bullet\CannonBullet.h" />
@@ -119,33 +126,38 @@
     <ClInclude Include="Bullet\NormalBullet.h" />
     <ClInclude Include="Bullet\PenetratingBullet.h" />
     <ClInclude Include="Bullet\PlayerBulletManager.h" />
-    <ClInclude Include="Bullet\SoldeirBullet.h" />
+    <ClInclude Include="Bullet\SoldierBullet.h" />
     <ClInclude Include="Bullet\TankBullet.h" />
     <ClInclude Include="Character\Character.h" />
     <ClInclude Include="Character\CharacterManager.h" />
     <ClInclude Include="Character\Enemy.h" />
     <ClInclude Include="Character\Player.h" />
-    <ClInclude Include="Character\Tank.h" />
     <ClInclude Include="Collider\Collider.h" />
     <ClInclude Include="Collider\CollisionManager.h" />
+    <ClInclude Include="DataManager\DataManager.h" />
     <ClInclude Include="ObjectManager\ObjectManager.h" />
     <ClInclude Include="Scene\CreditRollScene.h" />
     <ClInclude Include="Scene\GameClear.h" />
     <ClInclude Include="Scene\GameOver.h" />
     <ClInclude Include="Scene\GameScene.h" />
     <ClInclude Include="Scene\LogoScene.h" />
+    <ClInclude Include="Scene\MenuButton.h" />
     <ClInclude Include="Scene\ResultScene.h" />
     <ClInclude Include="Scene\Scene.h" />
     <ClInclude Include="Scene\SceneFactory.h" />
     <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\TeamLogo.h" />
-    <ClInclude Include="Scene\TitleBackground.h" />
+    <ClInclude Include="Scene\TitleLogo.h" />
     <ClInclude Include="Scene\TitleScene.h" />
     <ClInclude Include="Stage\Stage.h" />
     <ClInclude Include="Stage\StageManager.h" />
     <ClInclude Include="StateManager\StateManager.h" />
+    <ClInclude Include="Ui\BulletIcon.h" />
+    <ClInclude Include="Ui\Gauge.h" />
+    <ClInclude Include="Ui\Score.h" />
     <ClInclude Include="Ui\Ui.h" />
     <ClInclude Include="Ui\UiManager.h" />
+    <ClInclude Include="Ui\VectorIcon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

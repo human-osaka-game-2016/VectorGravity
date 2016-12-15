@@ -109,15 +109,6 @@
     <Filter Include="main\SceneManager\Scene\ResultScene\GameOver">
       <UniqueIdentifier>{cee79ebe-7c5c-4374-8836-54e72c826944}</UniqueIdentifier>
     </Filter>
-    <Filter Include="main\SceneManager\Scene\TitleScene\Menuutton">
-      <UniqueIdentifier>{90a5be70-b44f-4570-92f8-49b540d43550}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="main\SceneManager\Scene\TitleScene\TitleBackground">
-      <UniqueIdentifier>{8b9a6ab6-09cc-41ef-9be3-4646f3d85b21}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="main\SceneManager\Scene\TitleScene\TitleEnemy">
-      <UniqueIdentifier>{bb110672-ed6f-4db1-81c8-981554e45856}</UniqueIdentifier>
-    </Filter>
     <Filter Include="main\SceneManager\Scene\TitleScene\TitleLogo">
       <UniqueIdentifier>{0cd37eac-b661-4be9-9cac-f39ac9f6b8ee}</UniqueIdentifier>
     </Filter>
@@ -133,9 +124,6 @@
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\CannonBullet">
       <UniqueIdentifier>{6d105695-4d6c-485f-b61d-ec5e52b0d1c9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\SoldeirBullet">
-      <UniqueIdentifier>{5a837885-6d73-425a-834f-d5f9660f3a0d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\TankBullet">
       <UniqueIdentifier>{3db1353e-131e-41bd-8609-f8f744719226}</UniqueIdentifier>
     </Filter>
@@ -147,6 +135,18 @@
     </Filter>
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\PenetratingBullet">
       <UniqueIdentifier>{ec169170-bbca-4af8-8692-bad8ee25c44d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\BasePoint">
+      <UniqueIdentifier>{795831e1-ab24-40d8-b36d-ab2f30d6d586}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\DataManager">
+      <UniqueIdentifier>{f39dcb88-575b-4eab-bbaf-d64b4420c9fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\TitleScene\MenuButton">
+      <UniqueIdentifier>{90a5be70-b44f-4570-92f8-49b540d43550}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\SoldierBullet">
+      <UniqueIdentifier>{5a837885-6d73-425a-834f-d5f9660f3a0d}</UniqueIdentifier>
     </Filter>
     <Filter Include="main\SceneManager\Scene\GameScene\CollisionManager">
       <UniqueIdentifier>{36a05518-41f2-436d-a970-f45bb9fb53f0}</UniqueIdentifier>
@@ -191,9 +191,6 @@
     </ClCompile>
     <ClCompile Include="Scene\TitleScene.cpp">
       <Filter>main\SceneManager\Scene\TitleScene</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\TitleBackground.cpp">
-      <Filter>main\SceneManager\Scene\TitleScene\TitleBackground</Filter>
     </ClCompile>
     <ClCompile Include="Collider\Collider.cpp">
       <Filter>main\SceneManager\Scene\GameScene\CollisionManager\Collider</Filter>
@@ -246,9 +243,6 @@
     <ClCompile Include="Bullet\TankBullet.cpp">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\TankBullet</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet\SoldeirBullet.cpp">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\SoldeirBullet</Filter>
-    </ClCompile>
     <ClCompile Include="Bullet\CannonBullet.cpp">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\CannonBullet</Filter>
     </ClCompile>
@@ -258,8 +252,32 @@
     <ClCompile Include="Bullet\Bullet.cpp">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet</Filter>
     </ClCompile>
-    <ClCompile Include="Character\Tank.cpp">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Tank</Filter>
+    <ClCompile Include="BasePoint\BasePoint.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\BasePoint</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManager\DataManager.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\DataManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\TitleLogo.cpp">
+      <Filter>main\SceneManager\Scene\TitleScene\TitleLogo</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\MenuButton.cpp">
+      <Filter>main\SceneManager\Scene\TitleScene\MenuButton</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\VectorIcon.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\VectorIcon</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Score.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\Score</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Gauge.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\Gauge</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\BulletIcon.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\BulletIcon</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet\SoldierBullet.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\SoldierBullet</Filter>
     </ClCompile>
     <ClCompile Include="Collider\CollisionManager.cpp">
       <Filter>main\SceneManager\Scene\GameScene\CollisionManager</Filter>
@@ -298,9 +316,6 @@
     </ClInclude>
     <ClInclude Include="Scene\TitleScene.h">
       <Filter>main\SceneManager\Scene\TitleScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\TitleBackground.h">
-      <Filter>main\SceneManager\Scene\TitleScene\TitleBackground</Filter>
     </ClInclude>
     <ClInclude Include="Collider\Collider.h">
       <Filter>main\SceneManager\Scene\GameScene\CollisionManager\Collider</Filter>
@@ -353,9 +368,6 @@
     <ClInclude Include="Bullet\TankBullet.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\TankBullet</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet\SoldeirBullet.h">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\SoldeirBullet</Filter>
-    </ClInclude>
     <ClInclude Include="Bullet\CannonBullet.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\CannonBullet</Filter>
     </ClInclude>
@@ -365,8 +377,32 @@
     <ClInclude Include="Bullet\Bullet.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet</Filter>
     </ClInclude>
-    <ClInclude Include="Character\Tank.h">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Tank</Filter>
+    <ClInclude Include="BasePoint\BasePoint.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\BasePoint</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManager\DataManager.h">
+      <Filter>main\SceneManager\Scene\GameScene\DataManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\TitleLogo.h">
+      <Filter>main\SceneManager\Scene\TitleScene\TitleLogo</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\MenuButton.h">
+      <Filter>main\SceneManager\Scene\TitleScene\MenuButton</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\VectorIcon.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\VectorIcon</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Score.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\Score</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Gauge.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\Gauge</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\BulletIcon.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\BulletIcon</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet\SoldierBullet.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\SoldierBullet</Filter>
     </ClInclude>
     <ClInclude Include="Collider\CollisionManager.h">
       <Filter>main\SceneManager\Scene\GameScene\CollisionManager</Filter>
