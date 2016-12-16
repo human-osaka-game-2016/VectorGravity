@@ -18,7 +18,7 @@ MenuButton::~MenuButton()
 
 bool MenuButton::Control()
 {
-	/*return true;*/
+	return true;
 }
 
 void MenuButton::Draw()

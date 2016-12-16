@@ -9,6 +9,9 @@
 
 #include "Scene.h"
 
+class TeamLogo;
+class InputKey;
+
 class LogoScene : public Scene
 {
 public:
@@ -17,6 +20,13 @@ public:
 
 	virtual SceneID Control();
 	virtual void Draw();
+
+private:
+
+
+	InputKey*	m_pInputKey;
+	TeamLogo*	m_pTeamLogo;
+
 };
 
 #endif // !LOGOSCENE_H

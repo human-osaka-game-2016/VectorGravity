@@ -63,11 +63,15 @@ public:
 	 */
 	void DrawCenter(float posx_, float posy_, Texture* ptexture_);
 
+	void SetColor(DWORD color_);
+
+	DWORD AppointColor(int alpha_ = 0xFF, int red_ = 0xFF, int green_ = 0xFF, int blue_ = 0xFF);
 
 private:
 
 	LPDIRECT3DDEVICE9	m_pD3Device;	//!< DirectXのデバイス
 	Texture*			m_pTexture;
+	DWORD				m_colors[4];
 	float				m_textureWidth;
 	float				m_textureHeight;
 	float				m_textureMaxTu;

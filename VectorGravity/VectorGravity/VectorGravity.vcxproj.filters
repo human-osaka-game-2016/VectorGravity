@@ -154,6 +154,9 @@
     <Filter Include="main\SceneManager\Scene\GameScene\CollisionManager\Collider">
       <UniqueIdentifier>{2035cfc8-c6cd-4d27-acf6-c4907dabbd36}</UniqueIdentifier>
     </Filter>
+    <Filter Include="main\SceneManager\Scene\TitleScene\TitleBackgroung">
+      <UniqueIdentifier>{fe7e3766-0298-4593-8990-7857881edc77}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -285,6 +288,9 @@
     <ClCompile Include="Character\Tank.cpp">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Tank</Filter>
     </ClCompile>
+    <ClCompile Include="Scene\TitleBackground.cpp">
+      <Filter>main\SceneManager\Scene\TitleScene\TitleBackgroung</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene\SceneManager.h">
@@ -322,9 +328,6 @@
     </ClInclude>
     <ClInclude Include="Collider\Collider.h">
       <Filter>main\SceneManager\Scene\GameScene\CollisionManager\Collider</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjectManager\ObjectManager.h">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager</Filter>
     </ClInclude>
     <ClInclude Include="Ui\UiManager.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager</Filter>
@@ -412,6 +415,12 @@
     </ClInclude>
     <ClInclude Include="Character\Tank.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Tank</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\TitleBackground.h">
+      <Filter>main\SceneManager\Scene\TitleScene\TitleBackgroung</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager\ObjectManager.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

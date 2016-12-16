@@ -105,6 +105,7 @@
     <ClCompile Include="Scene\SceneFactory.cpp" />
     <ClCompile Include="Scene\SceneManager.cpp" />
     <ClCompile Include="Scene\TeamLogo.cpp" />
+    <ClCompile Include="Scene\TitleBackground.cpp" />
     <ClCompile Include="Scene\TitleLogo.cpp" />
     <ClCompile Include="Scene\TitleScene.cpp" />
     <ClCompile Include="Stage\Stage.cpp" />
@@ -149,6 +150,7 @@
     <ClInclude Include="Scene\SceneFactory.h" />
     <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\TeamLogo.h" />
+    <ClInclude Include="Scene\TitleBackground.h" />
     <ClInclude Include="Scene\TitleLogo.h" />
     <ClInclude Include="Scene\TitleScene.h" />
     <ClInclude Include="Stage\Stage.h" />

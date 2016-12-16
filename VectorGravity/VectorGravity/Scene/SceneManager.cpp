@@ -14,8 +14,8 @@
 SceneManager::SceneManager() :
 m_pScene(nullptr),
 m_state(CREATE),
-m_currentSceneID(SceneID::GAME_SCENE),
-m_nextSceneID(SceneID::GAME_SCENE),
+m_currentSceneID(SceneID::LOGO_SCENE),
+m_nextSceneID(SceneID::LOGO_SCENE),
 m_pGraphicsDevice(&GraphicsDevice::Instance()),
 m_pInputDevice(&InputDevice::Instance()),
 m_pInputKey(&InputKey::Instance()),
