@@ -129,7 +129,7 @@ HRESULT Sound::LoadSoundFile(TCHAR* filepath_)
 
 	IDirectSoundBuffer*		ptempBuf = NULL;			// プライマリバッファの場合は使う必要がある
 	m_pDsound8->CreateSoundBuffer(&DSBufferDesc, &ptempBuf, NULL);
-	ptempBuf->QueryInterface(IID_IDirectSoundBuffer8, (void**)m_pDsoundBuffer);
+	ptempBuf->QueryInterface(IID_IDirectSoundBuffer8, (void**)&m_pDsoundBuffer);
 	ptempBuf->Release();
 
 	// セカンダリバッファにWaveデータ書き込み
@@ -145,7 +145,24 @@ HRESULT Sound::LoadSoundFile(TCHAR* filepath_)
 
 }
 
-void SoundState()
+void Sound::SoundState(SoundMode soundstate_)
 {
+	switch (soundstate_)
+	{
+	case PLAY:
+		m_pDsoundBuffer->Play(0, 0, 0);
+		break;
+		
+	case LOOP:
+		m_pDsoundBuffer->Play(0, 0, DSBPLAY_LOOPING);
+		break;
 
+	case STOP:
+		m_pDsoundBuffer->Stop();
+		break;
+
+	case RESET:
+		m_pDsoundBuffer->SetCurrentPosition(0);
+		break;
+	}
 }

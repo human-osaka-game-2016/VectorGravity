@@ -9,14 +9,24 @@
 
 #include <dsound.h>
 
+enum SoundMode
+{
+	PLAY,
+	LOOP,
+	STOP,
+	RESET,
+};
+
 class Sound
 {
 public:
 
-	/**
-	 * コンストラクタ
-	 */
-	Sound();
+	static Sound& Instance()
+	{
+		static Sound sound;
+
+		return sound;
+	}
 
 	/**
 	 * デストラクタ
@@ -43,9 +53,14 @@ public:
 	 * @todo 仮置き
 	 * 再生状態を決める関数
 	 */
-	void SoundState();
+	void SoundState(SoundMode soundstate_);
 
 private:
+
+	/**
+	* コンストラクタ
+	*/
+	Sound();
 
 	/**
 	 * waveファイルを開く関数
