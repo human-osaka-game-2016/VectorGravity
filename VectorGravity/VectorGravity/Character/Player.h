@@ -9,15 +9,18 @@
 
 #include "Character.h"
 
+class InputKey;
+class Sound;
+
 #define MOVE_SPEED 12
 #define PLAYER_SIZE 128
 
 enum VectorDirection
 {
-	UP,
-	DOWN,
-	LEFT,
-	RIGHT
+	VECTOR_UP,
+	VECTOR_DOWN,
+	VECTOR_LEFT,
+	VECTOR_RIGHT
 };
 
 enum BulletKind
@@ -55,6 +58,8 @@ private:
 	PlayerState		m_playerState;
 	Angle			m_angle;
 	BulletKind		m_bulletKind;
+	InputKey*		m_pInputKey;
+	Sound*			m_pSound;
 
 	int				m_Hp;
 	int				m_Gp;

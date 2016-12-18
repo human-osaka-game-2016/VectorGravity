@@ -8,16 +8,20 @@
 #include "SceneFactory.h"
 #include "TitleBackground.h"
 #include <InputKey.h>
+#include <Sound.h>
 
 TitleScene::TitleScene() : 
 m_pTitleBackground(new TitleBackground),
-m_pInputKey(&InputKey::Instance())
+m_pInputKey(&InputKey::Instance()),
+m_pSound(&Sound::Instance())
 {
-
+	m_pSound->LoadSoundFile("Resource/Sound/musicbox.wav");
+	m_pSound->SoundState(PLAY);
 }
 
 TitleScene::~TitleScene()
 {
+	m_pSound->SoundState(STOP);
 	delete m_pTitleBackground;
 }
 

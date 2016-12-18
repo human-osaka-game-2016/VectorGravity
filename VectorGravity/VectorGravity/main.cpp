@@ -10,6 +10,7 @@
 #include <GraphicsDevice.h>
 #include <InputDevice.h>
 #include <WindowCreate.h>
+#include <Sound.h>
 #include "Scene\SceneManager.h"
 
 #pragma comment ( lib, "dsound.lib" )
@@ -55,6 +56,7 @@ int WINAPI WinMain(HINSTANCE hinst, HINSTANCE hprevinst, LPSTR szstr, INT icmsho
 	GraphicsDevice*	pGrapphicsDevice;
 	InputDevice*	pInputDevice;
 	SceneManager*	pSceneManager;
+	Sound*			pSound;
 
 	pWindowCreate = new WindowCreate;
 	pWindowCreate->Create(hinst, WindowProc, GAME_TITLE, DISPLAY_WIDTH, DISPLAY_HIGHT, false);
@@ -65,6 +67,9 @@ int WINAPI WinMain(HINSTANCE hinst, HINSTANCE hprevinst, LPSTR szstr, INT icmsho
 	pInputDevice = &InputDevice::Instance();
 	pInputDevice->InitInput();
 	pInputDevice->InitInputKey(pWindowCreate->GetHwnd());
+
+	pSound = &Sound::Instance();
+	pSound->InitSound(pWindowCreate->GetHwnd());
 
 	pSceneManager = new SceneManager;
 

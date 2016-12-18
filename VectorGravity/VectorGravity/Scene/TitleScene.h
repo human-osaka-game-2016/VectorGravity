@@ -11,6 +11,7 @@
 
 class TitleBackground;
 class InputKey;
+class Sound;
 
 class TitleScene : public Scene
 {
@@ -26,6 +27,7 @@ private:
 
 	InputKey*			m_pInputKey;
 	TitleBackground*	m_pTitleBackground;
+	Sound*				m_pSound;
 
 };
 

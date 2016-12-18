@@ -11,6 +11,7 @@
 
 class TeamLogo;
 class InputKey;
+class Sound;
 
 class LogoScene : public Scene
 {
@@ -26,6 +27,7 @@ private:
 
 	InputKey*	m_pInputKey;
 	TeamLogo*	m_pTeamLogo;
+	Sound*		m_pSound;
 
 };
 
