@@ -157,6 +157,12 @@
     <Filter Include="main\SceneManager\Scene\TitleScene\TitleBackgroung">
       <UniqueIdentifier>{fe7e3766-0298-4593-8990-7857881edc77}</UniqueIdentifier>
     </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\StageManager\Stage\Stage1">
+      <UniqueIdentifier>{34df1b29-e211-4cc8-b7c5-cd456346ac07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\MyRect">
+      <UniqueIdentifier>{4764c70a-500b-4de3-a657-2b764c0b67f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -291,6 +297,12 @@
     <ClCompile Include="Scene\TitleBackground.cpp">
       <Filter>main\SceneManager\Scene\TitleScene\TitleBackgroung</Filter>
     </ClCompile>
+    <ClCompile Include="Stage\Stage1.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\StageManager\Stage\Stage1</Filter>
+    </ClCompile>
+    <ClCompile Include="MyRect.cpp">
+      <Filter>main\MyRect</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene\SceneManager.h">
@@ -421,6 +433,12 @@
     </ClInclude>
     <ClInclude Include="ObjectManager\ObjectManager.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\Stage1.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\StageManager\Stage\Stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="MyRect.h">
+      <Filter>main\MyRect</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

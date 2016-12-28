@@ -3,6 +3,10 @@
 
 #include<Windows.h>
 #include<d3dx9.h>
+#include<vector>
+#include "../MyRect.h"
+
+enum PlayerDirection;
 
 class DataManager
 {
@@ -16,7 +20,7 @@ public:
 		return DataManager;
 	}
 
-	void SetPositionData(LONG x_, LONG y_)
+	void SetPositionData(float x_, float y_)
 	{
 		m_posX = x_;
 		m_posY = y_;
@@ -32,30 +36,12 @@ public:
 		return m_posY;
 	}
 
-	void SetMovingDistanceX(float x_)
-	{
-		m_movingDistanceX = x_;
-	}
-	void SetMovingDistanceY(float y_)
-	{
-		m_movingDistanceY = y_;
-	}
-
-	float GetMovingDistanceX()
-	{
-		return m_movingDistanceX;
-	}
-	float GetMovingDistanceY()
-	{
-		return m_movingDistanceY;
-	}
-
-	void SetBasePointRect(RECT rect_)
+	void SetBasePointRect(MyRect rect_)
 	{
 		m_basePointRect = rect_;
 	}
 
-	RECT GetBasePoint()
+	MyRect GetBasePoint()
 	{
 		return m_basePointRect;
 	}
@@ -80,19 +66,92 @@ public:
 		return m_playerFieldHits;
 	}
 
+	void AddEnemyInitPos(D3DXVECTOR2 enemyinitpos_)
+	{
+		m_enemyInitPos.push_back(enemyinitpos_);
+	}
+
+	std::vector<D3DXVECTOR2>* GetEnemyInitPos()
+	{
+		return &m_enemyInitPos;
+	}
+
+	void ClearEnemyInitPos()
+	{
+		m_enemyInitPos.clear();
+	}
+
+	void SetPlayerInitPos(D3DXVECTOR2 playerinitpos_)
+	{
+		m_playerInitPos = playerinitpos_;
+	}
+
+	D3DXVECTOR2 GetPlayerInitPos()
+	{
+		return m_playerInitPos;
+	}
+
+	void SetBasePointMove(D3DXVECTOR2 basepointpoint_)
+	{
+		m_basePointMove = basepointpoint_;
+	}
+
+	D3DXVECTOR2 GetBasePointMove()
+	{
+		return m_basePointMove;
+	}
+
+	void SetPlayerXMoveSpeed(float playerxmovespeed_)
+	{
+		m_playerXMoveSpeed = playerxmovespeed_;
+	}
+
+	float GetPlayerXMoveSpeed()
+	{
+		return m_playerXMoveSpeed;
+	}
+
+	void SetPlayerYMoveSpeed(float playerymovespeed_)
+	{
+		m_playerYMoveSpeed = playerymovespeed_;
+	}
+
+	float GetPlayerYMoveSpeed()
+	{
+		return m_playerYMoveSpeed;
+	}
+
+	void SetPlayerDirection(PlayerDirection direction_)
+	{
+		m_playerDirection = direction_;
+	}
+
+	PlayerDirection GetPlayerDirection()
+	{
+		return m_playerDirection;
+	}
+
 private:
 	DataManager();
 
 	float m_posX;
 	float m_posY;
 
-	float m_movingDistanceX;
-	float m_movingDistanceY;
-
 	bool m_playerFieldHits;
 
-	RECT m_basePointRect;
+	MyRect m_basePointRect;
 	D3DXVECTOR2 m_basePointDistance;
+
+	std::vector<D3DXVECTOR2> m_enemyInitPos;
+	D3DXVECTOR2 m_playerInitPos;
+
+	D3DXVECTOR2 m_basePointMove;
+
+	float m_playerXMoveSpeed;
+	float m_playerYMoveSpeed;
+
+	PlayerDirection m_playerDirection;
+
 };
 
 #endif // !DATAMANAGER_H

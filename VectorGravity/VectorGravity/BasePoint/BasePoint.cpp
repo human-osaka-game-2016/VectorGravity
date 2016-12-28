@@ -3,9 +3,17 @@
 
 BasePoint::BasePoint() :
 m_pInputKey(&InputKey::Instance()),
-m_basePointRect({ 100, 100, 1000, 400 }),
+m_basePointRect({ 100, 100, 800, 450 }),
 m_basePointDistance(0, 0)
 {
+	m_playerInitPos = DataManager::GetInstance().GetPlayerInitPos();
+
+	m_playerDistance = m_playerInitPos;
+
+	m_basePointDistance.x += m_playerDistance.x - m_playerInitPos.x;
+	m_basePointDistance.y += m_playerDistance.y + m_playerInitPos.y;
+
+	DataManager::GetInstance().SetBasePointRect(m_basePointRect);
 }
 
 BasePoint::~BasePoint()
@@ -26,43 +34,31 @@ void BasePoint::Control()
 	{
 		if (m_pInputKey->m_key[RIGHT] == ON)
 		{
-			if (DataManager::GetInstance().GetPlayerFieldHits() == false)
-			{
-				m_basePointDistance.x += DataManager::GetInstance().GetMovingDistanceX();
-			}
+				m_basePointDistance.x += DataManager::GetInstance().GetPlayerXMoveSpeed();
 		}
 	}
-	if (m_playerPosX <= m_basePointRect.left)
+	else if (m_playerPosX <= m_basePointRect.left)
 	{
 		if (m_pInputKey->m_key[LEFT] == ON)
 		{
-			if (DataManager::GetInstance().GetPlayerFieldHits() == false)
-			{
-				m_basePointDistance.x -= DataManager::GetInstance().GetMovingDistanceX();
-			}
-		}
-	}
-	if (m_playerPosY <= m_basePointRect.top)
-	{
-		if (m_pInputKey->m_key[UP] == ON)
-		{
-			if (DataManager::GetInstance().GetPlayerFieldHits() == false)
-			{
-				m_basePointDistance.y -= DataManager::GetInstance().GetMovingDistanceY();
-			}
-		}
-	}
-	if (m_playerPosY >= m_basePointRect.bottom)
-	{
-		if (m_pInputKey->m_key[DOWN] == ON)
-		{
-			if (DataManager::GetInstance().GetPlayerFieldHits() == false)
-			{
-				m_basePointDistance.y += DataManager::GetInstance().GetMovingDistanceY();
-			}
+				m_basePointDistance.x -= DataManager::GetInstance().GetPlayerXMoveSpeed();
 		}
 	}
 
+	if (m_playerPosY <= m_basePointRect.top)
+	{
+		if (DataManager::GetInstance().GetPlayerFieldHits() == false)
+		{
+			m_basePointDistance.y -= DataManager::GetInstance().GetPlayerYMoveSpeed();
+		}
+	}
+	else if (m_playerPosY >= m_basePointRect.bottom)
+	{
+		if (DataManager::GetInstance().GetPlayerFieldHits() == false)
+		{
+			m_basePointDistance.y += DataManager::GetInstance().GetPlayerYMoveSpeed();
+		}
+	}
 
 	DataManager::GetInstance().SetBasePointRect(m_basePointRect);
 	DataManager::GetInstance().SetBasePointDistance(m_basePointDistance);

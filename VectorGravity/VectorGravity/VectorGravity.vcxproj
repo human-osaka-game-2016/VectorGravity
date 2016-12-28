@@ -93,6 +93,7 @@
     <ClCompile Include="Collider\CollisionManager.cpp" />
     <ClCompile Include="DataManager\DataManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyRect.cpp" />
     <ClCompile Include="ObjectManager\ObjectManager.cpp" />
     <ClCompile Include="Scene\CreditRollScene.cpp" />
     <ClCompile Include="Scene\GameClear.cpp" />
@@ -109,6 +110,7 @@
     <ClCompile Include="Scene\TitleLogo.cpp" />
     <ClCompile Include="Scene\TitleScene.cpp" />
     <ClCompile Include="Stage\Stage.cpp" />
+    <ClCompile Include="Stage\Stage1.cpp" />
     <ClCompile Include="Stage\StageManager.cpp" />
     <ClCompile Include="StateManager\StateManager.cpp" />
     <ClCompile Include="Ui\BulletIcon.cpp" />
@@ -138,6 +140,7 @@
     <ClInclude Include="Collider\Collider.h" />
     <ClInclude Include="Collider\CollisionManager.h" />
     <ClInclude Include="DataManager\DataManager.h" />
+    <ClInclude Include="MyRect.h" />
     <ClInclude Include="ObjectManager\ObjectManager.h" />
     <ClInclude Include="Scene\CreditRollScene.h" />
     <ClInclude Include="Scene\GameClear.h" />
@@ -154,6 +157,7 @@
     <ClInclude Include="Scene\TitleLogo.h" />
     <ClInclude Include="Scene\TitleScene.h" />
     <ClInclude Include="Stage\Stage.h" />
+    <ClInclude Include="Stage\Stage1.h" />
     <ClInclude Include="Stage\StageManager.h" />
     <ClInclude Include="StateManager\StateManager.h" />
     <ClInclude Include="Ui\BulletIcon.h" />

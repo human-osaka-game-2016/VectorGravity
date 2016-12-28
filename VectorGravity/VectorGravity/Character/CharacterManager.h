@@ -28,7 +28,6 @@ private:
 	std::vector<Character*>		m_pCharacter;
 	Tank*	m_pTank;
 	Player*	m_pPlayer;
-
 };
 
 #endif // !CHARCTERMANAGER_H

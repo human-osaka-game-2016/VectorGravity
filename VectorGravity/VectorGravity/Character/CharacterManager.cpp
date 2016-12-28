@@ -5,30 +5,31 @@
  */
 
 #include "CharacterManager.h"
+#include "../DataManager/DataManager.h"
 #include "Character.h"
 #include "Tank.h"
 #include "Player.h"
 
-CharacterManager::CharacterManager() :
-m_pTank(new Tank),
-m_pPlayer(new Player)
+CharacterManager::CharacterManager()
 {
+	D3DXVECTOR2 m_playerInitPos = DataManager::GetInstance().GetPlayerInitPos();
+
+	m_pPlayer = new Player(m_playerInitPos);
 }
 
 CharacterManager::~CharacterManager()
 {
 	delete m_pPlayer;
-	delete m_pTank;
 }
 
 void CharacterManager::Control()
 {
-	Character* charaControlList[2] =
+	Character* charaControlList[1] =
 	{
-		m_pTank, m_pPlayer
+		m_pPlayer
 	};
 
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < 1; i++)
 	{
 		charaControlList[i]->Control();
 	}
@@ -36,12 +37,12 @@ void CharacterManager::Control()
 
 void CharacterManager::Draw()
 {
-	Character* characterDrawList[2] = 
+	Character* characterDrawList[1] = 
 	{
-		m_pTank, m_pPlayer
+		 m_pPlayer
 	};
 
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < 1; i++)
 	{
 		characterDrawList[i]->Draw();
 	}

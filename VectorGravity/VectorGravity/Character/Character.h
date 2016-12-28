@@ -7,6 +7,9 @@
 #ifndef CHARCTER_H
 #define CHARCTER_H
 
+#include <Windows.h>
+#include <d3dx9.h>
+
 class Texture;
 class Vertex;
 
