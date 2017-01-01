@@ -11,6 +11,7 @@
 
 class Character;
 class Tank;
+class LongSoldier;
 class Player;
 
 class CharacterManager
@@ -26,8 +27,9 @@ public:
 private:
 
 	std::vector<Character*>		m_pCharacter;
-	Tank*	m_pTank;
-	Player*	m_pPlayer;
+	Tank*						m_pTank;
+	LongSoldier*				m_pLongSoldier;
+	Player*						m_pPlayer;
 };
 
 #endif // !CHARCTERMANAGER_H

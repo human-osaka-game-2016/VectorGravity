@@ -23,7 +23,7 @@ public:
 		return collisionManager;
 	}
 
-	void SetCollision(Collider* pCollider_)
+	void SetCollider(Collider* pCollider_)
 	{
 		m_pCollider.push_back(pCollider_);		//m_pCollider‚ÉpCollider‚ğ”z—ñ‚Ìˆê”ÔÅŒã‚É‘«‚·B
 	}

@@ -9,7 +9,6 @@
 
 StageManager::StageManager() :
 m_pStage1(new Stage1)
-
 {
 
 }

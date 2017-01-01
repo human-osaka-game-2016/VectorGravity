@@ -7,8 +7,8 @@
 #ifndef OBJECTMANAGER_H
 #define OBJECTMANAGER_H
 
-class CharacterManager;
 class StageManager;
+class CharacterManager;
 class BasePoint;
 class UiManager;
 
@@ -24,8 +24,8 @@ public:
 
 private:
 
-	CharacterManager*	m_pCharacterManager;
 	StageManager*		m_pStageManager;
+	CharacterManager*	m_pCharacterManager;
 	BasePoint*			m_pBasePoint;
 	UiManager*			m_pUiManager;
 

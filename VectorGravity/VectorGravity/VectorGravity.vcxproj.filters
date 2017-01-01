@@ -73,9 +73,6 @@
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\NewFilter4">
       <UniqueIdentifier>{00daa64a-5f65-4042-ad7e-301b2cb86598}</UniqueIdentifier>
     </Filter>
-    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\NewFilter5">
-      <UniqueIdentifier>{d1d71ee2-6d63-459e-b9dd-10acec720a0b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\PlayerBulletManager">
       <UniqueIdentifier>{176714a3-8f7a-4f76-b8fd-8be7e1d8a2b7}</UniqueIdentifier>
     </Filter>
@@ -162,6 +159,9 @@
     </Filter>
     <Filter Include="main\MyRect">
       <UniqueIdentifier>{4764c70a-500b-4de3-a657-2b764c0b67f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\LongSoldier">
+      <UniqueIdentifier>{d1d71ee2-6d63-459e-b9dd-10acec720a0b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -303,6 +303,9 @@
     <ClCompile Include="MyRect.cpp">
       <Filter>main\MyRect</Filter>
     </ClCompile>
+    <ClCompile Include="Character\LongSoldier.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\LongSoldier</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene\SceneManager.h">
@@ -439,6 +442,9 @@
     </ClInclude>
     <ClInclude Include="MyRect.h">
       <Filter>main\MyRect</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\LongSoldier.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\LongSoldier</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -20,20 +20,20 @@ public:
 		return DataManager;
 	}
 
-	void SetPositionData(float x_, float y_)
+	void SetPlayerPositionData(float x_, float y_)
 	{
-		m_posX = x_;
-		m_posY = y_;
+		m_playerPosX = x_;
+		m_playerPosY = y_;
 	}
 
-	float GetPositionXData()
+	float GetPlayerPositionXData()
 	{
-		return m_posX;
+		return m_playerPosX;
 	}
 
-	float GetPositionYData()
+	float GetPlayerPositionYData()
 	{
-		return m_posY;
+		return m_playerPosY;
 	}
 
 	void SetBasePointRect(MyRect rect_)
@@ -134,8 +134,8 @@ public:
 private:
 	DataManager();
 
-	float m_posX;
-	float m_posY;
+	float m_playerPosX;
+	float m_playerPosY;
 
 	bool m_playerFieldHits;
 
@@ -144,7 +144,6 @@ private:
 
 	std::vector<D3DXVECTOR2> m_enemyInitPos;
 	D3DXVECTOR2 m_playerInitPos;
-
 	D3DXVECTOR2 m_basePointMove;
 
 	float m_playerXMoveSpeed;

@@ -27,8 +27,8 @@ void BasePoint::Control()
 	m_pInputKey->CheckKey(DIK_LEFT, LEFT);
 	m_pInputKey->CheckKey(DIK_RIGHT, RIGHT);
 
-	m_playerPosX = DataManager::GetInstance().GetPositionXData();
-	m_playerPosY = DataManager::GetInstance().GetPositionYData();
+	m_playerPosX = DataManager::GetInstance().GetPlayerPositionXData();
+	m_playerPosY = DataManager::GetInstance().GetPlayerPositionYData();
 
 	if (m_playerPosX >= m_basePointRect.right)
 	{

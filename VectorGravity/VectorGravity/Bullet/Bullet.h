@@ -7,6 +7,9 @@
 #ifndef BULLET_H
 #define BULLET_H
 
+class Texture;
+class Vertex;
+
 class Bullet
 {
 public:
@@ -16,10 +19,13 @@ public:
 
 	virtual void Control() = 0;
 	virtual void Draw() = 0;
+	virtual void Attack() = 0;
 
 protected:
 
-	void Attack();
+	//void Attack();
+	Texture*	m_pTexture;
+	Vertex*		m_pVertex;
 
 };
 

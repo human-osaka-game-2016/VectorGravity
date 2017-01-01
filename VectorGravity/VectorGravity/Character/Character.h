@@ -26,8 +26,8 @@ public:
 protected:
 
 	Texture*	m_pTexture;
-	Texture*	m_pTexture2;
 	Vertex*		m_pVertex;
+	Vertex*		m_pVertex2;
 	float		m_posX;
 	float		m_posY;
 	bool		m_isDeath;

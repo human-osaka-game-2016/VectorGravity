@@ -13,12 +13,14 @@
 #include "../Collider/CollisionManager.h"
 #include "../DataManager/DataManager.h"
 #include "../StateManager/StateManager.h"
+#include "../Bullet/PlayerBulletManager.h"
 
 Player::Player(D3DXVECTOR2 initpos_) :
 m_pInputKey(&InputKey::Instance()),
 m_pSound(&Sound::Instance()),
 m_pStateManager(&StateManager::Instance()),
-m_jumpPower(JUMPPOWER),
+m_playerBulletManager(new PlayerBulletManager),
+m_jumpPower(JUMP_POWER),
 m_gravity(GRAVITY),
 m_freeGravity(GRAVITY),
 m_moveSpeedX(MOVE_SPEED),
@@ -28,21 +30,30 @@ m_topFieldHits(false),
 m_bottomFieldHits(false),
 m_rightFieldHits(false),
 m_leftFieldHits(false),
-m_upFlag(false),
-m_downFlag(false),
+m_damageHit(false),
+m_isUpScrolling(false),
+m_isDownScrolling(false),
+m_Hp(100),
+m_Gp(100),
+m_recoveryGp(1),
+m_damageInterval(0),
 m_pCollider(new Collider(Collider::PLAYER_ID))
 {
 	m_pVertex = new Vertex;
+
+	m_isDeath = false;
 
 	m_posX = initpos_.x;
 	m_posY = initpos_.y;
 	m_playerRect = { m_posX, m_posY, m_posX + PLAYER_SIZE, m_posY + PLAYER_SIZE };
 	m_pVertex->SetTextureSize(PLAYER_SIZE, PLAYER_SIZE, 0.125, 0.125);
 
+	CollisionManager::getInstance().SetCollider(m_pCollider);
 }
 
 Player::~Player()
 {
+	delete m_playerBulletManager;
 	delete m_pVertex;
 }
 
@@ -71,24 +82,107 @@ void Player::Control()
 
 	m_colliderIDs = m_pCollider->GetColliderIDs();
 
-	for (unsigned int i = 0; i < m_colliderIDs.size(); i++)
+	if (m_damageHit == false)
 	{
-		if (m_colliderIDs[i] == Collider::ENEMYBULLET_ID)
+		for (unsigned int i = 0; i < m_colliderIDs.size(); i++)
 		{
-			//ƒ_ƒ[ƒWŠÖŒW‚Ìˆ—
+			if (m_colliderIDs[i] == Collider::ENEMYBULLET_ID)
+			{
+				//ƒ_ƒ[ƒWŠÖŒW‚Ìˆ—
+			}
+			if (m_colliderIDs[i] == Collider::SOLDIER_ID)
+			{
+				m_Hp -= 30;  //Žb’è“I‚È•ºŽm‚Æ‚ÌÚGƒ_ƒ[ƒW
+				m_damageHit = true;
+			}
 		}
 	}
 
+	//–³“GŽžŠÔ‰Šú‰»
+	if (m_damageHit)
+	{
+		m_damageInterval += 1;
+		if (m_damageInterval == DAMAGE_INTERVAL)
+		{
+			m_damageHit = false;
+			m_damageInterval = 0;
+		}
+
+		//“_–Åˆ—
+		m_flashingCount++;
+		if (m_flashingCount > FLASHTIME)
+		{
+			if (m_hitFlashing == false)
+			{
+				m_hitFlashing = true;
+			}
+			else if (m_hitFlashing == true)
+			{
+				m_hitFlashing = false;
+			}
+			m_flashingCount = 0;
+		}
+	}
+
+	//Ž€–S”»’è
+	if (m_Hp <= 0)
+	{
+		m_isDeath = true;
+	}
+
+	//GP‰ñ•œˆ—
+	if (m_Gp < 100)
+	{
+		m_Gp += m_recoveryGp; //‚PƒtƒŒ[ƒ€1‰ñ•œ@1•bŠÔ‚É60‰ñ•œ@‰ñ•œ—Ê‚ÍŒã‚Å•Ï‚¦‚é—\’è
+	}
+
+	m_playerBulletManager->Control();
+	Attack();
 	Move();
 
-	DataManager::GetInstance().SetPositionData(m_posX, m_posY);
+	DataManager::GetInstance().SetPlayerDirection(m_playerDirection);
+
+	DataManager::GetInstance().SetPlayerPositionData(m_posX, m_posY);
 
 	m_pCollider->ClearColliderIDs();
 }
 
 void Player::Draw()
 {
+	m_playerBulletManager->Draw();
 	m_pVertex->DrawLeftTop(m_posX, m_posY, m_pTexture);
+
+	if (m_damageHit)
+	{
+		if (m_flashingCount != 0)
+		{
+			if (m_hitFlashing)
+			{
+				m_pVertex->SetColor(0xFFFFFFFF);
+			}
+			else if (m_hitFlashing == false)
+			{
+				m_pVertex->SetColor(0x00FFFFFF);
+			}
+		}
+	}
+	else
+	{
+		m_pVertex->SetColor(0xFFFFFFFF);
+	}
+	
+}
+
+void Player::Attack()
+{
+	if (m_Gp >= 30)
+	{
+		if (m_pInputKey->m_key[SPACE] == PUSH)
+		{
+			m_playerBulletManager->CreateBullet();
+			m_Gp -= 30;
+		}
+	}
 }
 
 void Player::Move()
@@ -99,6 +193,8 @@ void Player::Move()
 	{
 		m_leftFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.left - m_moveSpeedX, m_playerRect.bottom - 30, distance);
 		DataManager::GetInstance().SetPlayerFieldHits(m_leftFieldHits);
+
+		m_playerDirection = Direction_Left;
 
 		if (m_leftFieldHits == false)
 		{
@@ -115,6 +211,8 @@ void Player::Move()
 		m_rightFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.right + m_moveSpeedX, m_playerRect.bottom - 30, distance);
 		DataManager::GetInstance().SetPlayerFieldHits(m_rightFieldHits);
 		
+		m_playerDirection = Direction_Right;
+
 		if (m_rightFieldHits == false)
 		{
 			if (m_basePointRect.right > m_posX)
@@ -135,7 +233,7 @@ void Player::Move()
 			if (m_bottomFieldHits)
 			{
 				m_isJump = true;
-				m_upFlag = true;
+				m_isUpScrolling = true;
 			}
 		}
 	}
@@ -145,7 +243,7 @@ void Player::Move()
 		m_bottomFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.right - 60, m_playerRect.bottom - m_jumpPower, distance);
 		DataManager::GetInstance().SetPlayerFieldHits(m_bottomFieldHits);
 
-		if (m_upFlag)
+		if (m_isUpScrolling)
 		{
 			m_playerRect.top -= m_jumpPower;
 			m_playerRect.bottom -= m_jumpPower;
@@ -155,7 +253,7 @@ void Player::Move()
 		if (m_basePointRect.top >= m_posY)
 		{
 			m_moveSpeedY = m_jumpPower;
-			m_upFlag = false;			
+			m_isUpScrolling = false;			
 		}
 
 		m_jumpPower -= m_gravity;
@@ -167,7 +265,7 @@ void Player::Move()
 
 		if (m_jumpPower <= 0)
 		{
-			m_jumpPower = JUMPPOWER;
+			m_jumpPower = JUMP_POWER;
 			m_gravity = GRAVITY;
 			m_isJump = false;
 		}
@@ -178,17 +276,17 @@ void Player::Move()
 
 	if (m_bottomFieldHits == false)
 	{
-		m_downFlag = true;
+		m_isDownScrolling = true;
 
 		if (m_isJump == false)
 		{
 			if (m_basePointRect.bottom <= m_posY)
 			{
 				m_moveSpeedY = m_freeGravity;
-				m_downFlag = false;
+				m_isDownScrolling = false;
 			}
 
-			if (m_downFlag)
+			if (m_isDownScrolling)
 			{
 				m_playerRect.top += m_freeGravity;
 				m_playerRect.bottom += m_freeGravity;

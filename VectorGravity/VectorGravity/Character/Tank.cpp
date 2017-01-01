@@ -22,5 +22,5 @@ void Tank::Control()
 
 void Tank::Draw()
 {
-	m_pVertex->DrawCenter(m_posX, m_posY, m_pTexture2);
+	m_pVertex->DrawCenter(m_posX, m_posY, m_pTexture);
 }

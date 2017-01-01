@@ -7,6 +7,10 @@
 #ifndef BULLETMANAGER_H
 #define BULLETMANAGER_H
 
+class NormalBullet;
+class StateManager;
+enum VectorDirection;
+
 class BulletManager
 {
 public:

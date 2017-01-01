@@ -5,20 +5,22 @@
  */
 
 #include "Bullet.h"
+#include <Texture.h>
 
-Bullet::Bullet()
+Bullet::Bullet():
+m_pTexture(new Texture)
 {
-
+	m_pTexture->LoadTexture("Resource/Texture/PlayerBullet.png");
 }
 
 Bullet::~Bullet()
 {
-
+	delete m_pTexture;
 }
 
 void Bullet::Control()
 {
-	Attack();
+	//Attack();
 }
 
 void Bullet::Draw()

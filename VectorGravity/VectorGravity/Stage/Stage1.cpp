@@ -15,11 +15,11 @@ m_pVertex(new Vertex)
 	m_mapchip[3] = { 0.0f,      CHIP_SIZE, 0.5f, 1.0f, 0xFFFFFFFF, 0.0f, 1.0f };
 
 	m_pTexture->LoadTexture("Resource/Texture/Block.png");
+	m_pVertex->SetTextureSize(CHIP_SIZE, CHIP_SIZE);
 
 	StageLoad("Resource/File/stage1.csv");	//ステージ１用
 
 	CollisionManager::getInstance().SetStage(this);
-	m_pVertex->SetTextureSize(CHIP_SIZE, CHIP_SIZE);
 }
 
 Stage1::~Stage1()
@@ -54,10 +54,10 @@ void Stage1::StageLoad(const char* stagedata_)
 			case 51:
 			{
 				m_stage[i][j] = 0;
-				D3DXVECTOR2 InitPos;
-				InitPos.x = j * CHIP_SIZE;
-				InitPos.y = i * CHIP_SIZE;
-				DataManager::GetInstance().AddEnemyInitPos(InitPos);
+				D3DXVECTOR2 InitEnemyPos;
+				InitEnemyPos.x = j * CHIP_SIZE;
+				InitEnemyPos.y = i * CHIP_SIZE;
+				DataManager::GetInstance().AddEnemyInitPos(InitEnemyPos);
 			}
 			break;
 			case 101:

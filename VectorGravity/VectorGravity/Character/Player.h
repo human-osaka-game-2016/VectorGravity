@@ -15,11 +15,15 @@ class InputKey;
 class Sound;
 class Collider;
 class StateManager;
+class PlayerBulletManager;
 
 #define MOVE_SPEED 12
 #define PLAYER_SIZE 128
-#define JUMPPOWER 20
+#define JUMP_POWER 20
 #define GRAVITY 0.01
+#define GP_RECOVERYTIME 100
+#define DAMAGE_INTERVAL 120
+#define FLASHTIME 6
 
 enum VectorDirection
 {
@@ -48,6 +52,12 @@ enum PlayerState
 	JUMP,
 };
 
+enum PlayerDirection	//プレイヤーの向き
+{
+	Direction_Left,
+	Direction_Right,
+};
+
 class Player : public Character
 {
 public:
@@ -57,12 +67,15 @@ public:
 
 	virtual void Control();
 	virtual void Draw();
+	void Attack();
 	void Move();
 
 private:
 
 	VectorDirection VectorOrient();
 
+	PlayerBulletManager* m_playerBulletManager;
+	PlayerDirection m_playerDirection;
 	VectorDirection	m_vectorDirection;
 	PlayerState		m_playerState;
 	Angle			m_angle;
@@ -77,6 +90,7 @@ private:
 	bool m_rightFieldHits;
 	bool m_leftFieldHits;
 	bool m_bottomFieldHits2;
+	bool m_damageHit;
 
 	float m_moveSpeedX;
 	float m_moveSpeedY;
@@ -88,8 +102,13 @@ private:
 	float m_gravityPower;
 
 	bool m_isJump;
-	bool m_upFlag;
-	bool m_downFlag;
+	bool m_isUpScrolling;
+	bool m_isDownScrolling;
+
+	int m_recoveryGp;
+	int m_damageInterval;
+	int m_flashingCount;
+	bool m_hitFlashing;
 
 	MyRect m_baseRect;
 	D3DXVECTOR2 distance;
@@ -104,7 +123,7 @@ private:
 
 	//初期位置を受け取るメンバ変数
 	D3DXVECTOR2 m_initPos;
-
+	
 	int				m_Hp;
 	int				m_Gp;
 
