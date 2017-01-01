@@ -133,12 +133,15 @@ void Player::Control()
 	//GP‰ñ•œˆ—
 	if (m_Gp < 100)
 	{
-		m_Gp += m_recoveryGp; //‚PƒtƒŒ[ƒ€1‰ñ•œ@1•bŠÔ‚É60‰ñ•œ@‰ñ•œ—Ê‚ÍŒã‚Å•Ï‚¦‚é—\’è
+		m_Gp += m_recoveryGp; //‚PƒtƒŒ[ƒ€1‰ñ•œ@1•bŠÔ‚É60‰ñ•œ@‰ñ•œ—Ê‚ÍŒã‚Å•Ï‚¦‚é—\’è‚ ‚è
 	}
 
 	m_playerBulletManager->Control();
 	Attack();
 	Move();
+
+	StateManager::Instance().SetPlayerHp(m_Hp);
+	StateManager::Instance().SetPlayerGp(m_Gp);
 
 	DataManager::GetInstance().SetPlayerDirection(m_playerDirection);
 
