@@ -12,16 +12,18 @@
 GameScene::GameScene() :
 m_pObjectManager(new ObjectManager),
 m_pauses(false),
-m_pSound(&Sound::Instance())
+m_pSound(new Sound)
 {
-	m_pSound->LoadSoundFile("Resource/Sound/muci_action_r01.wav");
-	m_pSound->SoundState(LOOP);
+	m_pSound->LoadSoundFile("Resource/Sound/BG_Gamescene.wav");
+	m_pSound->SoundState(Sound::LOOP);
 }
 
 GameScene::~GameScene()
 {
-	m_pSound->SoundState(STOP);
+	m_pSound->SoundState(Sound::STOP);
 	delete m_pObjectManager;
+	delete m_pSound;
+
 }
 
 SceneID GameScene::Control()

@@ -11,7 +11,6 @@
 
 class TeamLogo;
 class InputKey;
-class Sound;
 
 class LogoScene : public Scene
 {
@@ -24,11 +23,8 @@ public:
 
 private:
 
-
 	InputKey*	m_pInputKey;
 	TeamLogo*	m_pTeamLogo;
-	Sound*		m_pSound;
-
 };
 
 #endif // !LOGOSCENE_H

@@ -17,7 +17,7 @@
 
 Player::Player(D3DXVECTOR2 initpos_) :
 m_pInputKey(&InputKey::Instance()),
-m_pSound(&Sound::Instance()),
+m_pSound(new Sound),
 m_pStateManager(&StateManager::Instance()),
 m_playerBulletManager(new PlayerBulletManager),
 m_jumpPower(JUMP_POWER),
@@ -47,6 +47,7 @@ m_pCollider(new Collider(Collider::PLAYER_ID))
 	m_posY = initpos_.y;
 	m_playerRect = { m_posX, m_posY, m_posX + PLAYER_SIZE, m_posY + PLAYER_SIZE };
 	m_pVertex->SetTextureSize(PLAYER_SIZE, PLAYER_SIZE, 0.125, 0.125);
+	m_pSound->LoadSoundFile("Resource/Sound/BG_firing01.wav");
 
 	CollisionManager::getInstance().SetCollider(m_pCollider);
 }
@@ -55,6 +56,7 @@ Player::~Player()
 {
 	delete m_playerBulletManager;
 	delete m_pVertex;
+	delete m_pSound;
 }
 
 void Player::Control()
@@ -64,12 +66,6 @@ void Player::Control()
 	m_pInputKey->CheckKey(DIK_DOWN, DOWN);
 	m_pInputKey->CheckKey(DIK_LEFT, LEFT);
 	m_pInputKey->CheckKey(DIK_RIGHT, RIGHT);
-
-	if (m_pInputKey->m_key[SPACE] == PUSH)
-	{
-		m_pSound->LoadSoundFile("Resource/Sound/sen_ka_yumi01.wav");
-		m_pSound->SoundState(PLAY);
-	}
 
 	//他クラスに移動スピードを伝える
 	DataManager::GetInstance().SetPlayerXMoveSpeed(m_moveSpeedX);
@@ -183,6 +179,7 @@ void Player::Attack()
 		if (m_pInputKey->m_key[SPACE] == PUSH)
 		{
 			m_playerBulletManager->CreateBullet();
+			m_pSound->SoundState(Sound::RESET_PLAY);
 			m_Gp -= 30;
 		}
 	}

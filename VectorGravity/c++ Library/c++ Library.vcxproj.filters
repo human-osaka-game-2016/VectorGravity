@@ -33,6 +33,9 @@
     <Filter Include="WindowCreate">
       <UniqueIdentifier>{04c15f8d-6ca6-49d9-b8bc-549a21b8cd98}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SoundDevice">
+      <UniqueIdentifier>{529f9226-b4da-48f9-a6e0-98f9008aa38f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GraphicsDevice.cpp">
@@ -62,6 +65,9 @@
     <ClCompile Include="Sound.cpp">
       <Filter>Sound</Filter>
     </ClCompile>
+    <ClCompile Include="SoundDevice.cpp">
+      <Filter>SoundDevice</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicsDevice.h">
@@ -90,6 +96,9 @@
     </ClInclude>
     <ClInclude Include="Sound.h">
       <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundDevice.h">
+      <Filter>SoundDevice</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

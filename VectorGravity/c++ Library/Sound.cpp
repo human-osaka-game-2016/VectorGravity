@@ -1,14 +1,14 @@
 ﻿/**
- * @file	Sound.cpp
- * @breif	サウンドクラス実装内部
- * @author	shibata
- */
+* @file	Sound.cpp
+* @breif	サウンドクラス実装内部
+* @author	shibata
+*/
 
 #include "Sound.h"
 #include <tchar.h>
 
-Sound::Sound() : 
-m_pDsound8(NULL),
+Sound::Sound() :
+m_pDsound8(SoundDevice::Instance().GetSoundDivice()),
 m_pDsoundBuffer(NULL)
 {
 
@@ -16,7 +16,7 @@ m_pDsoundBuffer(NULL)
 
 Sound::~Sound()
 {
-
+	m_pDsoundBuffer->Release();
 }
 
 bool Sound::OpenWave(TCHAR* filepath_, WAVEFORMATEX* waveformat_, char** ppdata_, DWORD* datasize_)
@@ -93,22 +93,6 @@ bool Sound::OpenWave(TCHAR* filepath_, WAVEFORMATEX* waveformat_, char** ppdata_
 	return true;
 }
 
-HRESULT Sound::InitSound(HWND hWnd_)
-{
-	if (FAILED(DirectSoundCreate8(NULL, &m_pDsound8, NULL)))			// オブジェクトの生成と初期化
-	{
-		MessageBox(NULL, "オブジェクトが生成できませんでした。", NULL, MB_OK);
-		return E_FAIL;
-	}
-	if (FAILED(m_pDsound8->SetCooperativeLevel(hWnd_, DSSCL_PRIORITY)))		// 協調レベルの設定
-	{
-		MessageBox(NULL, "協調レベルが設定できませんでした。", NULL, MB_OK);
-		return E_FAIL;
-	}
-
-	return S_OK;
-}
-
 HRESULT Sound::LoadSoundFile(TCHAR* filepath_)
 {
 	WAVEFORMATEX waveformat;
@@ -141,6 +125,8 @@ HRESULT Sound::LoadSoundFile(TCHAR* filepath_)
 		m_pDsoundBuffer->Unlock(lpvwrite, dwlength, NULL, 0);
 	}
 
+	delete[] pwavedata;
+
 	return S_OK;
 
 }
@@ -152,7 +138,7 @@ void Sound::SoundState(SoundMode soundstate_)
 	case PLAY:
 		m_pDsoundBuffer->Play(0, 0, 0);
 		break;
-		
+
 	case LOOP:
 		m_pDsoundBuffer->Play(0, 0, DSBPLAY_LOOPING);
 		break;
@@ -163,6 +149,15 @@ void Sound::SoundState(SoundMode soundstate_)
 
 	case RESET:
 		m_pDsoundBuffer->SetCurrentPosition(0);
+		break;
+
+	case RESET_STOP:
+		m_pDsoundBuffer->Stop();
+		m_pDsoundBuffer->SetCurrentPosition(0);
+		break;
+	case RESET_PLAY:
+		m_pDsoundBuffer->SetCurrentPosition(0);
+		m_pDsoundBuffer->Play(0, 0, 0);
 		break;
 	}
 }

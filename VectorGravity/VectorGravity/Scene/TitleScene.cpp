@@ -13,16 +13,18 @@
 TitleScene::TitleScene() : 
 m_pTitleBackground(new TitleBackground),
 m_pInputKey(&InputKey::Instance()),
-m_pSound(&Sound::Instance())
+m_pSound(new Sound)
 {
-	m_pSound->LoadSoundFile("Resource/Sound/musicbox.wav");
-	m_pSound->SoundState(PLAY);
+	m_pSound->LoadSoundFile("Resource/Sound/BG_Titlescene.wav");
+	m_pSound->SoundState(Sound::LOOP);
 }
 
 TitleScene::~TitleScene()
 {
-	m_pSound->SoundState(STOP);
+	m_pSound->SoundState(Sound::STOP);
 	delete m_pTitleBackground;
+	delete m_pSound;
+
 }
 
 SceneID TitleScene::Control()

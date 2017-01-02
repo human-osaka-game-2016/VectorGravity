@@ -12,17 +12,14 @@
 
 LogoScene::LogoScene() : 
 m_pTeamLogo(new TeamLogo),
-m_pInputKey(&InputKey::Instance()),
-m_pSound(&Sound::Instance())
+m_pInputKey(&InputKey::Instance())
 {
-	m_pSound->LoadSoundFile("Resource/Sound/fanfare.wav");
-	m_pSound->SoundState(PLAY);
+
 }
 
 LogoScene::~LogoScene()
 {
 	delete m_pTeamLogo;
-	m_pSound->SoundState(STOP);
 }
 
 SceneID LogoScene::Control()

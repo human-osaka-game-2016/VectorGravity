@@ -18,6 +18,7 @@ Font::~Font()
 	if (m_pFont != NULL)
 	{
 		m_pFont->Release();
+		m_pFont = NULL;
 	}
 }
 

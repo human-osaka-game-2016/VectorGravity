@@ -78,6 +78,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="InputContlloer.cpp" />
+    <ClCompile Include="SoundDevice.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="InputKey.cpp" />
@@ -88,6 +89,7 @@
     <ClCompile Include="WindowCreate.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SoundDevice.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="InputContlloer.h" />
