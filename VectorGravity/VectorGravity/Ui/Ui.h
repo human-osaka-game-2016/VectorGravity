@@ -7,6 +7,10 @@
 #ifndef UI_H
 #define UI_H
 
+class Texture;
+class Vertex;
+class StateManager;
+
 class Ui
 {
 public:
@@ -15,6 +19,12 @@ public:
 	virtual ~Ui();
 
 	virtual void Draw() = 0;
+
+protected:
+
+	Texture*		m_pTexture;
+	Vertex*			m_pVertex;
+	StateManager*	m_pStateManager;
 };
 
 #endif // !UI_H

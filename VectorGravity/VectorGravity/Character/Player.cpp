@@ -35,8 +35,8 @@ m_leftFieldHits(false),
 m_damageHit(false),
 m_isUpScrolling(false),
 m_isDownScrolling(false),
-m_Hp(100),
-m_Gp(100),
+m_Hp(320),
+m_Gp(320),
 m_recoveryGp(1),
 m_damageInterval(0),
 m_vectorDirection(VECTOR_UP),
@@ -106,7 +106,7 @@ void Player::Control()
 			}
 			if (m_colliderIDs[i] == Collider::SOLDIER_ID)
 			{
-				m_Hp -= 15;  //暫定的な兵士との接触ダメージ
+				m_Hp -= 40;  //暫定的な兵士との接触ダメージ
 				m_pSoundManager->SoundState(PLAYER_DAMAGE, Sound::RESET_PLAY);
 				m_damageHit = true;
 			}
@@ -120,6 +120,7 @@ void Player::Control()
 	//無敵時間初期化
 	if (m_damageHit)
 	{
+
 		m_damageInterval += 1;
 		if (m_damageInterval == DAMAGE_INTERVAL)
 		{
@@ -150,11 +151,11 @@ void Player::Control()
 	}
 
 	//GP回復処理
-	if (m_Gp < 100)
+	if (m_Gp < 320)
 	{
 		m_Gp += m_recoveryGp; //１フレーム1回復　1秒間に60回復　回復量は後で変える予定あり
 
-		if (m_Gp >= 100)
+		if (m_Gp == 320)
 		{
 			m_pSoundManager->SoundState(PLAYER_GPRECOVER, Sound::PLAY);
 		}
@@ -204,18 +205,18 @@ void Player::Draw()
 	{
 		m_pVertex->SetColor(0xFFFFFFFF);
 	}
-
+	
 }
 
 void Player::Attack()
 {
-	if (m_Gp >= 30)
+	if (m_Gp >= 80)
 	{
 		if (m_pInputKey->m_key[SPACE] == PUSH)
 		{
 			m_playerBulletManager->CreateBullet();
 			m_pSoundManager->SoundState(PLAYER_ATTACK, Sound::RESET_PLAY);
-			m_Gp -= 30;
+			m_Gp -= 160;
 		}
 	}
 }
@@ -245,7 +246,7 @@ void Player::Move()
 	{
 		m_rightFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.right + m_moveSpeedX, m_playerRect.bottom - 30, distance);
 		DataManager::GetInstance().SetPlayerFieldHits(m_rightFieldHits);
-
+		
 		m_playerDirection = Direction_Right;
 
 		if (m_rightFieldHits == false)
@@ -356,22 +357,22 @@ void Player::Move()
 
 VectorDirection Player::VectorOrient()
 {
-	if (m_pInputKey->m_key[A] == ON)
+	if (m_pInputKey->m_key[A] == PUSH)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_LEFT;
 	}
-	if (m_pInputKey->m_key[D] == ON)
+	if (m_pInputKey->m_key[D] == PUSH)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_RIGHT;
 	}
-	if (m_pInputKey->m_key[W] == ON)
+	if (m_pInputKey->m_key[W] == PUSH)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_UP;
 	}
-	if (m_pInputKey->m_key[S] == ON)
+	if (m_pInputKey->m_key[S] == PUSH)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_DOWN;

@@ -7,6 +7,9 @@
 #ifndef UIMANAGER_H
 #define UIMANAGER_H
 
+class VectorIcon;
+class Gauge;
+
 class UiManager
 {
 public:
@@ -15,6 +18,11 @@ public:
 	~UiManager();
 
 	void Draw();
+
+private:
+
+	VectorIcon* m_pVectorIcon;
+	Gauge*		m_pGauge;
 };
 
 #endif // !UIMANAGER_H
