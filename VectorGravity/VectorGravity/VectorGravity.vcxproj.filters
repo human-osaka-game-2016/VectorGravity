@@ -31,9 +31,6 @@
     <Filter Include="main\SceneManager\Scene\GameScene">
       <UniqueIdentifier>{cf219048-89c1-4813-bb2b-c58d606fc4d3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="main\SceneManager\Scene\ResultScene">
-      <UniqueIdentifier>{10cac487-166f-4834-94c6-de35ff10393f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="main\SceneManager\Scene\CreditRollScene">
       <UniqueIdentifier>{c80ffc88-bee0-4b4d-80d3-97ba0ce9eebe}</UniqueIdentifier>
     </Filter>
@@ -81,12 +78,6 @@
     </Filter>
     <Filter Include="main\SceneManager\Scene\LogoScene\TeamLogo">
       <UniqueIdentifier>{9f40a0a3-794b-4cd0-a0fd-55d4c23ac180}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="main\SceneManager\Scene\ResultScene\GameClear">
-      <UniqueIdentifier>{868af122-3324-49c6-b96e-58f5533f0af5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="main\SceneManager\Scene\ResultScene\GameOver">
-      <UniqueIdentifier>{cee79ebe-7c5c-4374-8836-54e72c826944}</UniqueIdentifier>
     </Filter>
     <Filter Include="main\SceneManager\Scene\TitleScene\TitleLogo">
       <UniqueIdentifier>{0cd37eac-b661-4be9-9cac-f39ac9f6b8ee}</UniqueIdentifier>
@@ -139,6 +130,12 @@
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\StageManager\GoalPoint">
       <UniqueIdentifier>{3404531e-80bb-417a-b9ab-51730fad4921}</UniqueIdentifier>
     </Filter>
+    <Filter Include="main\SceneManager\Scene\GameClear">
+      <UniqueIdentifier>{868af122-3324-49c6-b96e-58f5533f0af5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\SceneManager\Scene\GameOver">
+      <UniqueIdentifier>{cee79ebe-7c5c-4374-8836-54e72c826944}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -165,14 +162,11 @@
     <ClCompile Include="Scene\TeamLogo.cpp">
       <Filter>main\SceneManager\Scene\LogoScene\TeamLogo</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\ResultScene.cpp">
-      <Filter>main\SceneManager\Scene\ResultScene</Filter>
-    </ClCompile>
     <ClCompile Include="Scene\GameOver.cpp">
-      <Filter>main\SceneManager\Scene\ResultScene\GameOver</Filter>
+      <Filter>main\SceneManager\Scene\GameOver</Filter>
     </ClCompile>
     <ClCompile Include="Scene\GameClear.cpp">
-      <Filter>main\SceneManager\Scene\ResultScene\GameClear</Filter>
+      <Filter>main\SceneManager\Scene\GameClear</Filter>
     </ClCompile>
     <ClCompile Include="Scene\TitleScene.cpp">
       <Filter>main\SceneManager\Scene\TitleScene</Filter>
@@ -293,14 +287,11 @@
     <ClInclude Include="Scene\TeamLogo.h">
       <Filter>main\SceneManager\Scene\LogoScene\TeamLogo</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\ResultScene.h">
-      <Filter>main\SceneManager\Scene\ResultScene</Filter>
-    </ClInclude>
     <ClInclude Include="Scene\GameOver.h">
-      <Filter>main\SceneManager\Scene\ResultScene\GameOver</Filter>
+      <Filter>main\SceneManager\Scene\GameOver</Filter>
     </ClInclude>
     <ClInclude Include="Scene\GameClear.h">
-      <Filter>main\SceneManager\Scene\ResultScene\GameClear</Filter>
+      <Filter>main\SceneManager\Scene\GameClear</Filter>
     </ClInclude>
     <ClInclude Include="Scene\TitleScene.h">
       <Filter>main\SceneManager\Scene\TitleScene</Filter>
