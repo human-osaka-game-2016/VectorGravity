@@ -357,22 +357,22 @@ void Player::Move()
 
 VectorDirection Player::VectorOrient()
 {
-	if (m_pInputKey->m_key[A] == PUSH)
+	if (m_pInputKey->m_key[A] == ON)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_LEFT;
 	}
-	if (m_pInputKey->m_key[D] == PUSH)
+	if (m_pInputKey->m_key[D] == ON)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_RIGHT;
 	}
-	if (m_pInputKey->m_key[W] == PUSH)
+	if (m_pInputKey->m_key[W] == ON)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_UP;
 	}
-	if (m_pInputKey->m_key[S] == PUSH)
+	if (m_pInputKey->m_key[S] == ON)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_DOWN;
