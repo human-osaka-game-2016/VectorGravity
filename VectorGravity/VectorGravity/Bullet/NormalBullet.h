@@ -41,6 +41,7 @@ private:
 	Collider* m_pCollider;
 	InputKey*		m_pInputKey;
 	bool  m_hits;
+	bool  m_fieldHits;
 	float m_posX;
 	float m_posY;
 
@@ -48,6 +49,13 @@ private:
 
 	PlayerDirection m_playerDirection;
 	MyRect m_normalBulletRect;
+	MyRect m_baseRect;
+
+	D3DXVECTOR2   m_base;
+
+	D3DXVECTOR2 distance;
+
+	std::vector<Collider::ColliderID> m_colliderIDs;
 
 };
 

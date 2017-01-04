@@ -7,7 +7,7 @@ class Enemy : public Character
 {
 public:
 	Enemy();
-	~Enemy();
+	virtual ~Enemy();
 
 	virtual void Control();
 	virtual void Draw();

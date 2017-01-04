@@ -13,6 +13,8 @@
 
 NormalBullet::NormalBullet(Collider* pcollider_):
 m_pInputKey(&InputKey::Instance()),
+m_hits(false),
+m_fieldHits(false),
 m_pCollider(pcollider_)
 {
 	m_playerPos.x = DataManager::GetInstance().GetPlayerPositionXData();
@@ -40,6 +42,28 @@ NormalBullet::~NormalBullet()
 void NormalBullet::Control()
 {
 	m_pCollider->SetRectData(m_normalBulletRect);
+
+	distance = DataManager::GetInstance().GetBasePointDistance();
+
+	m_colliderIDs = m_pCollider->GetColliderIDs();
+
+	for (int i = 0; i < m_colliderIDs.size(); i++)
+	{
+		if (m_colliderIDs[i] == Collider::PLAYER_ID)
+		{
+		}
+		if (m_colliderIDs[i] == Collider::SOLDIER_ID)
+		{
+			m_hits = true;
+		}
+	}
+
+	m_fieldHits = CollisionManager::getInstance().HasHitField(m_normalBulletRect.right, m_normalBulletRect.bottom - 16, distance);
+
+	DataManager::GetInstance().SetNormalBulletHit(m_hits);
+
+	DataManager::GetInstance().SetNormalBulletHit(m_fieldHits);
+
 	Attack();
 	m_pCollider->ClearColliderIDs();
 }

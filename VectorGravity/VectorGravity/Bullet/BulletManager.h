@@ -16,7 +16,7 @@ class BulletManager
 public:
 
 	BulletManager();
-	~BulletManager();
+	virtual ~BulletManager();
 
 	virtual void Control();
 	virtual void Draw();

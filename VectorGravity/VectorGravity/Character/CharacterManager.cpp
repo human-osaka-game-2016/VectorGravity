@@ -11,43 +11,44 @@
 #include "LongSoldier.h"
 #include "Player.h"
 
-CharacterManager::CharacterManager()
+CharacterManager::CharacterManager() :
+m_pPlayer(NULL),
+m_pLongSoldier(NULL)
 {
-	std::vector<D3DXVECTOR2>* m_enemyInitPos = DataManager::GetInstance().GetEnemyInitPos();
 	D3DXVECTOR2 m_playerInitPos = DataManager::GetInstance().GetPlayerInitPos();
+	std::vector<D3DXVECTOR2>* m_enemyInitPos = DataManager::GetInstance().GetEnemyInitPos();
 
-	m_pPlayer = new Player(m_playerInitPos);
-	m_pLongSoldier = new LongSoldier((*m_enemyInitPos)[0]);
+	m_pCharacter.push_back(new Player(m_playerInitPos));
+	m_pCharacter.push_back(new LongSoldier((*m_enemyInitPos)[0]));
+	m_pCharacter.push_back(new LongSoldier((*m_enemyInitPos)[1]));
+	m_pCharacter.push_back(new LongSoldier((*m_enemyInitPos)[2]));
+	m_pCharacter.push_back(new LongSoldier((*m_enemyInitPos)[3]));
+	m_pCharacter.push_back(new LongSoldier((*m_enemyInitPos)[4]));
+	m_pCharacter.push_back(new LongSoldier((*m_enemyInitPos)[5]));
+
 }
 
 CharacterManager::~CharacterManager()
 {
-	delete m_pPlayer;
-	delete m_pLongSoldier;
+	for (auto i : m_pCharacter)
+	{
+		delete i;
+	}
+
 }
 
 void CharacterManager::Control()
 {
-	Character* charaControlList[2] =
+	for (auto i : m_pCharacter)
 	{
-		m_pPlayer, m_pLongSoldier
-	};
-
-	for (int i = 0; i < 2; i++)
-	{
-		charaControlList[i]->Control();
+		i->Control();
 	}
 }
 
 void CharacterManager::Draw()
 {
-	Character* characterDrawList[2] = 
+	for (auto i : m_pCharacter)
 	{
-		 m_pPlayer, m_pLongSoldier
-	};
-
-	for (int i = 0; i < 2; i++)
-	{
-		characterDrawList[i]->Draw();
+		i->Draw();
 	}
 }

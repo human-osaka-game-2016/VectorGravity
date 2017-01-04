@@ -8,7 +8,6 @@
 #define PLAYER_H
 
 #include "Character.h"
-#include "../Collider/Collider.h"
 #include "../MyRect.h"
 #include <SoundManager.h>
 
@@ -77,6 +76,8 @@ private:
 	SoundManager*	m_pSoundManager;
 
 	MyRect m_playerRect;
+
+	bool m_isStageClear;
 
 	bool m_topFieldHits;
 	bool m_bottomFieldHits;

@@ -1,8 +1,8 @@
 /**
- * @file	Player.cpp
- * @breif	プレイヤーのクラス実装
- * @author	shibata
- */
+* @file	Player.cpp
+* @breif	プレイヤーのクラス実装
+* @author	shibata
+*/
 
 #include "Player.h"
 #include <Texture.h>
@@ -27,6 +27,7 @@ m_freeGravity(GRAVITY),
 m_moveSpeedX(MOVE_SPEED),
 m_moveSpeedY(0),
 m_gravityPower(0.1),
+m_isStageClear(false),
 m_topFieldHits(false),
 m_bottomFieldHits(false),
 m_rightFieldHits(false),
@@ -38,6 +39,7 @@ m_Hp(100),
 m_Gp(100),
 m_recoveryGp(1),
 m_damageInterval(0),
+m_vectorDirection(VECTOR_UP),
 m_pCollider(new Collider(Collider::PLAYER_ID))
 {
 	m_pVertex = new Vertex;
@@ -69,6 +71,10 @@ Player::~Player()
 
 void Player::Control()
 {
+	m_pInputKey->CheckKey(DIK_A, A);
+	m_pInputKey->CheckKey(DIK_D, D);
+	m_pInputKey->CheckKey(DIK_W, W);
+	m_pInputKey->CheckKey(DIK_S, S);
 	m_pInputKey->CheckKey(DIK_SPACE, SPACE);
 	m_pInputKey->CheckKey(DIK_UP, UP);
 	m_pInputKey->CheckKey(DIK_DOWN, DOWN);
@@ -100,9 +106,13 @@ void Player::Control()
 			}
 			if (m_colliderIDs[i] == Collider::SOLDIER_ID)
 			{
-				m_Hp -= 30;  //暫定的な兵士との接触ダメージ
+				m_Hp -= 15;  //暫定的な兵士との接触ダメージ
 				m_pSoundManager->SoundState(PLAYER_DAMAGE, Sound::RESET_PLAY);
 				m_damageHit = true;
+			}
+			if (m_colliderIDs[i] == Collider::GOALPOINT_ID)
+			{
+				m_isStageClear = true;
 			}
 		}
 	}
@@ -159,6 +169,9 @@ void Player::Control()
 
 	StateManager::Instance().SetPlayerHp(m_Hp);
 	StateManager::Instance().SetPlayerGp(m_Gp);
+	DataManager::GetInstance().SetPlayerDead(m_isDeath);
+	DataManager::GetInstance().SetStageClear(m_isStageClear);
+
 	m_pStateManager->SetVectorDirection(m_vectorDirection);
 
 	DataManager::GetInstance().SetPlayerDirection(m_playerDirection);
@@ -191,7 +204,7 @@ void Player::Draw()
 	{
 		m_pVertex->SetColor(0xFFFFFFFF);
 	}
-	
+
 }
 
 void Player::Attack()
@@ -232,7 +245,7 @@ void Player::Move()
 	{
 		m_rightFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.right + m_moveSpeedX, m_playerRect.bottom - 30, distance);
 		DataManager::GetInstance().SetPlayerFieldHits(m_rightFieldHits);
-		
+
 		m_playerDirection = Direction_Right;
 
 		if (m_rightFieldHits == false)
@@ -277,7 +290,7 @@ void Player::Move()
 		if (m_basePointRect.top >= m_posY)
 		{
 			m_moveSpeedY = m_jumpPower;
-			m_isUpScrolling = false;			
+			m_isUpScrolling = false;
 		}
 
 		m_jumpPower -= m_gravity;
@@ -343,22 +356,22 @@ void Player::Move()
 
 VectorDirection Player::VectorOrient()
 {
-	if (m_pInputKey->m_key[A] == PUSH)
+	if (m_pInputKey->m_key[A] == ON)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_LEFT;
 	}
-	if (m_pInputKey->m_key[D] == PUSH)
+	if (m_pInputKey->m_key[D] == ON)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_RIGHT;
 	}
-	if (m_pInputKey->m_key[W] == PUSH)
+	if (m_pInputKey->m_key[W] == ON)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_UP;
 	}
-	if (m_pInputKey->m_key[S] == PUSH)
+	if (m_pInputKey->m_key[S] == ON)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_DOWN;

@@ -107,6 +107,7 @@
     <ClCompile Include="Scene\TitleBackground.cpp" />
     <ClCompile Include="Scene\TitleLogo.cpp" />
     <ClCompile Include="Scene\TitleScene.cpp" />
+    <ClCompile Include="Stage\GoalPoint.cpp" />
     <ClCompile Include="Stage\Stage.cpp" />
     <ClCompile Include="Stage\Stage1.cpp" />
     <ClCompile Include="Stage\StageManager.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="Scene\TitleBackground.h" />
     <ClInclude Include="Scene\TitleLogo.h" />
     <ClInclude Include="Scene\TitleScene.h" />
+    <ClInclude Include="Stage\GoalPoint.h" />
     <ClInclude Include="Stage\Stage.h" />
     <ClInclude Include="Stage\Stage1.h" />
     <ClInclude Include="Stage\StageManager.h" />

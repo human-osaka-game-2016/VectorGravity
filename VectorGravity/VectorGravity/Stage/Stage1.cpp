@@ -69,6 +69,15 @@ void Stage1::StageLoad(const char* stagedata_)
 				DataManager::GetInstance().SetPlayerInitPos(InitPlayerPos);
 			}
 			break;
+			case 201:
+			{
+				m_stage[i][j] = 0;
+				D3DXVECTOR2 GoalPointPos;
+				GoalPointPos.x = j * CHIP_SIZE;
+				GoalPointPos.y = i * CHIP_SIZE;
+				DataManager::GetInstance().SetGoalPointPos(GoalPointPos);
+			}
+			break;
 			}
 		}
 	}

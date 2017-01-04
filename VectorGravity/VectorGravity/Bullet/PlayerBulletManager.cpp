@@ -8,6 +8,7 @@
 #include "NormalBullet.h"
 #include "../Collider/Collider.h"
 #include "../Collider/CollisionManager.h"
+#include "../DataManager/DataManager.h"
 
 const int PlayerBulletManager::m_BulletMax = 4;
 
@@ -42,6 +43,13 @@ void PlayerBulletManager::Control()
 			m_BulletNum--;
 		}
 		else if (m_pNormalBullets[i]->GetRect().right < 0)
+		{
+			delete m_pNormalBullets[i];
+			m_pNormalBullets.erase(m_pNormalBullets.begin() + i);
+			m_BulletNum--;
+		}
+
+		if (DataManager::GetInstance().GetNormalBulletHit())
 		{
 			delete m_pNormalBullets[i];
 			m_pNormalBullets.erase(m_pNormalBullets.begin() + i);

@@ -91,6 +91,16 @@ public:
 		return m_playerInitPos;
 	}
 
+	void SetGoalPointPos(D3DXVECTOR2 goalpoint_)
+	{
+		m_goalPointPos = goalpoint_;
+	}
+
+	D3DXVECTOR2 GetGoalPointPos()
+	{
+		return m_goalPointPos;
+	}
+
 	void SetBasePointMove(D3DXVECTOR2 basepointpoint_)
 	{
 		m_basePointMove = basepointpoint_;
@@ -131,6 +141,46 @@ public:
 		return m_playerDirection;
 	}
 
+	void SetNormalBulletHit(bool hit_)
+	{
+		m_normalBulletHit = hit_;
+	}
+
+	bool GetNormalBulletHit()
+	{
+		return m_normalBulletHit;
+	}
+
+	void SetPlayerDead(bool death_)
+	{
+		m_playerIsDeath = death_;
+	}
+
+	bool GetPlayerDead()
+	{
+		return m_playerIsDeath;
+	}
+
+	void SetStageClear(bool clear_)
+	{
+		m_playerIsStageClear = clear_;
+	}
+
+	bool GetStageClear()
+	{
+		return m_playerIsStageClear;
+	}
+
+	void SetEnemyDead(bool dead_)
+	{
+		m_enemyIsDeath = dead_;
+	}
+
+	bool GetEnemyDead()
+	{
+		return m_enemyIsDeath;
+	}
+
 private:
 	DataManager();
 
@@ -144,6 +194,7 @@ private:
 
 	std::vector<D3DXVECTOR2> m_enemyInitPos;
 	D3DXVECTOR2 m_playerInitPos;
+	D3DXVECTOR2 m_goalPointPos;
 	D3DXVECTOR2 m_basePointMove;
 
 	float m_playerXMoveSpeed;
@@ -151,6 +202,12 @@ private:
 
 	PlayerDirection m_playerDirection;
 
+	bool m_normalBulletHit;
+
+	bool m_playerIsDeath;
+	bool m_playerIsStageClear;
+
+	bool m_enemyIsDeath;
 };
 
 #endif // !DATAMANAGER_H

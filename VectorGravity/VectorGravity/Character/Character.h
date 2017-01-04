@@ -9,6 +9,7 @@
 
 #include <Windows.h>
 #include <d3dx9.h>
+#include "../Collider/Collider.h"
 
 class Texture;
 class Vertex;
@@ -33,6 +34,7 @@ protected:
 	float		m_posY;
 	bool		m_isDeath;
 
+	bool		m_enemyDead;
 };
 
 #endif // !CHARCTER_H

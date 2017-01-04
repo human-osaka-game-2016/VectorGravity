@@ -8,6 +8,7 @@
 #define STAGEMANAGER_H
 
 class Stage1;
+class GoalPoint;
 
 class StageManager
 {
@@ -19,7 +20,8 @@ public:
 	void Control();
 	void Draw();
 
-	Stage1* m_pStage1;
+	Stage1*    m_pStage1;
+	GoalPoint* m_pGoalPoint;
 
 };
 

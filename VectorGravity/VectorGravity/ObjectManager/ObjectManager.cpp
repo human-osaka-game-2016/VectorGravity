@@ -38,7 +38,7 @@ void ObjectManager::Control()
 
 void ObjectManager::Draw()
 {
-	m_pStageManager->Draw();
 	m_pCharacterManager->Draw();
+	m_pStageManager->Draw();
 	m_pUiManager->Draw();
 }

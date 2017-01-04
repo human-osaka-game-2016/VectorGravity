@@ -6,7 +6,7 @@ class Stage
 public:
 
 	Stage();
-	~Stage();
+	virtual ~Stage();
 
 	virtual void Draw() = 0;
 

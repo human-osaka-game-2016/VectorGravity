@@ -136,6 +136,9 @@
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\LongSoldier">
       <UniqueIdentifier>{d1d71ee2-6d63-459e-b9dd-10acec720a0b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\StageManager\GoalPoint">
+      <UniqueIdentifier>{3404531e-80bb-417a-b9ab-51730fad4921}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -264,6 +267,9 @@
     <ClCompile Include="Character\LongSoldier.cpp">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\LongSoldier</Filter>
     </ClCompile>
+    <ClCompile Include="Stage\GoalPoint.cpp">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\StageManager\GoalPoint</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene\SceneManager.h">
@@ -388,6 +394,9 @@
     </ClInclude>
     <ClInclude Include="Character\LongSoldier.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\LongSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\GoalPoint.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\StageManager\GoalPoint</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
