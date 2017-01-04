@@ -76,11 +76,8 @@
     <ClCompile Include="BasePoint\BasePoint.cpp" />
     <ClCompile Include="Bullet\Bullet.cpp" />
     <ClCompile Include="Bullet\BulletManager.cpp" />
-    <ClCompile Include="Bullet\CannonBullet.cpp" />
     <ClCompile Include="Bullet\EnemyBulletManager.cpp" />
-    <ClCompile Include="Bullet\GumBullet.cpp" />
     <ClCompile Include="Bullet\NormalBullet.cpp" />
-    <ClCompile Include="Bullet\PenetratingBullet.cpp" />
     <ClCompile Include="Bullet\PlayerBulletManager.cpp" />
     <ClCompile Include="Bullet\SoldierBullet.cpp" />
     <ClCompile Include="Bullet\TankBullet.cpp" />
@@ -114,9 +111,7 @@
     <ClCompile Include="Stage\Stage1.cpp" />
     <ClCompile Include="Stage\StageManager.cpp" />
     <ClCompile Include="StateManager\StateManager.cpp" />
-    <ClCompile Include="Ui\BulletIcon.cpp" />
     <ClCompile Include="Ui\Gauge.cpp" />
-    <ClCompile Include="Ui\Score.cpp" />
     <ClCompile Include="Ui\Ui.cpp" />
     <ClCompile Include="Ui\UiManager.cpp" />
     <ClCompile Include="Ui\VectorIcon.cpp" />
@@ -125,11 +120,8 @@
     <ClInclude Include="BasePoint\BasePoint.h" />
     <ClInclude Include="Bullet\Bullet.h" />
     <ClInclude Include="Bullet\BulletManager.h" />
-    <ClInclude Include="Bullet\CannonBullet.h" />
     <ClInclude Include="Bullet\EnemyBulletManager.h" />
-    <ClInclude Include="Bullet\GumBullet.h" />
     <ClInclude Include="Bullet\NormalBullet.h" />
-    <ClInclude Include="Bullet\PenetratingBullet.h" />
     <ClInclude Include="Bullet\PlayerBulletManager.h" />
     <ClInclude Include="Bullet\SoldierBullet.h" />
     <ClInclude Include="Bullet\TankBullet.h" />
@@ -162,9 +154,7 @@
     <ClInclude Include="Stage\Stage1.h" />
     <ClInclude Include="Stage\StageManager.h" />
     <ClInclude Include="StateManager\StateManager.h" />
-    <ClInclude Include="Ui\BulletIcon.h" />
     <ClInclude Include="Ui\Gauge.h" />
-    <ClInclude Include="Ui\Score.h" />
     <ClInclude Include="Ui\Ui.h" />
     <ClInclude Include="Ui\UiManager.h" />
     <ClInclude Include="Ui\VectorIcon.h" />

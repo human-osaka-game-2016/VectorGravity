@@ -67,12 +67,6 @@
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\Gauge">
       <UniqueIdentifier>{28155e3b-8f18-4d79-92c6-31846c098a08}</UniqueIdentifier>
     </Filter>
-    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\NewFilter3">
-      <UniqueIdentifier>{6f73bba6-b412-40bd-ae68-60ab84cb428e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\NewFilter4">
-      <UniqueIdentifier>{00daa64a-5f65-4042-ad7e-301b2cb86598}</UniqueIdentifier>
-    </Filter>
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\PlayerBulletManager">
       <UniqueIdentifier>{176714a3-8f7a-4f76-b8fd-8be7e1d8a2b7}</UniqueIdentifier>
     </Filter>
@@ -82,20 +76,8 @@
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\VectorIcon">
       <UniqueIdentifier>{a94967ad-821b-42f1-b5b3-ce56ef4919ed}</UniqueIdentifier>
     </Filter>
-    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\BulletIcon">
-      <UniqueIdentifier>{f793e76c-892c-45f0-bc80-90702a6402d1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\Score">
-      <UniqueIdentifier>{b5349156-ce48-4a97-888b-594ad98a3a38}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\ShotLine">
-      <UniqueIdentifier>{8e36646f-e22c-42cb-a9bd-4ff78a1849e7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Tank">
       <UniqueIdentifier>{a6761544-fdb9-45f5-a9e8-2921751380d8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\Enemy\Cannon">
-      <UniqueIdentifier>{8ffb931b-ec27-4190-aee5-89d6a0436765}</UniqueIdentifier>
     </Filter>
     <Filter Include="main\SceneManager\Scene\LogoScene\TeamLogo">
       <UniqueIdentifier>{9f40a0a3-794b-4cd0-a0fd-55d4c23ac180}</UniqueIdentifier>
@@ -118,20 +100,11 @@
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet">
       <UniqueIdentifier>{c9afa1eb-c7fe-46b4-82d7-460007887ec8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\CannonBullet">
-      <UniqueIdentifier>{6d105695-4d6c-485f-b61d-ec5e52b0d1c9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\TankBullet">
       <UniqueIdentifier>{3db1353e-131e-41bd-8609-f8f744719226}</UniqueIdentifier>
     </Filter>
-    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\GumBullet">
-      <UniqueIdentifier>{dc3561fa-bf9a-481d-bf69-260f4e026090}</UniqueIdentifier>
-    </Filter>
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\NormalBullet">
       <UniqueIdentifier>{dc60d651-9fc6-4e3a-b93f-4262fc973c64}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\PenetratingBullet">
-      <UniqueIdentifier>{ec169170-bbca-4af8-8692-bad8ee25c44d}</UniqueIdentifier>
     </Filter>
     <Filter Include="main\SceneManager\Scene\GameScene\ObjectManager\BasePoint">
       <UniqueIdentifier>{795831e1-ab24-40d8-b36d-ab2f30d6d586}</UniqueIdentifier>
@@ -240,20 +213,11 @@
     <ClCompile Include="StateManager\StateManager.cpp">
       <Filter>main\SceneManager\Scene\GameScene\StateManager</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet\PenetratingBullet.cpp">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\PenetratingBullet</Filter>
-    </ClCompile>
     <ClCompile Include="Bullet\NormalBullet.cpp">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\NormalBullet</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet\GumBullet.cpp">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\GumBullet</Filter>
-    </ClCompile>
     <ClCompile Include="Bullet\TankBullet.cpp">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\TankBullet</Filter>
-    </ClCompile>
-    <ClCompile Include="Bullet\CannonBullet.cpp">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\CannonBullet</Filter>
     </ClCompile>
     <ClCompile Include="Stage\Stage.cpp">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\StageManager\Stage</Filter>
@@ -276,14 +240,8 @@
     <ClCompile Include="Ui\VectorIcon.cpp">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\VectorIcon</Filter>
     </ClCompile>
-    <ClCompile Include="Ui\Score.cpp">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\Score</Filter>
-    </ClCompile>
     <ClCompile Include="Ui\Gauge.cpp">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\Gauge</Filter>
-    </ClCompile>
-    <ClCompile Include="Ui\BulletIcon.cpp">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\BulletIcon</Filter>
     </ClCompile>
     <ClCompile Include="Bullet\SoldierBullet.cpp">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\SoldierBullet</Filter>
@@ -377,20 +335,11 @@
     <ClInclude Include="StateManager\StateManager.h">
       <Filter>main\SceneManager\Scene\GameScene\StateManager</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet\PenetratingBullet.h">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\PenetratingBullet</Filter>
-    </ClInclude>
     <ClInclude Include="Bullet\NormalBullet.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\NormalBullet</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet\GumBullet.h">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\GumBullet</Filter>
-    </ClInclude>
     <ClInclude Include="Bullet\TankBullet.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\TankBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="Bullet\CannonBullet.h">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\CannonBullet</Filter>
     </ClInclude>
     <ClInclude Include="Stage\Stage.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\StageManager\Stage</Filter>
@@ -413,14 +362,8 @@
     <ClInclude Include="Ui\VectorIcon.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\VectorIcon</Filter>
     </ClInclude>
-    <ClInclude Include="Ui\Score.h">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\Score</Filter>
-    </ClInclude>
     <ClInclude Include="Ui\Gauge.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\Gauge</Filter>
-    </ClInclude>
-    <ClInclude Include="Ui\BulletIcon.h">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager\UiManager\Ui\BulletIcon</Filter>
     </ClInclude>
     <ClInclude Include="Bullet\SoldierBullet.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\CharacterManager\Character\BulletManager\Bullet\SoldierBullet</Filter>

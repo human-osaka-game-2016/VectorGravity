@@ -11,7 +11,12 @@
 
 class TitleBackground;
 class InputKey;
-class Sound;
+class SoundManager;
+
+enum TitleSound
+{
+	TITLE_SOUND
+};
 
 class TitleScene : public Scene
 {
@@ -27,7 +32,7 @@ private:
 
 	InputKey*			m_pInputKey;
 	TitleBackground*	m_pTitleBackground;
-	Sound*				m_pSound;
+	SoundManager*		m_pSoundManager;
 
 };
 

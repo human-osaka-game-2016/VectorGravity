@@ -8,22 +8,22 @@
 #include "SceneFactory.h"
 #include "TitleBackground.h"
 #include <InputKey.h>
-#include <Sound.h>
+#include <SoundManager.h>
 
 TitleScene::TitleScene() : 
 m_pTitleBackground(new TitleBackground),
 m_pInputKey(&InputKey::Instance()),
-m_pSound(new Sound)
+m_pSoundManager(new SoundManager)
 {
-	m_pSound->LoadSoundFile("Resource/Sound/BG_Titlescene.wav");
-	m_pSound->SoundState(Sound::LOOP);
+	m_pSoundManager->LoadSoundFile(TITLE_SOUND, "Resource/Sound/BG_Titlescene.wav");
+	m_pSoundManager->SoundState(TITLE_SOUND, Sound::LOOP);
 }
 
 TitleScene::~TitleScene()
 {
-	m_pSound->SoundState(Sound::STOP);
+	m_pSoundManager->SoundState(TITLE_SOUND, Sound::STOP);
 	delete m_pTitleBackground;
-	delete m_pSound;
+	delete m_pSoundManager;
 
 }
 

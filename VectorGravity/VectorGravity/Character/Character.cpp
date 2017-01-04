@@ -8,7 +8,6 @@
 #include <Texture.h>
 
 
-
 Character::Character() :
 m_pTexture(new Texture)
 {
@@ -17,7 +16,6 @@ m_pTexture(new Texture)
 
 Character::~Character()
 {
-	delete m_pTexture;
 }
 
 void Character::Control()

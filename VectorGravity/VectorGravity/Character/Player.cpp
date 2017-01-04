@@ -8,18 +8,19 @@
 #include <Texture.h>
 #include <Vertex.h>
 #include <InputKey.h>
-#include <Sound.h>
 #include "../Collider/Collider.h"
 #include "../Collider/CollisionManager.h"
 #include "../DataManager/DataManager.h"
 #include "../StateManager/StateManager.h"
 #include "../Bullet/PlayerBulletManager.h"
+#include "../Scene/GameScene.h"
+#include "../ObjectManager/ObjectManager.h"
 
 Player::Player(D3DXVECTOR2 initpos_) :
 m_pInputKey(&InputKey::Instance()),
-m_pSound(new Sound),
 m_pStateManager(&StateManager::Instance()),
 m_playerBulletManager(new PlayerBulletManager),
+m_pSoundManager(new SoundManager),
 m_jumpPower(JUMP_POWER),
 m_gravity(GRAVITY),
 m_freeGravity(GRAVITY),
@@ -47,7 +48,12 @@ m_pCollider(new Collider(Collider::PLAYER_ID))
 	m_posY = initpos_.y;
 	m_playerRect = { m_posX, m_posY, m_posX + PLAYER_SIZE, m_posY + PLAYER_SIZE };
 	m_pVertex->SetTextureSize(PLAYER_SIZE, PLAYER_SIZE, 0.125, 0.125);
-	m_pSound->LoadSoundFile("Resource/Sound/BG_firing01.wav");
+	m_pSoundManager->LoadSoundFile(PLAYER_ATTACK, "Resource/Sound/BG_firing01.wav");
+	m_pSoundManager->LoadSoundFile(VECTOR_CHANGE, "Resource/Sound/BG_Change01.wav");
+	m_pSoundManager->LoadSoundFile(PLAYER_DAMAGE, "Resource/Sound/BG_Damage01.wav");
+	m_pSoundManager->LoadSoundFile(PLAYER_JUMP, "Resource/Sound/BG_Jump01.wav");
+	m_pSoundManager->LoadSoundFile(PLAYER_GPRECOVER, "Resource/Sound/BG_GPRecovery01.wav");
+	m_pSoundManager->LoadSoundFile(PLAYER_LAND, "Resource/Sound/BG_Landing01.wav");
 
 	CollisionManager::getInstance().SetCollider(m_pCollider);
 }
@@ -56,7 +62,9 @@ Player::~Player()
 {
 	delete m_playerBulletManager;
 	delete m_pVertex;
-	delete m_pSound;
+	delete m_pTexture;
+	delete m_pSoundManager;
+	delete m_pCollider;
 }
 
 void Player::Control()
@@ -66,6 +74,10 @@ void Player::Control()
 	m_pInputKey->CheckKey(DIK_DOWN, DOWN);
 	m_pInputKey->CheckKey(DIK_LEFT, LEFT);
 	m_pInputKey->CheckKey(DIK_RIGHT, RIGHT);
+	m_pInputKey->CheckKey(DIK_A, A);
+	m_pInputKey->CheckKey(DIK_S, S);
+	m_pInputKey->CheckKey(DIK_D, D);
+	m_pInputKey->CheckKey(DIK_W, W);
 
 	//‘¼ƒNƒ‰ƒX‚ÉˆÚ“®ƒXƒs[ƒh‚ð“`‚¦‚é
 	DataManager::GetInstance().SetPlayerXMoveSpeed(m_moveSpeedX);
@@ -89,6 +101,7 @@ void Player::Control()
 			if (m_colliderIDs[i] == Collider::SOLDIER_ID)
 			{
 				m_Hp -= 30;  //Žb’è“I‚È•ºŽm‚Æ‚ÌÚGƒ_ƒ[ƒW
+				m_pSoundManager->SoundState(PLAYER_DAMAGE, Sound::RESET_PLAY);
 				m_damageHit = true;
 			}
 		}
@@ -130,14 +143,23 @@ void Player::Control()
 	if (m_Gp < 100)
 	{
 		m_Gp += m_recoveryGp; //‚PƒtƒŒ[ƒ€1‰ñ•œ@1•bŠÔ‚É60‰ñ•œ@‰ñ•œ—Ê‚ÍŒã‚Å•Ï‚¦‚é—\’è‚ ‚è
+
+		if (m_Gp >= 100)
+		{
+			m_pSoundManager->SoundState(PLAYER_GPRECOVER, Sound::PLAY);
+		}
 	}
 
+
+
 	m_playerBulletManager->Control();
+	m_vectorDirection = VectorOrient();
 	Attack();
 	Move();
 
 	StateManager::Instance().SetPlayerHp(m_Hp);
 	StateManager::Instance().SetPlayerGp(m_Gp);
+	m_pStateManager->SetVectorDirection(m_vectorDirection);
 
 	DataManager::GetInstance().SetPlayerDirection(m_playerDirection);
 
@@ -179,7 +201,7 @@ void Player::Attack()
 		if (m_pInputKey->m_key[SPACE] == PUSH)
 		{
 			m_playerBulletManager->CreateBullet();
-			m_pSound->SoundState(Sound::RESET_PLAY);
+			m_pSoundManager->SoundState(PLAYER_ATTACK, Sound::RESET_PLAY);
 			m_Gp -= 30;
 		}
 	}
@@ -225,6 +247,7 @@ void Player::Move()
 	}
 	if (m_pInputKey->m_key[UP] == PUSH)
 	{
+
 		m_topFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.right - 60, m_playerRect.top, distance);
 		DataManager::GetInstance().SetPlayerFieldHits(m_topFieldHits);
 
@@ -234,6 +257,7 @@ void Player::Move()
 			{
 				m_isJump = true;
 				m_isUpScrolling = true;
+				m_pSoundManager->SoundState(PLAYER_JUMP, Sound::RESET_PLAY);
 			}
 		}
 	}
@@ -268,18 +292,25 @@ void Player::Move()
 			m_jumpPower = JUMP_POWER;
 			m_gravity = GRAVITY;
 			m_isJump = false;
+			m_isLand = true;
 		}
 	}
 
 	m_bottomFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.right - 60, m_playerRect.bottom + m_freeGravity, distance);
 	DataManager::GetInstance().SetPlayerFieldHits(m_bottomFieldHits);
 
+	if (m_bottomFieldHits && !m_isJump && m_isLand)
+	{
+		m_pSoundManager->SoundState(PLAYER_LAND, Sound::PLAY);
+		m_isLand = false;
+	}
 	if (m_bottomFieldHits == false)
 	{
 		m_isDownScrolling = true;
 
 		if (m_isJump == false)
 		{
+
 			if (m_basePointRect.bottom <= m_posY)
 			{
 				m_moveSpeedY = m_freeGravity;
@@ -291,13 +322,13 @@ void Player::Move()
 				m_playerRect.top += m_freeGravity;
 				m_playerRect.bottom += m_freeGravity;
 				m_posY += m_freeGravity;
+
 			}
 
 			if (m_freeGravity < 10)
 			{
 				m_freeGravity += m_gravityPower;
 			}
-
 
 			if (m_bottomFieldHits)
 			{
@@ -312,22 +343,27 @@ void Player::Move()
 
 VectorDirection Player::VectorOrient()
 {
-	if (m_pInputKey->m_key[A] == ON)
+	if (m_pInputKey->m_key[A] == PUSH)
 	{
+		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_LEFT;
 	}
-	if (m_pInputKey->m_key[D] == ON)
+	if (m_pInputKey->m_key[D] == PUSH)
 	{
+		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_RIGHT;
 	}
 	if (m_pInputKey->m_key[W] == PUSH)
 	{
+		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_UP;
 	}
 	if (m_pInputKey->m_key[S] == PUSH)
 	{
+		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_DOWN;
 	}
+
 
 	return m_vectorDirection;
 }

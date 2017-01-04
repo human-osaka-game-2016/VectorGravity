@@ -10,12 +10,13 @@
 #include "Character.h"
 #include "../Collider/Collider.h"
 #include "../MyRect.h"
+#include <SoundManager.h>
 
 class InputKey;
-class Sound;
 class Collider;
 class StateManager;
 class PlayerBulletManager;
+enum VectorDirection;
 
 #define MOVE_SPEED 12
 #define PLAYER_SIZE 128
@@ -24,14 +25,6 @@ class PlayerBulletManager;
 #define GP_RECOVERYTIME 100
 #define DAMAGE_INTERVAL 120
 #define FLASHTIME 6
-
-enum VectorDirection
-{
-	VECTOR_UP,
-	VECTOR_DOWN,
-	VECTOR_LEFT,
-	VECTOR_RIGHT
-};
 
 enum BulletKind
 {
@@ -81,7 +74,7 @@ private:
 	Angle			m_angle;
 	BulletKind		m_bulletKind;
 	InputKey*		m_pInputKey;
-	Sound*			m_pSound;
+	SoundManager*	m_pSoundManager;
 
 	MyRect m_playerRect;
 
@@ -89,8 +82,8 @@ private:
 	bool m_bottomFieldHits;
 	bool m_rightFieldHits;
 	bool m_leftFieldHits;
-	bool m_bottomFieldHits2;
 	bool m_damageHit;
+	bool m_isLand;
 
 	float m_moveSpeedX;
 	float m_moveSpeedY;

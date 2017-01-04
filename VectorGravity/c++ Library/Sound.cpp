@@ -16,7 +16,10 @@ m_pDsoundBuffer(NULL)
 
 Sound::~Sound()
 {
-	m_pDsoundBuffer->Release();
+	if (m_pDsoundBuffer != NULL)
+	{
+		m_pDsoundBuffer->Release();
+	}
 }
 
 bool Sound::OpenWave(TCHAR* filepath_, WAVEFORMATEX* waveformat_, char** ppdata_, DWORD* datasize_)

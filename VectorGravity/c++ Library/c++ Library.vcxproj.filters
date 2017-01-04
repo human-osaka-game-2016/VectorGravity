@@ -36,6 +36,9 @@
     <Filter Include="SoundDevice">
       <UniqueIdentifier>{529f9226-b4da-48f9-a6e0-98f9008aa38f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SoundManager">
+      <UniqueIdentifier>{a312e19d-847a-41d3-ac78-57d58637a912}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GraphicsDevice.cpp">
@@ -68,6 +71,9 @@
     <ClCompile Include="SoundDevice.cpp">
       <Filter>SoundDevice</Filter>
     </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>SoundManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicsDevice.h">
@@ -99,6 +105,9 @@
     </ClInclude>
     <ClInclude Include="SoundDevice.h">
       <Filter>SoundDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>SoundManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

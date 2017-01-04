@@ -12,6 +12,24 @@ class CharacterManager;
 class BasePoint;
 class UiManager;
 
+enum VectorDirection
+{
+	VECTOR_UP,
+	VECTOR_DOWN,
+	VECTOR_LEFT,
+	VECTOR_RIGHT
+};
+
+enum SoundKind
+{
+	PLAYER_ATTACK,
+	VECTOR_CHANGE,
+	PLAYER_DAMAGE,
+	PLAYER_JUMP,
+	PLAYER_GPRECOVER,
+	PLAYER_LAND,		// Land = ’…’n
+};
+
 class ObjectManager
 {
 public:

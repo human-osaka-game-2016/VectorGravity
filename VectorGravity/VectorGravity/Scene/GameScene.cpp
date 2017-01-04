@@ -7,22 +7,22 @@
 #include "GameScene.h"
 #include "SceneFactory.h"
 #include "../ObjectManager/ObjectManager.h"
-#include <Sound.h>
+#include <SoundManager.h>
 
 GameScene::GameScene() :
 m_pObjectManager(new ObjectManager),
 m_pauses(false),
-m_pSound(new Sound)
+m_pSoundManager(new SoundManager)
 {
-	m_pSound->LoadSoundFile("Resource/Sound/BG_Gamescene.wav");
-	m_pSound->SoundState(Sound::LOOP);
+	m_pSoundManager->LoadSoundFile(GAME_BGM, "Resource/Sound/BG_Gamescene.wav");
+	m_pSoundManager->SoundState(GAME_BGM, Sound::LOOP);
 }
 
 GameScene::~GameScene()
 {
-	m_pSound->SoundState(Sound::STOP);
+	m_pSoundManager->SoundState(GAME_BGM, Sound::STOP);
 	delete m_pObjectManager;
-	delete m_pSound;
+	delete m_pSoundManager;
 
 }
 

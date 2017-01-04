@@ -23,7 +23,9 @@ m_pCollider(new Collider(Collider::SOLDIER_ID))
 
 LongSoldier::~LongSoldier()
 {
+	delete m_pTexture;
 	delete m_pVertex2;
+	delete m_pCollider;
 }
 
 void LongSoldier::Control()

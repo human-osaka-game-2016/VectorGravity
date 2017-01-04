@@ -10,7 +10,12 @@
 #include "Scene.h"
 
 class ObjectManager;
-class Sound;
+class SoundManager;
+
+enum GameSceneSound
+{
+	GAME_BGM,
+};
 
 class GameScene : public Scene
 {
@@ -27,7 +32,7 @@ public:
 private:
 
 	ObjectManager*	m_pObjectManager;
-	Sound*			m_pSound;
+	SoundManager*	m_pSoundManager;
 	bool			m_pauses;
 };
 
