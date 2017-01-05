@@ -11,7 +11,7 @@ m_pKeyDevice(InputDevice::Instance().GetKeyDevice())
 {
 	for(int i = 0; i < KEYMAX; i++)
 	{
-		m_preKey[i] = { OFF };
+		m_preKey[i] = { 0 };
 	}
 }
 

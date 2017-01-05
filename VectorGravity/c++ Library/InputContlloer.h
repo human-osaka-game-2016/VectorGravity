@@ -13,10 +13,15 @@
 
 #define STICK_DEADZONE		0.20f * float(0X7777)	//!< スティックを動かしても反応しない範囲
 #define TRIGGER_DEADZONE	30						//!< トリガーを押しても反応しない範囲
-#define CONTLLOER_MAX		4						//!< コントローラーの最大接続数
+
+struct ControllerState
+{
+	XINPUT_STATE xinputState;
+	XINPUT_VIBRATION xinputVibration;
+};
 
 /// コントローラーのボタンの種類
-enum ContlloerKind
+enum ButtonKind
 {
 	START_BUTTON,
 	BACK_BUTTON,
@@ -29,17 +34,44 @@ enum ContlloerKind
 	DPAD_LEFT,
 	DPAD_RIGHT,
 	RIGHT_SHOULDER,
-	LEFT_SHOULDER
+	LEFT_SHOULDER,
+	LEFT_TRIGGER,
+	RIGHT_TRIGGER,
+	LEFT_THUMBSTICK,
+	RIGHT_THUMBSTICK,
+	BUTTON_MAX
+};
+
+enum ContlloerNumber
+{
+	CONTLLOER_1,
+	CONTLLOER_2,
+	CONTLLOER_3,
+	CONTLLOER_4,
+	CONTLLOER_MAX
+};
+
+enum PadState
+{
+	PAD_PUSH,
+	PAD_RELEASE,
+	PAD_ON,
+	PAD_OFF
+
 };
 
 class InputContlloer
 {
 public:
 
-	/**
-	 * コンストラクタ
-	 */
-	InputContlloer();
+	PadState m_padButton[CONTLLOER_MAX][BUTTON_MAX];
+
+	static InputContlloer& Instance()
+	{
+		static InputContlloer inputContlloer;
+
+		return inputContlloer;
+	}
 
 	/**
 	 * デストラクタ
@@ -49,19 +81,24 @@ public:
 	/**
 	 * コントローラーの状態取得関数
 	 */
-	void GetContlloerState();
+	void GetContlloerState(ContlloerNumber number_ = CONTLLOER_1);
+
+	void CheckButton(int xinput_, ButtonKind button_, ContlloerNumber number_ = CONTLLOER_1);
+
+	void CheckTriger(ButtonKind trigger_, ContlloerNumber number_ = CONTLLOER_1);
+
+	void CheckStick(ButtonKind stick_, ContlloerNumber number_ = CONTLLOER_1);
 
 private:
+	/**
+	* コンストラクタ
+	*/
+	InputContlloer();
 
-	struct ControllerState
-	{
-		XINPUT_STATE xinputState;
-		XINPUT_VIBRATION xinputVibration;
-		bool connected;
-	};
 
-	ControllerState			m_controllerState;
-	LPDIRECTINPUTDEVICE8	m_pContlloerDevice;		//!< DirectInputのコントローラー用のデバイス
+
+	ControllerState			m_controllerState[CONTLLOER_MAX];
+	int						m_prePad[CONTLLOER_MAX][BUTTON_MAX];
 	const float				m_kStickDeadZone;		//!< スティックを動かしても反応しない範囲を格納する変数
 	const float				m_ktriggerDeadZone;		//!< トリガーを押しても反応しない範囲を格納する変数
 };
