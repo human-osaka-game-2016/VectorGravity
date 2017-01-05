@@ -7,13 +7,16 @@
 #include "../MyRect.h"
 #include "../Character/Player.h"
 
+#define SOLDIERBULLET_SIZE 32
+#define SOLDIERBULLET_SPEED 10
+
 class InputKey;
 
 class SoldierBullet : Bullet
 {
 public:
 
-	SoldierBullet();
+	SoldierBullet(Collider*);
 	~SoldierBullet();
 	virtual void Control();
 	virtual void Draw();

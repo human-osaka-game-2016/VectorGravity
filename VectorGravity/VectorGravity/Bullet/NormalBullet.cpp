@@ -49,7 +49,7 @@ void NormalBullet::Control()
 
 	for (int i = 0; i < m_colliderIDs.size(); i++)
 	{
-		if (m_colliderIDs[i] == Collider::PLAYER_ID)
+		if (m_colliderIDs[i] == Collider::TANK_ID)
 		{
 		}
 		if (m_colliderIDs[i] == Collider::SOLDIER_ID)
@@ -60,9 +60,14 @@ void NormalBullet::Control()
 
 	m_fieldHits = CollisionManager::getInstance().HasHitField(m_normalBulletRect.right, m_normalBulletRect.bottom - 16, distance);
 
-	DataManager::GetInstance().SetNormalBulletHit(m_hits);
-
-	DataManager::GetInstance().SetNormalBulletHit(m_fieldHits);
+	if (m_hits == true || m_fieldHits == true)
+	{
+		DataManager::GetInstance().SetNormalBulletHit(true);
+	}
+	else
+	{
+		DataManager::GetInstance().SetNormalBulletHit(false);
+	}
 
 	Attack();
 	m_pCollider->ClearColliderIDs();

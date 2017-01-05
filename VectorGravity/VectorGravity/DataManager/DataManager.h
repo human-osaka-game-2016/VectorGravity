@@ -36,6 +36,22 @@ public:
 		return m_playerPosY;
 	}
 
+	void SetEnemyPositionData(float x_, float y_)
+	{
+		m_enemyPosX = x_;
+		m_enemyPosY = y_;
+	}
+
+	float GetEnemyPositionXData()
+	{
+		return m_enemyPosX;
+	}
+
+	float GetEnemyPositionYData()
+	{
+		return m_enemyPosY;
+	}
+
 	void SetBasePointRect(MyRect rect_)
 	{
 		m_basePointRect = rect_;
@@ -171,21 +187,14 @@ public:
 		return m_playerIsStageClear;
 	}
 
-	void SetEnemyDead(bool dead_)
-	{
-		m_enemyIsDeath = dead_;
-	}
-
-	bool GetEnemyDead()
-	{
-		return m_enemyIsDeath;
-	}
-
 private:
 	DataManager();
 
 	float m_playerPosX;
 	float m_playerPosY;
+
+	float m_enemyPosX;
+	float m_enemyPosY;
 
 	bool m_playerFieldHits;
 

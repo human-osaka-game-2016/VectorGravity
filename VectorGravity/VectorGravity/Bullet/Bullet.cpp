@@ -8,14 +8,17 @@
 #include <Texture.h>
 
 Bullet::Bullet():
-m_pTexture(new Texture)
+m_pTexture(new Texture),
+m_pTexture2(new Texture)
 {
 	m_pTexture->LoadTexture("Resource/Texture/PlayerBullet.png");
+	m_pTexture2->LoadTexture("Resource/Texture/EnemyBullet.png");
 }
 
 Bullet::~Bullet()
 {
 	delete m_pTexture;
+	delete m_pTexture2;
 }
 
 void Bullet::Control()

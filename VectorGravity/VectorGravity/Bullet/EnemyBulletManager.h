@@ -8,6 +8,9 @@
 #define ENEMYBULLETMANAGER_H
 
 #include "BulletManager.h"
+#include <vector>
+
+class Collider;
 
 enum EnemyID
 {
@@ -27,6 +30,15 @@ public:
 	virtual void Control();
 	virtual void Draw();
 	virtual void CreateBullet(EnemyID enmeyID_);
+
+private:
+	static const int m_BulletMax;
+
+	std::vector<SoldierBullet*> m_pSoldierBullets;
+
+	int m_BulletNum;
+
+	Collider* m_pCollider[4];
 
 };
 

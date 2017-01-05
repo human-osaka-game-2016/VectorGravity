@@ -7,6 +7,8 @@
 
 #define STAGE_HEIGHT 45
 #define STAGE_WIDTH 200
+#define BACKGROUND_HEIGHT 720
+#define BACKGROUND_WIDTH 1280
 #define CHIP_SIZE 32.f
 
 class Texture;
@@ -44,7 +46,9 @@ private:
 	int** m_stage;
 
 	Texture* m_pTexture;
-	Vertex* m_pVertex;
+	Texture* m_pTexture2;
+	Vertex*  m_pVertex;
+	Vertex*  m_pVertex2;
 
 	CUSTOMVERTEX m_mapchip[4];
 

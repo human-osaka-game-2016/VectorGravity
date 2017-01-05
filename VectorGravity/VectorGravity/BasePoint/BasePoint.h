@@ -6,6 +6,8 @@
 #include <d3dx9.h>
 #include "../MyRect.h"
 
+class InputKey;
+
 class BasePoint
 {
 public:

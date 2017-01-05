@@ -20,6 +20,7 @@ m_pCollider(new Collider(Collider::GOALPOINT_ID))
 
 GoalPoint::~GoalPoint()
 {
+	delete m_pCollider;
 	delete m_pTexture;
 	delete m_pVertex;
 }

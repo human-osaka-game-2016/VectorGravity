@@ -9,6 +9,7 @@
 
 class Collider;
 class StateManager;
+class EnemyBulletManager;
 class InputKey;
 
 class LongSoldier : public Enemy
@@ -19,6 +20,8 @@ public:
 
 	virtual void Control();
 	virtual void Draw();
+	void Attack();
+	void Search();
 
 private:
 
@@ -29,6 +32,7 @@ private:
 	Collider*     m_pCollider;
 	StateManager* m_pStateManager;
 	InputKey*     m_pInputKey;
+	EnemyBulletManager* m_pEnemyBulletManager;
 
 	std::vector<Collider::ColliderID> m_colliderIDs;
 
@@ -41,6 +45,12 @@ private:
 	bool m_leftFieldHits;
 	bool m_topFieldHits;
 	bool m_bottomFieldHits;
+
+	float m_playerPosX;
+	float m_playerPosY;
+	float m_searchRange;
+	float m_playerDistance;
+
 
 };
 

@@ -25,7 +25,9 @@ protected:
 
 	//void Attack();
 	Texture*	m_pTexture;
+	Texture*	m_pTexture2;
 	Vertex*		m_pVertex;
+	Vertex*		m_pVertex2;
 
 };
 

@@ -8,7 +8,7 @@
 #include "LogoScene.h"
 #include "TitleScene.h"
 #include "GameScene.h"
-#include "ResultScene.h"
+//#include "ResultScene.h"
 #include "CreditRollScene.h"
 
 Scene* SceneFactory::CreateScene(SceneID sceneID_)
@@ -29,9 +29,9 @@ Scene* SceneFactory::CreateScene(SceneID sceneID_)
 		pScene = new GameScene;
 		break;
 
-	case RESULT_SCENE:
-		pScene = new ResultScene;
-		break;
+	//case RESULT_SCENE:
+	//	pScene = new ResultScene;
+	//	break;
 
 	case CREDIT_ROLL_SCENE:
 		pScene = new CreditRollScene;

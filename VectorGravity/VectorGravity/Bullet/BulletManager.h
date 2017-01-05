@@ -8,6 +8,7 @@
 #define BULLETMANAGER_H
 
 class NormalBullet;
+class SoldierBullet;
 class StateManager;
 enum VectorDirection;
 

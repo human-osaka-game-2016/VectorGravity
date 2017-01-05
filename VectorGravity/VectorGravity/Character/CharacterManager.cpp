@@ -30,25 +30,30 @@ m_pLongSoldier(NULL)
 
 CharacterManager::~CharacterManager()
 {
-	for (auto i : m_pCharacter)
+	for (int i = 0; i < m_pCharacter.size(); i++)
 	{
-		delete i;
+		delete m_pCharacter[i];
 	}
-
 }
 
 void CharacterManager::Control()
 {
-	for (auto i : m_pCharacter)
+	for (int i = 0; i < m_pCharacter.size(); i++)
 	{
-		i->Control();
+		m_pCharacter[i]->Control();
+		if (m_pCharacter[i]->GetIsDead() == true)
+		{
+			delete m_pCharacter[i];
+			m_pCharacter.erase(m_pCharacter.begin() + i);
+		}
 	}
+
 }
 
 void CharacterManager::Draw()
 {
-	for (auto i : m_pCharacter)
+	for (int i = 0; i < m_pCharacter.size(); i++)
 	{
-		i->Draw();
+		m_pCharacter[i]->Draw();
 	}
 }

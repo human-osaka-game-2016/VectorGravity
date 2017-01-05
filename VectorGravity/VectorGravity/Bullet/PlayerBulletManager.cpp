@@ -49,7 +49,7 @@ void PlayerBulletManager::Control()
 			m_BulletNum--;
 		}
 
-		if (DataManager::GetInstance().GetNormalBulletHit())
+		if (DataManager::GetInstance().GetNormalBulletHit() == true)
 		{
 			delete m_pNormalBullets[i];
 			m_pNormalBullets.erase(m_pNormalBullets.begin() + i);

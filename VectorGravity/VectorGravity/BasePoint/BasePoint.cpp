@@ -1,5 +1,6 @@
-#include"BasePoint.h"
-#include"../DataManager/DataManager.h"
+#include "BasePoint.h"
+#include "../DataManager/DataManager.h"
+#include <InputKey.h>
 
 BasePoint::BasePoint() :
 m_pInputKey(&InputKey::Instance()),

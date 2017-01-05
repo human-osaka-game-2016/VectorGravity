@@ -25,6 +25,11 @@ public:
 	virtual void Control() = 0;
 	virtual void Draw() = 0;
 
+	bool GetIsDead()
+	{
+		return m_isDeath;
+	}
+
 protected:
 
 	Texture*	m_pTexture;
@@ -34,7 +39,6 @@ protected:
 	float		m_posY;
 	bool		m_isDeath;
 
-	bool		m_enemyDead;
 };
 
 #endif // !CHARCTER_H

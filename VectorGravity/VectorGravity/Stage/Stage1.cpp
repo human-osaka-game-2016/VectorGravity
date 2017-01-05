@@ -7,7 +7,9 @@
 
 Stage1::Stage1() :
 m_pTexture(new Texture),
-m_pVertex(new Vertex)
+m_pTexture2(new Texture),
+m_pVertex(new Vertex),
+m_pVertex2(new Vertex)
 {
 	m_mapchip[0] = { 0.0f,           0.0f, 0.5f, 1.0f, 0xFFFFFFFF, 0.0f, 0.0f };
 	m_mapchip[1] = { CHIP_SIZE,      0.0f, 0.5f, 1.0f, 0xFFFFFFFF, 1.0f, 0.0f };
@@ -15,7 +17,9 @@ m_pVertex(new Vertex)
 	m_mapchip[3] = { 0.0f,      CHIP_SIZE, 0.5f, 1.0f, 0xFFFFFFFF, 0.0f, 1.0f };
 
 	m_pTexture->LoadTexture("Resource/Texture/Block.png");
+	m_pTexture2->LoadTexture("Resource/Texture/BackGround.png");
 	m_pVertex->SetTextureSize(CHIP_SIZE, CHIP_SIZE);
+	m_pVertex2->SetTextureSize(BACKGROUND_WIDTH, BACKGROUND_HEIGHT);
 
 	StageLoad("Resource/File/stage1.csv");	//ステージ１用
 
@@ -26,6 +30,8 @@ Stage1::~Stage1()
 {
 	delete m_pTexture;
 	delete m_pVertex;
+	delete m_pTexture2;
+	delete m_pVertex2;
 }
 
 void Stage1::Control()
@@ -94,6 +100,7 @@ void Stage1::StageRelease()
 
 void Stage1::Draw()
 {
+	m_pVertex2->DrawLeftTop(0, 0, m_pTexture2);
 	for (int y = 0; y < STAGE_HEIGHT; y++)
 	{
 		for (int x = 0; x < STAGE_WIDTH; x++)

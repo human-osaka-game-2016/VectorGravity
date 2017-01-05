@@ -102,7 +102,9 @@ void Player::Control()
 		{
 			if (m_colliderIDs[i] == Collider::ENEMYBULLET_ID)
 			{
-				//ƒ_ƒ[ƒWŠÖŒW‚Ìˆ—
+				m_Hp -= 40;  //Žb’è“I‚È•ºŽm‚Æ‚ÌÚGƒ_ƒ[ƒW
+				m_pSoundManager->SoundState(PLAYER_DAMAGE, Sound::RESET_PLAY);
+				m_damageHit = true;
 			}
 			if (m_colliderIDs[i] == Collider::SOLDIER_ID)
 			{

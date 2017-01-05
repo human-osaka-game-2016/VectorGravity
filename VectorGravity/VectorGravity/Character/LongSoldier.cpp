@@ -7,15 +7,20 @@
 #include "../DataManager/DataManager.h"
 #include "../StateManager/StateManager.h"
 #include "../ObjectManager/ObjectManager.h"
-
+#include "../Bullet/EnemyBulletManager.h"
 
 LongSoldier::LongSoldier(D3DXVECTOR2 initpos_) :
 m_pStateManager(&StateManager::Instance()),
 m_pInputKey(&InputKey::Instance()),
+m_pEnemyBulletManager(new EnemyBulletManager),
 m_hits(false),
 m_soldierhits(false),
 m_XBlow(0),
 m_YBlow(0),
+m_playerPosX(0),
+m_playerPosY(0),
+m_playerDistance(0),
+m_searchRange(400),
 m_pCollider(new Collider(Collider::SOLDIER_ID))
 {
 	m_pVertex2 = new Vertex;
@@ -28,6 +33,7 @@ m_pCollider(new Collider(Collider::SOLDIER_ID))
 
 	m_isDeath = false;
 
+	DataManager::GetInstance().SetEnemyPositionData(m_posX, m_posY);
 	CollisionManager::getInstance().SetCollider(m_pCollider);
 }
 
@@ -36,6 +42,7 @@ LongSoldier::~LongSoldier()
 	delete m_pTexture;
 	delete m_pVertex2;
 	delete m_pCollider;
+	delete m_pEnemyBulletManager;
 }
 
 void LongSoldier::Control()
@@ -148,14 +155,23 @@ void LongSoldier::Control()
 	m_posX += m_XBlow;
 	m_posY += m_YBlow;
 
-	DataManager::GetInstance().SetEnemyDead(m_isDeath);
+	//m_pEnemyBulletManager->Control();
+
+	/*Search();
+
+	if (m_playerDistance <= m_searchRange)
+	{
+		Attack();
+	}*/
 
 	m_pCollider->ClearColliderIDs();
 }
 
 void LongSoldier::Draw()
 {
+	//m_pEnemyBulletManager->Draw();
 	m_pVertex2->DrawLeftTop(m_posX - m_base.x, m_posY - m_base.y, m_pTexture);
+	m_pVertex2->SetColor(0xFFFFFFFF);
 
 	if (m_hits == true)
 	{
@@ -165,4 +181,18 @@ void LongSoldier::Draw()
 	{
 		m_pVertex2->SetTextureSize(LONGSOLDIER_SIZE, LONGSOLDIER_SIZE, 0.75, 0.5, 0.625, 0.375);
 	}
+}
+
+void LongSoldier::Attack()
+{
+	m_pEnemyBulletManager->CreateBullet(SOLDIER);
+}
+
+void LongSoldier::Search()
+{
+	m_playerPosX = DataManager::GetInstance().GetPlayerPositionXData();
+	m_playerPosY = DataManager::GetInstance().GetPlayerPositionYData();
+
+	m_playerDistance = pow((m_playerPosX - m_posX)*(m_playerPosX - m_posX) + (m_playerPosY - m_posY)*(m_playerPosY - m_posY), 0.5);
+
 }
