@@ -10,6 +10,7 @@
 class GraphicsDevice;
 class InputDevice;
 class InputKey;
+class InputContlloer;
 class Scene;
 enum SceneID;
 
@@ -36,6 +37,7 @@ private:
 	InputDevice*		m_pInputDevice;
 	GraphicsDevice*		m_pGraphicsDevice;
 	InputKey*			m_pInputKey;
+	InputContlloer*		m_pInputContlloer;
 	State				m_state;
 	SceneID				m_currentSceneID;
 	SceneID				m_nextSceneID;

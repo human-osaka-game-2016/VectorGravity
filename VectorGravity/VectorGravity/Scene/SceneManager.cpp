@@ -10,6 +10,7 @@
 #include <GraphicsDevice.h>
 #include <InputDevice.h>
 #include <InputKey.h>
+#include <InputContlloer.h>
 
 SceneManager::SceneManager() :
 m_pScene(nullptr),
@@ -19,6 +20,7 @@ m_nextSceneID(SceneID::LOGO_SCENE),
 m_pGraphicsDevice(&GraphicsDevice::Instance()),
 m_pInputDevice(&InputDevice::Instance()),
 m_pInputKey(&InputKey::Instance()),
+m_pInputContlloer(&InputContlloer::Instance()),
 m_isGameEnd(false)
 {
 }
@@ -35,6 +37,7 @@ SceneManager::~SceneManager()
 bool SceneManager::Run()
 {
 	m_pInputKey->GetKeyBoradState();
+	m_pInputContlloer->GetContlloerState();
 
 	Control();
 

@@ -7,14 +7,16 @@
 #ifndef GAMEOVER_H
 #define GAMEOVER_H
 
-class GameOver
+#include "Scene.h"
+
+class GameOver : public Scene
 {
 public:
 
 	GameOver();
-	~GameOver();
+	virtual ~GameOver();
 
-	void Control();
+	SceneID Control();
 	void Draw();
 };
 

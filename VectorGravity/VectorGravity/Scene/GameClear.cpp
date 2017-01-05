@@ -5,6 +5,7 @@
  */
 
 #include "GameClear.h"
+#include "SceneFactory.h"
 
 GameClear::GameClear()
 {
@@ -16,9 +17,11 @@ GameClear::~GameClear()
 
 }
 
-void GameClear::Control()
+SceneID GameClear::Control()
 {
+	SceneID nextScene = SceneID::GAME_CLEAR_SCENE;
 
+	return nextScene;
 }
 
 void GameClear::Draw()

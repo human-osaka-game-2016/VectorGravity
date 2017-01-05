@@ -7,14 +7,16 @@
 #ifndef GAMECLEAR_H
 #define GAMECLEAR_H
 
-class GameClear
+#include "Scene.h"
+
+class GameClear :public Scene
 {
 public:
 
 	GameClear();
-	~GameClear();
+	virtual ~GameClear();
 
-	void Control();
+	SceneID Control();
 	void Draw();
 };
 

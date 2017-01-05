@@ -11,6 +11,8 @@
 
 class ObjectManager;
 class SoundManager;
+class DataManager;
+
 
 enum GameSceneSound
 {
@@ -31,9 +33,10 @@ public:
 
 private:
 
-	ObjectManager*	m_pObjectManager;
-	SoundManager*	m_pSoundManager;
-	bool			m_pauses;
+	ObjectManager*		m_pObjectManager;
+	SoundManager*		m_pSoundManager;
+	DataManager*		m_pDataManager;
+	bool				m_pauses;
 };
 
 #endif // !GAMESCENE_H

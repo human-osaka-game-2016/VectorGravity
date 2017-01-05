@@ -5,6 +5,7 @@
  */
 
 #include "GameOver.h"
+#include "SceneFactory.h"
 
 GameOver::GameOver()
 {
@@ -16,9 +17,11 @@ GameOver::~GameOver()
 
 }
 
-void GameOver::Control()
+SceneID GameOver::Control()
 {
+	SceneID nextScene = SceneID::GAME_OVER_SCENE;
 
+	return nextScene;
 }
 
 void GameOver::Draw()

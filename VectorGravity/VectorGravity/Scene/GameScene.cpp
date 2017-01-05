@@ -1,18 +1,20 @@
 /**
- * @file	GameScene.cpp
- * @breif	ゲームシーンのクラス実装
- * @author	shibata
- */
+* @file	GameScene.cpp
+* @breif	ゲームシーンのクラス実装
+* @author	shibata
+*/
 
 #include "GameScene.h"
 #include "SceneFactory.h"
 #include "../ObjectManager/ObjectManager.h"
+#include "../DataManager/DataManager.h"
 #include <SoundManager.h>
 
 GameScene::GameScene() :
 m_pObjectManager(new ObjectManager),
 m_pauses(false),
-m_pSoundManager(new SoundManager)
+m_pSoundManager(new SoundManager),
+m_pDataManager(&DataManager::GetInstance())
 {
 	m_pSoundManager->LoadSoundFile(GAME_BGM, "Resource/Sound/BG_Gamescene.wav");
 	m_pSoundManager->SoundState(GAME_BGM, Sound::LOOP);
@@ -39,12 +41,17 @@ SceneID GameScene::Control()
 		ControlPause();
 	}
 
+	if (m_pDataManager->GetPlayerDead())
+	{
+		nextScene = GAME_OVER_SCENE;
+	}
+
+	if (m_pDataManager->GetStageClear())
+	{
+		nextScene = GAME_CLEAR_SCENE;
+	}
+
 	return nextScene;
-}
-
-void GameScene::ControlPause()
-{
-
 }
 
 void GameScene::Draw()
@@ -57,6 +64,11 @@ void GameScene::Draw()
 	{
 		DrawPause();
 	}
+}
+
+void GameScene::ControlPause()
+{
+
 }
 
 void GameScene::DrawPause()
