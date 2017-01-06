@@ -90,11 +90,11 @@
     <ClCompile Include="WindowCreate.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="InputContlloer.h" />
     <ClInclude Include="SoundDevice.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Font.h" />
-    <ClInclude Include="InputContlloer.h" />
     <ClInclude Include="InputKey.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="GraphicsDevice.h" />

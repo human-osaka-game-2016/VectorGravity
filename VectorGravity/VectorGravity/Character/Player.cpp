@@ -38,8 +38,8 @@ m_leftFieldHits(false),
 m_damageHit(false),
 m_isUpScrolling(false),
 m_isDownScrolling(false),
-m_Hp(320),
-m_Gp(320),
+m_Hp(300),
+m_Gp(300),
 m_recoveryGp(1),
 m_damageInterval(0),
 m_vectorDirection(VECTOR_UP),
@@ -118,13 +118,13 @@ void Player::Control()
 		{
 			if (m_colliderIDs[i] == Collider::ENEMYBULLET_ID)
 			{
-				m_Hp -= 40;  //暫定的な兵士との接触ダメージ
+				m_Hp -= 38;  //暫定的な兵士との接触ダメージ
 				m_pSoundManager->SoundState(PLAYER_DAMAGE, Sound::RESET_PLAY);
 				m_damageHit = true;
 			}
 			if (m_colliderIDs[i] == Collider::SOLDIER_ID)
 			{
-				m_Hp -= 40;  //暫定的な兵士との接触ダメージ
+				m_Hp -= 38;  //暫定的な兵士との接触ダメージ
 				m_pSoundManager->SoundState(PLAYER_DAMAGE, Sound::RESET_PLAY);
 				m_damageHit = true;
 			}
@@ -169,11 +169,11 @@ void Player::Control()
 	}
 
 	//GP回復処理
-	if (m_Gp < 320)
+	if (m_Gp < 300)
 	{
 		m_Gp += m_recoveryGp; //１フレーム1回復　1秒間に60回復　回復量は後で変える予定あり
 
-		if (m_Gp == 320)
+		if (m_Gp == 300)
 		{
 			m_pSoundManager->SoundState(PLAYER_GPRECOVER, Sound::PLAY);
 		}
@@ -228,13 +228,13 @@ void Player::Draw()
 
 void Player::Attack()
 {
-	if (m_Gp >= 80)
+	if (m_Gp >= 75)
 	{
 		if (m_pInputKey->m_key[SPACE] == PUSH || m_pInputContlloer->m_padButton[CONTLLOER_1][X_BUTTON] == PAD_PUSH || m_pInputContlloer->m_padButton[CONTLLOER_1][RIGHT_TRIGGER] == PAD_PUSH)
 		{
 			m_playerBulletManager->CreateBullet();
 			m_pSoundManager->SoundState(PLAYER_ATTACK, Sound::RESET_PLAY);
-			m_Gp -= 160;
+			m_Gp -= 150;
 		}
 	}
 }

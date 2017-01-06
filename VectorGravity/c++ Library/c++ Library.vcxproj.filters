@@ -85,9 +85,6 @@
     <ClInclude Include="Font.h">
       <Filter>Font</Filter>
     </ClInclude>
-    <ClInclude Include="InputContlloer.h">
-      <Filter>InputContlloer</Filter>
-    </ClInclude>
     <ClInclude Include="InputKey.h">
       <Filter>InputKey</Filter>
     </ClInclude>
@@ -108,6 +105,9 @@
     </ClInclude>
     <ClInclude Include="SoundManager.h">
       <Filter>SoundManager</Filter>
+    </ClInclude>
+    <ClInclude Include="InputContlloer.h">
+      <Filter>InputContlloer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

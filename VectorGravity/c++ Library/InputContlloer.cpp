@@ -140,5 +140,40 @@ void InputContlloer::CheckStick(ButtonKind stick_, StickDirection direction_, Co
 			break;
 		}
 		break;
+
+	case RIGHT_THUMBSTICK:
+		if (m_controllerState[number_].xinputState.Gamepad.sThumbLX < -m_kStickDeadZone)
+		{
+			m_padButton[number_][stick_] = PAD_ON;
+		}
+		else
+		{
+			m_padButton[number_][stick_] = PAD_OFF;
+		}
+		if (m_controllerState[number_].xinputState.Gamepad.sThumbLX > m_kStickDeadZone)
+		{
+			m_padButton[number_][stick_] = PAD_ON;
+		}
+		else
+		{
+			m_padButton[number_][stick_] = PAD_OFF;
+		}
+		if (m_controllerState[number_].xinputState.Gamepad.sThumbLY > m_kStickDeadZone)
+		{
+			m_padButton[number_][stick_] = PAD_ON;
+		}
+		else
+		{
+			m_padButton[number_][stick_] = PAD_OFF;
+		}
+		if (m_controllerState[number_].xinputState.Gamepad.sThumbLY < -m_kStickDeadZone)
+		{
+			m_padButton[number_][stick_] = PAD_ON;
+		}
+		else
+		{
+			m_padButton[number_][stick_] = PAD_OFF;
+		}
+		break;
 	}
 }
