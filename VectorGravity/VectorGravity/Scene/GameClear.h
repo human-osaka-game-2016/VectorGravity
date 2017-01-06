@@ -18,6 +18,9 @@ public:
 
 	SceneID Control();
 	void Draw();
+
+private:
+	int m_returnLogoCount;
 };
 
 #endif // !GAMECLEAR_H

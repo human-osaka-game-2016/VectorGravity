@@ -3,6 +3,13 @@
 
 #include "Character.h"
 
+enum EnemySound
+{
+	ACTIV_TRIGGER,
+	BLOW_WAY,
+	ENEMY_REFLECT
+};
+
 class Enemy : public Character
 {
 public:

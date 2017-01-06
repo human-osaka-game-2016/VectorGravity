@@ -9,9 +9,11 @@
 #include "../ObjectManager/ObjectManager.h"
 #include "../DataManager/DataManager.h"
 #include <SoundManager.h>
+#include <InputKey.h>
 
 GameScene::GameScene() :
 m_pObjectManager(new ObjectManager),
+m_pInputKey(&InputKey::Instance()),
 m_pauses(false),
 m_pSoundManager(new SoundManager),
 m_pDataManager(&DataManager::GetInstance())
@@ -32,6 +34,8 @@ SceneID GameScene::Control()
 {
 	SceneID nextScene = SceneID::GAME_SCENE;
 
+	m_pInputKey->CheckKey(DIK_Q, Q);
+
 	if (!m_pauses)
 	{
 		m_pObjectManager->Control();
@@ -49,6 +53,11 @@ SceneID GameScene::Control()
 	if (m_pDataManager->GetStageClear())
 	{
 		nextScene = GAME_CLEAR_SCENE;
+	}
+
+	if (m_pInputKey->m_key[Q] == ON)
+	{
+		nextScene = TITLE_SCENE;
 	}
 
 	return nextScene;

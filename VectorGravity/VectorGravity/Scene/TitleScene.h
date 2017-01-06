@@ -11,6 +11,7 @@
 
 class TitleBackground;
 class InputKey;
+class InputContlloer;
 class SoundManager;
 
 enum TitleSound
@@ -31,6 +32,7 @@ public:
 private:
 
 	InputKey*			m_pInputKey;
+	InputContlloer*		m_pInputContlloer;
 	TitleBackground*	m_pTitleBackground;
 	SoundManager*		m_pSoundManager;
 

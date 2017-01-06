@@ -2,11 +2,11 @@
 #define BASEPOINT_H
 
 #include <windows.h>
-#include <InputKey.h>
 #include <d3dx9.h>
 #include "../MyRect.h"
 
 class InputKey;
+class InputContlloer;
 
 class BasePoint
 {
@@ -19,6 +19,7 @@ public:
 private:
 
 	InputKey* m_pInputKey;
+	InputContlloer*	m_pInputContlloer;
 	MyRect m_basePointRect;
 	float m_posX;
 	float m_posY;

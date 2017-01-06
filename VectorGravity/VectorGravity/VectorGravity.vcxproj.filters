@@ -374,9 +374,6 @@
     <ClInclude Include="Scene\TitleBackground.h">
       <Filter>main\SceneManager\Scene\TitleScene\TitleBackgroung</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectManager\ObjectManager.h">
-      <Filter>main\SceneManager\Scene\GameScene\ObjectManager</Filter>
-    </ClInclude>
     <ClInclude Include="Stage\Stage1.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\StageManager\Stage\Stage1</Filter>
     </ClInclude>
@@ -388,6 +385,9 @@
     </ClInclude>
     <ClInclude Include="Stage\GoalPoint.h">
       <Filter>main\SceneManager\Scene\GameScene\ObjectManager\StageManager\GoalPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager\ObjectManager.h">
+      <Filter>main\SceneManager\Scene\GameScene\ObjectManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

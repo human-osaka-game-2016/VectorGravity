@@ -12,6 +12,7 @@
 class ObjectManager;
 class SoundManager;
 class DataManager;
+class InputKey;
 
 
 enum GameSceneSound
@@ -36,6 +37,7 @@ private:
 	ObjectManager*		m_pObjectManager;
 	SoundManager*		m_pSoundManager;
 	DataManager*		m_pDataManager;
+	InputKey*			m_pInputKey;
 	bool				m_pauses;
 };
 

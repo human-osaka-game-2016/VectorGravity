@@ -87,77 +87,57 @@ void InputContlloer::CheckTriger(ButtonKind trigger_, ContlloerNumber number_)
 	}
 }
 
-void InputContlloer::CheckStick(ButtonKind stick_, ContlloerNumber number_)
+void InputContlloer::CheckStick(ButtonKind stick_, StickDirection direction_, ContlloerNumber number_)
 {
 	switch (stick_)
 	{
 	case LEFT_THUMBSTICK:
-		if (m_controllerState[number_].xinputState.Gamepad.sThumbLX < -m_kStickDeadZone)
-		{
-			m_padButton[number_][stick_] = PAD_ON;
-		}
-		else
-		{
-			m_padButton[number_][stick_] = PAD_OFF;
-		}
-		if (m_controllerState[number_].xinputState.Gamepad.sThumbLX > m_kStickDeadZone)
-		{
-			m_padButton[number_][stick_] = PAD_ON;
-		}
-		else
-		{
-			m_padButton[number_][stick_] = PAD_OFF;
-		}
-		if (m_controllerState[number_].xinputState.Gamepad.sThumbLY > m_kStickDeadZone)
-		{
-			m_padButton[number_][stick_] = PAD_ON;
-		}
-		else
-		{
-			m_padButton[number_][stick_] = PAD_OFF;
-		}
-		if (m_controllerState[number_].xinputState.Gamepad.sThumbLY < -m_kStickDeadZone)
-		{
-			m_padButton[number_][stick_] = PAD_ON;
-		}
-		else
-		{
-			m_padButton[number_][stick_] = PAD_OFF;
-		}
-		break;
 
-	case RIGHT_THUMBSTICK:
-		if (m_controllerState[number_].xinputState.Gamepad.sThumbLX < -m_kStickDeadZone)
+		switch (direction_)
 		{
-			m_padButton[number_][stick_] = PAD_ON;
-		}
-		else
-		{
-			m_padButton[number_][stick_] = PAD_OFF;
-		}
-		if (m_controllerState[number_].xinputState.Gamepad.sThumbLX > m_kStickDeadZone)
-		{
-			m_padButton[number_][stick_] = PAD_ON;
-		}
-		else
-		{
-			m_padButton[number_][stick_] = PAD_OFF;
-		}
-		if (m_controllerState[number_].xinputState.Gamepad.sThumbLY > m_kStickDeadZone)
-		{
-			m_padButton[number_][stick_] = PAD_ON;
-		}
-		else
-		{
-			m_padButton[number_][stick_] = PAD_OFF;
-		}
-		if (m_controllerState[number_].xinputState.Gamepad.sThumbLY < -m_kStickDeadZone)
-		{
-			m_padButton[number_][stick_] = PAD_ON;
-		}
-		else
-		{
-			m_padButton[number_][stick_] = PAD_OFF;
+		case STICK_LEFT:
+			if (m_controllerState[number_].xinputState.Gamepad.sThumbLX < -m_kStickDeadZone)
+			{
+				m_padStick[number_][direction_][stick_] = PAD_ON;
+			}
+			else
+			{
+				m_padStick[number_][direction_][stick_] = PAD_OFF;
+			}
+			break;
+
+		case STICK_RIGHT:
+			if (m_controllerState[number_].xinputState.Gamepad.sThumbLX > m_kStickDeadZone)
+			{
+				m_padStick[number_][direction_][stick_] = PAD_ON;
+			}
+			else
+			{
+				m_padStick[number_][direction_][stick_] = PAD_OFF;
+			}
+			break;
+
+		case STICK_UP:
+			if (m_controllerState[number_].xinputState.Gamepad.sThumbLY > m_kStickDeadZone)
+			{
+				m_padStick[number_][direction_][stick_] = PAD_ON;
+			}
+			else
+			{
+				m_padStick[number_][direction_][stick_] = PAD_OFF;
+			}
+			break;
+
+		case STICK_DOWN:
+			if (m_controllerState[number_].xinputState.Gamepad.sThumbLY < -m_kStickDeadZone)
+			{
+				m_padStick[number_][direction_][stick_] = PAD_ON;
+			}
+			else
+			{
+				m_padStick[number_][direction_][stick_] = PAD_OFF;
+			}
+			break;
 		}
 		break;
 	}

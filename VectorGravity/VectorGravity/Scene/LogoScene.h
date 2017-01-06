@@ -11,6 +11,7 @@
 
 class TeamLogo;
 class InputKey;
+class InputContlloer;
 
 class LogoScene : public Scene
 {
@@ -23,8 +24,9 @@ public:
 
 private:
 
-	InputKey*	m_pInputKey;
-	TeamLogo*	m_pTeamLogo;
+	InputKey*			m_pInputKey;
+	InputContlloer*		m_pInputContlloer;
+	TeamLogo*			m_pTeamLogo;
 };
 
 #endif // !LOGOSCENE_H

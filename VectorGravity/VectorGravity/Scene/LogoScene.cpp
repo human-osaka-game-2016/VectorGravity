@@ -8,11 +8,12 @@
 #include "SceneFactory.h"
 #include "TeamLogo.h"
 #include <InputKey.h>
-#include <Sound.h>
+#include <InputContlloer.h>
 
 LogoScene::LogoScene() : 
 m_pTeamLogo(new TeamLogo),
-m_pInputKey(&InputKey::Instance())
+m_pInputKey(&InputKey::Instance()),
+m_pInputContlloer(&InputContlloer::Instance())
 {
 
 }
@@ -25,6 +26,7 @@ LogoScene::~LogoScene()
 SceneID LogoScene::Control()
 {
 	m_pInputKey->CheckKey(DIK_RETURN, ENTER);
+	m_pInputContlloer->CheckButton(XINPUT_GAMEPAD_A, A_BUTTON);
 
 	SceneID nextScene = SceneID::LOGO_SCENE;
 
@@ -33,7 +35,7 @@ SceneID LogoScene::Control()
 		nextScene = SceneID::TITLE_SCENE;
 	}
 
-	if (m_pInputKey->m_key[ENTER] == ON)
+	if (m_pInputKey->m_key[ENTER] == ON || m_pInputContlloer->m_padButton[CONTLLOER_1][A_BUTTON] == PAD_ON)
 	{
 		nextScene = SceneID::TITLE_SCENE;
 	}

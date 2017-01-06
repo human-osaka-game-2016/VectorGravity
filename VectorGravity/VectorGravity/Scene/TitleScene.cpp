@@ -9,11 +9,13 @@
 #include "TitleBackground.h"
 #include <InputKey.h>
 #include <SoundManager.h>
+#include <InputContlloer.h>
 
 TitleScene::TitleScene() : 
 m_pTitleBackground(new TitleBackground),
 m_pInputKey(&InputKey::Instance()),
-m_pSoundManager(new SoundManager)
+m_pSoundManager(new SoundManager),
+m_pInputContlloer(&InputContlloer::Instance())
 {
 	m_pSoundManager->LoadSoundFile(TITLE_SOUND, "Resource/Sound/BG_Titlescene.wav");
 	m_pSoundManager->SoundState(TITLE_SOUND, Sound::LOOP);
@@ -30,10 +32,11 @@ TitleScene::~TitleScene()
 SceneID TitleScene::Control()
 {
 	m_pInputKey->CheckKey(DIK_RETURN, ENTER);
+	m_pInputContlloer->CheckButton(XINPUT_GAMEPAD_A, A_BUTTON);
 
 	SceneID nextScene = SceneID::TITLE_SCENE;
 
-	if (m_pInputKey->m_key[ENTER] == ON)
+	if (m_pInputKey->m_key[ENTER] == ON || m_pInputContlloer->m_padButton[CONTLLOER_1][A_BUTTON] == PAD_ON)
 	{
 		nextScene = SceneID::GAME_SCENE;
 	}

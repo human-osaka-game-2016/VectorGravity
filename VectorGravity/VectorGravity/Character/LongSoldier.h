@@ -11,6 +11,8 @@ class Collider;
 class StateManager;
 class EnemyBulletManager;
 class InputKey;
+class InputContlloer;
+class SoundManager;
 
 class LongSoldier : public Enemy
 {
@@ -32,7 +34,9 @@ private:
 	Collider*     m_pCollider;
 	StateManager* m_pStateManager;
 	InputKey*     m_pInputKey;
+	InputContlloer*	m_pInputContlloer;
 	EnemyBulletManager* m_pEnemyBulletManager;
+	SoundManager*	m_pSoundManager;
 
 	std::vector<Collider::ColliderID> m_colliderIDs;
 

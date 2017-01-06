@@ -51,6 +51,15 @@ enum ContlloerNumber
 	CONTLLOER_MAX
 };
 
+enum StickDirection
+{
+	STICK_UP,
+	STICK_DOWN,
+	STICK_LEFT,
+	STICK_RIGHT,
+	DIRECTION_MAX
+};
+
 enum PadState
 {
 	PAD_PUSH,
@@ -65,6 +74,7 @@ class InputContlloer
 public:
 
 	PadState m_padButton[CONTLLOER_MAX][BUTTON_MAX];
+	PadState m_padStick[CONTLLOER_MAX][DIRECTION_MAX][BUTTON_MAX];
 
 	static InputContlloer& Instance()
 	{
@@ -87,7 +97,7 @@ public:
 
 	void CheckTriger(ButtonKind trigger_, ContlloerNumber number_ = CONTLLOER_1);
 
-	void CheckStick(ButtonKind stick_, ContlloerNumber number_ = CONTLLOER_1);
+	void CheckStick(ButtonKind stick_, StickDirection direction_, ContlloerNumber number_ = CONTLLOER_1);
 
 private:
 	/**

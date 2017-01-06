@@ -2,6 +2,8 @@
 #include <Vertex.h>
 #include <Texture.h>
 #include <InputKey.h>
+#include <InputContlloer.h>
+#include <SoundManager.h>
 #include "../Collider/Collider.h"
 #include "../Collider/CollisionManager.h"
 #include "../DataManager/DataManager.h"
@@ -12,7 +14,9 @@
 LongSoldier::LongSoldier(D3DXVECTOR2 initpos_) :
 m_pStateManager(&StateManager::Instance()),
 m_pInputKey(&InputKey::Instance()),
+m_pInputContlloer(&InputContlloer::Instance()),
 m_pEnemyBulletManager(new EnemyBulletManager),
+m_pSoundManager(new SoundManager),
 m_hits(false),
 m_soldierhits(false),
 m_XBlow(0),
@@ -35,6 +39,10 @@ m_pCollider(new Collider(Collider::SOLDIER_ID))
 
 	DataManager::GetInstance().SetEnemyPositionData(m_posX, m_posY);
 	CollisionManager::getInstance().SetCollider(m_pCollider);
+
+	m_pSoundManager->LoadSoundFile(ACTIV_TRIGGER, "Resource/Sound/BG_Invocation01.wav");
+	m_pSoundManager->LoadSoundFile(BLOW_WAY, "Resource/Sound/BG_EBlowaway01.wav");
+	m_pSoundManager->LoadSoundFile(ENEMY_REFLECT, "Resource/Sound/BG_EReflection01.wav");
 }
 
 LongSoldier::~LongSoldier()
@@ -43,6 +51,7 @@ LongSoldier::~LongSoldier()
 	delete m_pVertex2;
 	delete m_pCollider;
 	delete m_pEnemyBulletManager;
+	delete m_pSoundManager;
 }
 
 void LongSoldier::Control()
@@ -57,6 +66,8 @@ void LongSoldier::Control()
 	m_pCollider->SetRectData(m_baseRect);
 
 	m_pInputKey->CheckKey(DIK_LCONTROL, LCONTROL);
+	m_pInputContlloer->CheckButton(XINPUT_GAMEPAD_B, B_BUTTON);
+	m_pInputContlloer->CheckTriger(RIGHT_TRIGGER);
 
 	m_colliderIDs = m_pCollider->GetColliderIDs();
 
@@ -84,6 +95,7 @@ void LongSoldier::Control()
 
 	if (m_rightFieldHits == true)
 	{
+		m_pSoundManager->SoundState(ENEMY_REFLECT, Sound::PLAY);
 		m_isDeath = true;
 		m_XBlow = 0;
 		m_XBlow -= BLOWSPEED;
@@ -92,6 +104,7 @@ void LongSoldier::Control()
 
 	if (m_leftFieldHits == true)
 	{
+		m_pSoundManager->SoundState(ENEMY_REFLECT, Sound::PLAY);
 		m_isDeath = true;
 		m_XBlow = 0;
 		m_XBlow += BLOWSPEED;
@@ -100,6 +113,7 @@ void LongSoldier::Control()
 
 	if (m_topFieldHits == true)
 	{
+		m_pSoundManager->SoundState(ENEMY_REFLECT, Sound::PLAY);
 		m_isDeath = true;
 		m_YBlow = 0;
 		m_YBlow += BLOWSPEED;
@@ -108,6 +122,7 @@ void LongSoldier::Control()
 
 	if (m_bottomFieldHits == true)
 	{
+		m_pSoundManager->SoundState(ENEMY_REFLECT, Sound::PLAY);
 		m_isDeath = true;
 		m_YBlow = 0;
 		m_YBlow -= BLOWSPEED;
@@ -116,8 +131,10 @@ void LongSoldier::Control()
 
 	if (m_hits == true)
 	{
-		if (m_pInputKey->m_key[LCONTROL] == ON)
+		if (m_pInputKey->m_key[LCONTROL] == ON || m_pInputContlloer->m_padButton[CONTLLOER_1][B_BUTTON] == PAD_PUSH || m_pInputContlloer->m_padButton[CONTLLOER_1][RIGHT_TRIGGER] == PAD_ON)
 		{
+			m_pSoundManager->SoundState(ACTIV_TRIGGER, Sound::PLAY);
+			m_pSoundManager->SoundState(BLOW_WAY, Sound::PLAY);
 			switch (m_pStateManager->GetVectorDirection())
 			{
 			case VECTOR_UP:

@@ -9,9 +9,10 @@
 
 #include "Character.h"
 #include "../MyRect.h"
-#include <SoundManager.h>
 
 class InputKey;
+class InputContlloer;
+class SoundManager;
 class Collider;
 class StateManager;
 class PlayerBulletManager;
@@ -73,6 +74,7 @@ private:
 	Angle			m_angle;
 	BulletKind		m_bulletKind;
 	InputKey*		m_pInputKey;
+	InputContlloer*	m_pInputContlloer;
 	SoundManager*	m_pSoundManager;
 
 	MyRect m_playerRect;

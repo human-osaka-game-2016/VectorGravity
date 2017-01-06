@@ -8,6 +8,8 @@
 #include <Texture.h>
 #include <Vertex.h>
 #include <InputKey.h>
+#include <InputContlloer.h>
+#include <SoundManager.h>
 #include "../Collider/Collider.h"
 #include "../Collider/CollisionManager.h"
 #include "../DataManager/DataManager.h"
@@ -18,6 +20,7 @@
 
 Player::Player(D3DXVECTOR2 initpos_) :
 m_pInputKey(&InputKey::Instance()),
+m_pInputContlloer(&InputContlloer::Instance()),
 m_pStateManager(&StateManager::Instance()),
 m_playerBulletManager(new PlayerBulletManager),
 m_pSoundManager(new SoundManager),
@@ -84,6 +87,19 @@ void Player::Control()
 	m_pInputKey->CheckKey(DIK_S, S);
 	m_pInputKey->CheckKey(DIK_D, D);
 	m_pInputKey->CheckKey(DIK_W, W);
+
+	m_pInputContlloer->CheckStick(LEFT_THUMBSTICK, STICK_LEFT);
+	m_pInputContlloer->CheckStick(LEFT_THUMBSTICK, STICK_RIGHT);
+	m_pInputContlloer->CheckStick(LEFT_THUMBSTICK, STICK_UP);
+	m_pInputContlloer->CheckTriger(RIGHT_TRIGGER);
+	m_pInputContlloer->CheckButton(XINPUT_GAMEPAD_DPAD_UP, DPAD_UP);
+	m_pInputContlloer->CheckButton(XINPUT_GAMEPAD_DPAD_DOWN, DPAD_DOWN);
+	m_pInputContlloer->CheckButton(XINPUT_GAMEPAD_DPAD_LEFT, DPAD_LEFT);
+	m_pInputContlloer->CheckButton(XINPUT_GAMEPAD_DPAD_RIGHT, DPAD_RIGHT);
+	m_pInputContlloer->CheckButton(XINPUT_GAMEPAD_A, A_BUTTON);
+	m_pInputContlloer->CheckButton(XINPUT_GAMEPAD_X, X_BUTTON);
+
+	
 
 	//他クラスに移動スピードを伝える
 	DataManager::GetInstance().SetPlayerXMoveSpeed(m_moveSpeedX);
@@ -214,7 +230,7 @@ void Player::Attack()
 {
 	if (m_Gp >= 80)
 	{
-		if (m_pInputKey->m_key[SPACE] == PUSH)
+		if (m_pInputKey->m_key[SPACE] == PUSH || m_pInputContlloer->m_padButton[CONTLLOER_1][X_BUTTON] == PAD_PUSH || m_pInputContlloer->m_padButton[CONTLLOER_1][RIGHT_TRIGGER] == PAD_PUSH)
 		{
 			m_playerBulletManager->CreateBullet();
 			m_pSoundManager->SoundState(PLAYER_ATTACK, Sound::RESET_PLAY);
@@ -227,7 +243,7 @@ void Player::Move()
 {
 	distance = DataManager::GetInstance().GetBasePointDistance();
 
-	if (m_pInputKey->m_key[LEFT] == ON)
+	if (m_pInputKey->m_key[LEFT] == ON || m_pInputContlloer->m_padStick[CONTLLOER_1][STICK_LEFT][LEFT_THUMBSTICK] == PAD_ON)
 	{
 		m_leftFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.left - m_moveSpeedX, m_playerRect.bottom - 30, distance);
 		DataManager::GetInstance().SetPlayerFieldHits(m_leftFieldHits);
@@ -244,7 +260,7 @@ void Player::Move()
 			}
 		}
 	}
-	if (m_pInputKey->m_key[RIGHT] == ON)
+	if (m_pInputKey->m_key[RIGHT] == ON || m_pInputContlloer->m_padStick[CONTLLOER_1][STICK_RIGHT][LEFT_THUMBSTICK] == PAD_ON)
 	{
 		m_rightFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.right + m_moveSpeedX, m_playerRect.bottom - 30, distance);
 		DataManager::GetInstance().SetPlayerFieldHits(m_rightFieldHits);
@@ -261,7 +277,7 @@ void Player::Move()
 			}
 		}
 	}
-	if (m_pInputKey->m_key[UP] == PUSH)
+	if (m_pInputKey->m_key[UP] == PUSH || m_pInputContlloer->m_padButton[CONTLLOER_1][A_BUTTON] == PAD_PUSH || m_pInputContlloer->m_padStick[CONTLLOER_1][STICK_UP][LEFT_THUMBSTICK] == PAD_ON)
 	{
 
 		m_topFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.right - 60, m_playerRect.top, distance);
@@ -359,22 +375,22 @@ void Player::Move()
 
 VectorDirection Player::VectorOrient()
 {
-	if (m_pInputKey->m_key[A] == ON)
+	if (m_pInputKey->m_key[A] == ON || m_pInputContlloer->m_padButton[CONTLLOER_1][DPAD_LEFT] == PAD_PUSH)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_LEFT;
 	}
-	if (m_pInputKey->m_key[D] == ON)
+	if (m_pInputKey->m_key[D] == ON || m_pInputContlloer->m_padButton[CONTLLOER_1][DPAD_RIGHT] == PAD_PUSH)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_RIGHT;
 	}
-	if (m_pInputKey->m_key[W] == ON)
+	if (m_pInputKey->m_key[W] == ON || m_pInputContlloer->m_padButton[CONTLLOER_1][DPAD_UP] == PAD_PUSH)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_UP;
 	}
-	if (m_pInputKey->m_key[S] == ON)
+	if (m_pInputKey->m_key[S] == ON || m_pInputContlloer->m_padButton[CONTLLOER_1][DPAD_DOWN] == PAD_PUSH)
 	{
 		m_pSoundManager->SoundState(VECTOR_CHANGE, Sound::RESET_PLAY);
 		m_vectorDirection = VECTOR_DOWN;
