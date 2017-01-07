@@ -13,8 +13,8 @@ m_pCollider(pcollider_)
 {
 	m_pVertex2 = new Vertex;
 
-	m_posX = DataManager::GetInstance().GetEnemyPositionXData();
-	m_posY = DataManager::GetInstance().GetEnemyPositionYData();
+	m_posX = DataManager::GetInstance()->GetEnemyPositionXData();
+	m_posY = DataManager::GetInstance()->GetEnemyPositionYData();
 	m_soldierBulletRect = { m_posX, m_posY, m_posX + SOLDIERBULLET_SIZE, m_posY + SOLDIERBULLET_SIZE };
 	m_pVertex2->SetTextureSize(SOLDIERBULLET_SIZE, SOLDIERBULLET_SIZE);
 	m_hits = false;
@@ -24,16 +24,15 @@ m_pCollider(pcollider_)
 
 SoldierBullet::~SoldierBullet()
 {
-	delete m_pVertex2;
 	m_pCollider->SetIsActive(false);
-	
+	delete m_pVertex2;
 }
 
 void SoldierBullet::Control()
 {
 	m_pCollider->SetRectData(m_soldierBulletRect);
 
-	distance = DataManager::GetInstance().GetBasePointDistance();
+	distance = DataManager::GetInstance()->GetBasePointDistance();
 
 	m_colliderIDs = m_pCollider->GetColliderIDs();
 

@@ -14,18 +14,37 @@ class CollisionManager
 public:
 	~CollisionManager();
 
-	void Control();
-
-	static CollisionManager& getInstance()
+	static void Create()
 	{
-		static CollisionManager collisionManager;
-
-		return collisionManager;
+		if (m_pCollisionManager == NULL)
+		{
+			m_pCollisionManager = new CollisionManager();
+		}
 	}
 
-	void SetCollider(Collider* pCollider_)
+	static CollisionManager* GetInstance()
 	{
+		return m_pCollisionManager;
+	}
+
+	static void Delete()
+	{
+		delete m_pCollisionManager;
+		m_pCollisionManager = NULL;
+	}
+
+	void Control();
+
+	int SetCollider(Collider* pCollider_)
+	{
+		int collider = m_pCollider.size();;
 		m_pCollider.push_back(pCollider_);		//m_pCollider‚ÉpCollider‚ğ”z—ñ‚Ìˆê”ÔÅŒã‚É‘«‚·B
+		return collider;
+	}
+
+	void SetNotCollider(int index)
+	{
+		m_notCollider.push_back(index);
 	}
 
 	void ClearBuffer()
@@ -48,6 +67,10 @@ private:
 
 	int m_stageHeight;
 	int m_stageWidth;
+
+	std::vector<int> m_notCollider;
+
+	static CollisionManager* m_pCollisionManager;
 };
 
 #endif // !COLLISIONMANAGER_H

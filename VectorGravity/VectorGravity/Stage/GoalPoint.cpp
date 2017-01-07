@@ -15,19 +15,19 @@ m_pCollider(new Collider(Collider::GOALPOINT_ID))
 	m_pTexture->LoadTexture("Resource/Texture/Goal.png");
 	m_pVertex->SetTextureSize(GOALPOINTWIDTH, GOALPOINTHEIGHT);
 	m_GoalPointRect = { m_posX, m_posY, m_posX + GOALPOINTWIDTH, m_posY + GOALPOINTHEIGHT };
-	CollisionManager::getInstance().SetCollider(m_pCollider);
+	CollisionManager::GetInstance()->SetCollider(m_pCollider);
 }
 
 GoalPoint::~GoalPoint()
 {
 	delete m_pCollider;
-	delete m_pTexture;
 	delete m_pVertex;
+	delete m_pTexture;
 }
 
 void GoalPoint::Control()
 {
-	m_base = DataManager::GetInstance().GetBasePointDistance();
+	m_base = DataManager::GetInstance()->GetBasePointDistance();
 
 	m_baseRect.left   = m_GoalPointRect.left - m_base.x;
 	m_baseRect.top    = m_GoalPointRect.top - m_base.y;

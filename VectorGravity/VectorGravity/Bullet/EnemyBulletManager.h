@@ -40,6 +40,7 @@ private:
 
 	Collider* m_pCollider[4];
 
+	int m_setCollider[4];
 };
 
 #endif // !ENEMYBULLETMANAGER_H

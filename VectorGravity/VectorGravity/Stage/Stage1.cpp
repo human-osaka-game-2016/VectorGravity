@@ -23,20 +23,20 @@ m_pVertex2(new Vertex)
 
 	StageLoad("Resource/File/stage1.csv");	//ステージ１用
 
-	CollisionManager::getInstance().SetStage(this);
+	CollisionManager::GetInstance()->SetStage(this);
 }
 
 Stage1::~Stage1()
 {
-	delete m_pTexture;
+	delete m_pVertex2;
 	delete m_pVertex;
 	delete m_pTexture2;
-	delete m_pVertex2;
+	delete m_pTexture;
 }
 
 void Stage1::Control()
 {
-	m_basePointDistance = DataManager::GetInstance().GetBasePointDistance();
+	m_basePointDistance = DataManager::GetInstance()->GetBasePointDistance();
 }
 
 void Stage1::StageLoad(const char* stagedata_)
@@ -63,7 +63,7 @@ void Stage1::StageLoad(const char* stagedata_)
 				D3DXVECTOR2 InitEnemyPos;
 				InitEnemyPos.x = j * CHIP_SIZE;
 				InitEnemyPos.y = i * CHIP_SIZE;
-				DataManager::GetInstance().AddEnemyInitPos(InitEnemyPos);
+				DataManager::GetInstance()->AddEnemyInitPos(InitEnemyPos);
 			}
 			break;
 			case 101:
@@ -72,7 +72,7 @@ void Stage1::StageLoad(const char* stagedata_)
 				D3DXVECTOR2 InitPlayerPos;
 				InitPlayerPos.x = j * CHIP_SIZE;
 				InitPlayerPos.y = i * CHIP_SIZE;
-				DataManager::GetInstance().SetPlayerInitPos(InitPlayerPos);
+				DataManager::GetInstance()->SetPlayerInitPos(InitPlayerPos);
 			}
 			break;
 			case 201:
@@ -81,7 +81,7 @@ void Stage1::StageLoad(const char* stagedata_)
 				D3DXVECTOR2 GoalPointPos;
 				GoalPointPos.x = j * CHIP_SIZE;
 				GoalPointPos.y = i * CHIP_SIZE;
-				DataManager::GetInstance().SetGoalPointPos(GoalPointPos);
+				DataManager::GetInstance()->SetGoalPointPos(GoalPointPos);
 			}
 			break;
 			}
@@ -93,9 +93,9 @@ void Stage1::StageRelease()
 {
 	for (int i = 0; i < STAGE_HEIGHT; i++)
 	{
-		delete m_stage[i];
+		delete[] m_stage[i];
 	}
-	delete m_stage;
+	delete[] m_stage;
 }
 
 void Stage1::Draw()

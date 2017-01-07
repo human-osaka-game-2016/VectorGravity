@@ -18,12 +18,16 @@ EnemyBulletManager::EnemyBulletManager()
 	{
 		m_pCollider[i] = new Collider(Collider::ENEMYBULLET_ID);
 		m_pCollider[i]->SetIsActive(false);
-		CollisionManager::getInstance().SetCollider(m_pCollider[i]);
+		m_setCollider[i] = CollisionManager::GetInstance()->SetCollider(m_pCollider[i]);
 	}
 }
 
 EnemyBulletManager::~EnemyBulletManager()
 {
+	CollisionManager::GetInstance()->SetNotCollider(m_setCollider[0]);
+	CollisionManager::GetInstance()->SetNotCollider(m_setCollider[1]);
+	CollisionManager::GetInstance()->SetNotCollider(m_setCollider[2]);
+	CollisionManager::GetInstance()->SetNotCollider(m_setCollider[3]);
 	delete m_pCollider[0];
 	delete m_pCollider[1];
 	delete m_pCollider[2];

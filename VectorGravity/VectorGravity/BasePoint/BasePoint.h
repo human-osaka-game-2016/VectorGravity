@@ -7,6 +7,7 @@
 
 class InputKey;
 class InputContlloer;
+class DataManager;
 
 class BasePoint
 {
@@ -18,8 +19,9 @@ public:
 
 private:
 
-	InputKey* m_pInputKey;
+	InputKey*	    m_pInputKey;
 	InputContlloer*	m_pInputContlloer;
+	DataManager*	m_pDataManager;
 	MyRect m_basePointRect;
 	float m_posX;
 	float m_posY;

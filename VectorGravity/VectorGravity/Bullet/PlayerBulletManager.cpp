@@ -18,7 +18,7 @@ PlayerBulletManager::PlayerBulletManager()
 	{
 		m_pCollider[i] = new Collider(Collider::NORMALBULLET_ID);
 		m_pCollider[i]->SetIsActive(false);
-		CollisionManager::getInstance().SetCollider(m_pCollider[i]);
+		CollisionManager::GetInstance()->SetCollider(m_pCollider[i]);
 	}
 }
 
@@ -38,19 +38,22 @@ void PlayerBulletManager::Control()
 
 		if (m_pNormalBullets[i]->GetRect().left > 1280)
 		{
+			m_pCollider[i]->SetRectData(MyRect(0.0f, 0.0f, 0.0f, 0.0f));
 			delete m_pNormalBullets[i];
 			m_pNormalBullets.erase(m_pNormalBullets.begin() + i);
 			m_BulletNum--;
 		}
 		else if (m_pNormalBullets[i]->GetRect().right < 0)
 		{
+			m_pCollider[i]->SetRectData(MyRect(0.0f, 0.0f, 0.0f, 0.0f));
 			delete m_pNormalBullets[i];
 			m_pNormalBullets.erase(m_pNormalBullets.begin() + i);
 			m_BulletNum--;
 		}
 
-		if (DataManager::GetInstance().GetNormalBulletHit() == true)
+		if (DataManager::GetInstance()->GetNormalBulletHit() == true)
 		{
+			m_pCollider[i]->SetRectData(MyRect(0.0f, 0.0f, 0.0f, 0.0f));
 			delete m_pNormalBullets[i];
 			m_pNormalBullets.erase(m_pNormalBullets.begin() + i);
 			m_BulletNum--;

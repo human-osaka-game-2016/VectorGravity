@@ -12,7 +12,7 @@
 StageManager::StageManager() :
 m_pStage1(new Stage1)
 {
-	D3DXVECTOR2 m_basePointPos = DataManager::GetInstance().GetGoalPointPos();
+	D3DXVECTOR2 m_basePointPos = DataManager::GetInstance()->GetGoalPointPos();
 
 	m_pGoalPoint = new GoalPoint(m_basePointPos);
 
@@ -20,9 +20,9 @@ m_pStage1(new Stage1)
 
 StageManager::~StageManager()
 {
+	delete m_pGoalPoint;
 	m_pStage1->StageRelease();
 	delete m_pStage1;
-	delete m_pGoalPoint;
 }
 
 void StageManager::Control()

@@ -12,7 +12,7 @@ TitleBackground::TitleBackground() :
 m_pTexture(new Texture),
 m_pVertex(new Vertex)
 {
-	m_pTexture->LoadTexture("Resource/Texture/Title.jpg");
+	m_pTexture->LoadTexture("Resource/Texture/Title.png");
 	m_pVertex->SetTextureSize(BACKGROUND_WIDHT, BACKGROUND_HEIGHT);
 }
 

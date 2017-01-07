@@ -13,11 +13,23 @@ class DataManager
 public:
 	~DataManager();
 
-	static DataManager& GetInstance()
+	static void Create()
 	{
-		static DataManager DataManager;
+		if (m_pDataManager == NULL)
+		{
+			m_pDataManager = new DataManager();
+		}
+	}
 
-		return DataManager;
+	static DataManager* GetInstance()
+	{
+		return m_pDataManager;
+	}
+
+	static void Delete()
+	{
+		delete m_pDataManager;
+		m_pDataManager = NULL;
 	}
 
 	void SetPlayerPositionData(float x_, float y_)
@@ -217,6 +229,8 @@ private:
 	bool m_playerIsStageClear;
 
 	bool m_enemyIsDeath;
+
+	static DataManager* m_pDataManager;
 };
 
 #endif // !DATAMANAGER_H

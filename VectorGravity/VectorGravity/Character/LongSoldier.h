@@ -55,7 +55,7 @@ private:
 	float m_searchRange;
 	float m_playerDistance;
 
-
+	int   m_setCollider;
 };
 
 #endif // !LONGSOLDIER_H

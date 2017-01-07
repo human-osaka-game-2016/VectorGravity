@@ -38,6 +38,7 @@ m_leftFieldHits(false),
 m_damageHit(false),
 m_isUpScrolling(false),
 m_isDownScrolling(false),
+m_stagePos(0, 0),
 m_Hp(300),
 m_Gp(300),
 m_recoveryGp(1),
@@ -49,6 +50,7 @@ m_pCollider(new Collider(Collider::PLAYER_ID))
 
 	m_isDeath = false;
 
+	m_stagePos = initpos_;
 	m_posX = initpos_.x;
 	m_posY = initpos_.y;
 	m_playerRect = { m_posX, m_posY, m_posX + PLAYER_SIZE, m_posY + PLAYER_SIZE };
@@ -60,16 +62,16 @@ m_pCollider(new Collider(Collider::PLAYER_ID))
 	m_pSoundManager->LoadSoundFile(PLAYER_GPRECOVER, "Resource/Sound/BG_GPRecovery01.wav");
 	m_pSoundManager->LoadSoundFile(PLAYER_LAND, "Resource/Sound/BG_Landing01.wav");
 
-	CollisionManager::getInstance().SetCollider(m_pCollider);
+	CollisionManager::GetInstance()->SetCollider(m_pCollider);
 }
 
 Player::~Player()
 {
-	delete m_playerBulletManager;
 	delete m_pVertex;
-	delete m_pTexture;
-	delete m_pSoundManager;
 	delete m_pCollider;
+	delete m_pSoundManager;
+	delete m_playerBulletManager;
+	delete m_pTexture;
 }
 
 void Player::Control()
@@ -102,11 +104,11 @@ void Player::Control()
 	
 
 	//他クラスに移動スピードを伝える
-	DataManager::GetInstance().SetPlayerXMoveSpeed(m_moveSpeedX);
-	DataManager::GetInstance().SetPlayerYMoveSpeed(m_moveSpeedY);
+	DataManager::GetInstance()->SetPlayerXMoveSpeed(m_moveSpeedX);
+	DataManager::GetInstance()->SetPlayerYMoveSpeed(m_moveSpeedY);
 
 	//BasePointの矩形を受け取る
-	m_basePointRect = DataManager::GetInstance().GetBasePoint();
+	m_basePointRect = DataManager::GetInstance()->GetBasePoint();
 
 	m_pCollider->SetRectData(m_playerRect);
 
@@ -188,14 +190,15 @@ void Player::Control()
 
 	StateManager::Instance().SetPlayerHp(m_Hp);
 	StateManager::Instance().SetPlayerGp(m_Gp);
-	DataManager::GetInstance().SetPlayerDead(m_isDeath);
-	DataManager::GetInstance().SetStageClear(m_isStageClear);
+	DataManager::GetInstance()->SetPlayerDead(m_isDeath);
+	DataManager::GetInstance()->SetStageClear(m_isStageClear);
 
 	m_pStateManager->SetVectorDirection(m_vectorDirection);
 
-	DataManager::GetInstance().SetPlayerDirection(m_playerDirection);
+	DataManager::GetInstance()->SetPlayerDirection(m_playerDirection);
 
-	DataManager::GetInstance().SetPlayerPositionData(m_posX, m_posY);
+	DataManager::GetInstance()->SetPlayerPositionData(m_posX, m_posY);
+	//DataManager::GetInstance()->SetPlayerPositionData(m_stagePos.x, m_stagePos.y);
 
 	m_pCollider->ClearColliderIDs();
 }
@@ -241,17 +244,18 @@ void Player::Attack()
 
 void Player::Move()
 {
-	distance = DataManager::GetInstance().GetBasePointDistance();
+	distance = DataManager::GetInstance()->GetBasePointDistance();
 
 	if (m_pInputKey->m_key[LEFT] == ON || m_pInputContlloer->m_padStick[CONTLLOER_1][STICK_LEFT][LEFT_THUMBSTICK] == PAD_ON)
 	{
-		m_leftFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.left - m_moveSpeedX, m_playerRect.bottom - 30, distance);
-		DataManager::GetInstance().SetPlayerFieldHits(m_leftFieldHits);
+		m_leftFieldHits = CollisionManager::GetInstance()->HasHitField(m_playerRect.left - m_moveSpeedX, m_playerRect.bottom - 30, distance);
+		DataManager::GetInstance()->SetPlayerFieldHits(m_leftFieldHits);
 
 		m_playerDirection = Direction_Left;
 
 		if (m_leftFieldHits == false)
 		{
+			m_stagePos.x -= m_moveSpeedX;
 			if (m_basePointRect.left < m_posX)
 			{
 				m_playerRect.right -= m_moveSpeedX;
@@ -262,13 +266,14 @@ void Player::Move()
 	}
 	if (m_pInputKey->m_key[RIGHT] == ON || m_pInputContlloer->m_padStick[CONTLLOER_1][STICK_RIGHT][LEFT_THUMBSTICK] == PAD_ON)
 	{
-		m_rightFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.right + m_moveSpeedX, m_playerRect.bottom - 30, distance);
-		DataManager::GetInstance().SetPlayerFieldHits(m_rightFieldHits);
+		m_rightFieldHits = CollisionManager::GetInstance()->HasHitField(m_playerRect.right + m_moveSpeedX, m_playerRect.bottom - 30, distance);
+		DataManager::GetInstance()->SetPlayerFieldHits(m_rightFieldHits);
 		
 		m_playerDirection = Direction_Right;
 
 		if (m_rightFieldHits == false)
 		{
+			m_stagePos.x += m_moveSpeedX;
 			if (m_basePointRect.right > m_posX)
 			{
 				m_playerRect.right += m_moveSpeedX;
@@ -280,8 +285,8 @@ void Player::Move()
 	if (m_pInputKey->m_key[UP] == PUSH || m_pInputContlloer->m_padButton[CONTLLOER_1][A_BUTTON] == PAD_PUSH || m_pInputContlloer->m_padStick[CONTLLOER_1][STICK_UP][LEFT_THUMBSTICK] == PAD_ON)
 	{
 
-		m_topFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.right - 60, m_playerRect.top, distance);
-		DataManager::GetInstance().SetPlayerFieldHits(m_topFieldHits);
+		m_topFieldHits = CollisionManager::GetInstance()->HasHitField(m_playerRect.right - 60, m_playerRect.top, distance);
+		DataManager::GetInstance()->SetPlayerFieldHits(m_topFieldHits);
 
 		if (m_topFieldHits == false)
 		{
@@ -296,11 +301,12 @@ void Player::Move()
 
 	if (m_isJump)
 	{
-		m_bottomFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.right - 60, m_playerRect.bottom - m_jumpPower, distance);
-		DataManager::GetInstance().SetPlayerFieldHits(m_bottomFieldHits);
+		m_bottomFieldHits = CollisionManager::GetInstance()->HasHitField(m_playerRect.right - 60, m_playerRect.bottom - m_jumpPower, distance);
+		DataManager::GetInstance()->SetPlayerFieldHits(m_bottomFieldHits);
 
 		if (m_isUpScrolling)
 		{
+			m_stagePos.y -= m_jumpPower;
 			m_playerRect.top -= m_jumpPower;
 			m_playerRect.bottom -= m_jumpPower;
 			m_posY -= m_jumpPower;
@@ -328,8 +334,8 @@ void Player::Move()
 		}
 	}
 
-	m_bottomFieldHits = CollisionManager::getInstance().HasHitField(m_playerRect.right - 60, m_playerRect.bottom + m_freeGravity, distance);
-	DataManager::GetInstance().SetPlayerFieldHits(m_bottomFieldHits);
+	m_bottomFieldHits = CollisionManager::GetInstance()->HasHitField(m_playerRect.right - 60, m_playerRect.bottom + m_freeGravity, distance);
+	DataManager::GetInstance()->SetPlayerFieldHits(m_bottomFieldHits);
 
 	if (m_bottomFieldHits && !m_isJump && m_isLand)
 	{
@@ -351,6 +357,7 @@ void Player::Move()
 
 			if (m_isDownScrolling)
 			{
+				m_stagePos.y += m_freeGravity;
 				m_playerRect.top += m_freeGravity;
 				m_playerRect.bottom += m_freeGravity;
 				m_posY += m_freeGravity;

@@ -1,7 +1,8 @@
 #include "CollisionManager.h"
 #include "Collider.h"
 #include "../Stage/Stage1.h"
-#include "../DataManager/DataManager.h"
+
+CollisionManager* CollisionManager::m_pCollisionManager = NULL;
 
 CollisionManager::CollisionManager()
 {
@@ -17,10 +18,24 @@ void CollisionManager::Control()
 {
 	for (unsigned int i = 0; i < m_pCollider.size(); i++)
 	{
+		for (unsigned int k = 0; k < m_notCollider.size(); k++)
+		{
+			if (m_notCollider[k] == i)
+			{
+				continue;
+			}
+		}
 		if (m_pCollider[i]->GetIsActive() == true)
 		{
 			for (unsigned int j = 0; j < m_pCollider.size(); j++)
 			{
+				for (unsigned int l = 0; l < m_notCollider.size(); l++)
+				{
+					if (m_notCollider[l] == j)
+					{
+						continue;
+					}
+				}
 				if (m_pCollider[j]->GetIsActive() == true)
 				{
 					if (i != j)

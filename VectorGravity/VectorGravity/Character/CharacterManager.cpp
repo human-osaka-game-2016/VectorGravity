@@ -15,8 +15,8 @@ CharacterManager::CharacterManager() :
 m_pPlayer(NULL),
 m_pLongSoldier(NULL)
 {
-	D3DXVECTOR2 m_playerInitPos = DataManager::GetInstance().GetPlayerInitPos();
-	std::vector<D3DXVECTOR2>* m_enemyInitPos = DataManager::GetInstance().GetEnemyInitPos();
+	D3DXVECTOR2 m_playerInitPos = DataManager::GetInstance()->GetPlayerInitPos();
+	std::vector<D3DXVECTOR2>* m_enemyInitPos = DataManager::GetInstance()->GetEnemyInitPos();
 
 	m_pCharacter.push_back(new Player(m_playerInitPos));
 	m_pCharacter.push_back(new LongSoldier((*m_enemyInitPos)[0]));
@@ -30,6 +30,8 @@ m_pLongSoldier(NULL)
 
 CharacterManager::~CharacterManager()
 {
+	DataManager::GetInstance()->ClearEnemyInitPos();
+
 	for (int i = 0; i < m_pCharacter.size(); i++)
 	{
 		delete m_pCharacter[i];

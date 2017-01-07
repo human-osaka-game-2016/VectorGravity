@@ -17,10 +17,13 @@ m_hits(false),
 m_fieldHits(false),
 m_pCollider(pcollider_)
 {
-	m_playerPos.x = DataManager::GetInstance().GetPlayerPositionXData();
-	m_playerPos.y = DataManager::GetInstance().GetPlayerPositionYData();
-
 	m_pVertex = new Vertex;
+
+	m_playerPos.x = DataManager::GetInstance()->GetPlayerPositionXData();
+	m_playerPos.y = DataManager::GetInstance()->GetPlayerPositionYData();
+
+	//m_playerPos.x = DataManager::GetInstance()->GetPlayerInitPos().x;
+	//m_playerPos.y = DataManager::GetInstance()->GetPlayerInitPos().y;
 
 	m_posX = m_playerPos.x;;
 	m_posY = m_playerPos.y;;
@@ -29,21 +32,28 @@ m_pCollider(pcollider_)
 	m_hits = false;
 	m_pCollider->SetIsActive(true);
 
-	m_playerDirection = DataManager::GetInstance().GetPlayerDirection();
+	m_playerDirection = DataManager::GetInstance()->GetPlayerDirection();
 
 }
 
 NormalBullet::~NormalBullet()
 {
-	delete m_pVertex;
 	m_pCollider->SetIsActive(false);
+	delete m_pVertex;
 }
 
 void NormalBullet::Control()
 {
+	m_base = DataManager::GetInstance()->GetBasePointDistance();
+
+	m_baseRect.left   = m_normalBulletRect.left   - m_base.x;
+	m_baseRect.top    = m_normalBulletRect.top    - m_base.y;
+	m_baseRect.right  = m_normalBulletRect.right  - m_base.x;
+	m_baseRect.bottom = m_normalBulletRect.bottom - m_base.y;
+
 	m_pCollider->SetRectData(m_normalBulletRect);
 
-	distance = DataManager::GetInstance().GetBasePointDistance();
+	distance = DataManager::GetInstance()->GetBasePointDistance();
 
 	m_colliderIDs = m_pCollider->GetColliderIDs();
 
@@ -58,15 +68,15 @@ void NormalBullet::Control()
 		}
 	}
 
-	m_fieldHits = CollisionManager::getInstance().HasHitField(m_normalBulletRect.right, m_normalBulletRect.bottom - 16, distance);
+	m_fieldHits = CollisionManager::GetInstance()->HasHitField(m_normalBulletRect.right, m_normalBulletRect.bottom - 16, distance);
 
 	if (m_hits == true || m_fieldHits == true)
 	{
-		DataManager::GetInstance().SetNormalBulletHit(true);
+		DataManager::GetInstance()->SetNormalBulletHit(true);
 	}
 	else
 	{
-		DataManager::GetInstance().SetNormalBulletHit(false);
+		DataManager::GetInstance()->SetNormalBulletHit(false);
 	}
 
 	Attack();
@@ -75,7 +85,7 @@ void NormalBullet::Control()
 
 void NormalBullet::Draw()
 {
-	m_pVertex->DrawLeftTop(m_posX, m_posY, m_pTexture);
+	m_pVertex->DrawLeftTop(m_posX/* -m_base.x*/, m_posY/* - m_base.y*/, m_pTexture);
 }
 
 void NormalBullet::Bound()

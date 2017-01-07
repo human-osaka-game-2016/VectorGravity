@@ -37,8 +37,8 @@ m_pCollider(new Collider(Collider::SOLDIER_ID))
 
 	m_isDeath = false;
 
-	DataManager::GetInstance().SetEnemyPositionData(m_posX, m_posY);
-	CollisionManager::getInstance().SetCollider(m_pCollider);
+	DataManager::GetInstance()->SetEnemyPositionData(m_posX, m_posY);
+	m_setCollider = CollisionManager::GetInstance()->SetCollider(m_pCollider);
 
 	m_pSoundManager->LoadSoundFile(ACTIV_TRIGGER, "Resource/Sound/BG_Invocation01.wav");
 	m_pSoundManager->LoadSoundFile(BLOW_WAY, "Resource/Sound/BG_EBlowaway01.wav");
@@ -47,16 +47,17 @@ m_pCollider(new Collider(Collider::SOLDIER_ID))
 
 LongSoldier::~LongSoldier()
 {
-	delete m_pTexture;
+	CollisionManager::GetInstance()->SetNotCollider(m_setCollider);
 	delete m_pVertex2;
 	delete m_pCollider;
-	delete m_pEnemyBulletManager;
 	delete m_pSoundManager;
+	delete m_pEnemyBulletManager;
+	delete m_pTexture;
 }
 
 void LongSoldier::Control()
 {
-	m_base = DataManager::GetInstance().GetBasePointDistance();
+	m_base = DataManager::GetInstance()->GetBasePointDistance();
 
 	m_baseRect.left   = m_longSoldierRect.left - m_base.x;
 	m_baseRect.top    = m_longSoldierRect.top - m_base.y;
@@ -87,10 +88,10 @@ void LongSoldier::Control()
 		}
 	}
 
-	m_rightFieldHits  = CollisionManager::getInstance().HasHitField(m_longSoldierRect.right,      m_longSoldierRect.bottom - 64, D3DXVECTOR2(0, 0));
-	m_leftFieldHits   = CollisionManager::getInstance().HasHitField(m_longSoldierRect.left,       m_longSoldierRect.bottom - 64, D3DXVECTOR2(0, 0));
-	m_topFieldHits    = CollisionManager::getInstance().HasHitField(m_longSoldierRect.left + 64,  m_longSoldierRect.top, D3DXVECTOR2(0, 0));
-	m_bottomFieldHits = CollisionManager::getInstance().HasHitField(m_longSoldierRect.right - 64, m_longSoldierRect.bottom - 20, D3DXVECTOR2(0, 0));
+	m_rightFieldHits  = CollisionManager::GetInstance()->HasHitField(m_longSoldierRect.right,      m_longSoldierRect.bottom - 64, D3DXVECTOR2(0, 0));
+	m_leftFieldHits   = CollisionManager::GetInstance()->HasHitField(m_longSoldierRect.left,       m_longSoldierRect.bottom - 64, D3DXVECTOR2(0, 0));
+	m_topFieldHits    = CollisionManager::GetInstance()->HasHitField(m_longSoldierRect.left + 64,  m_longSoldierRect.top, D3DXVECTOR2(0, 0));
+	m_bottomFieldHits = CollisionManager::GetInstance()->HasHitField(m_longSoldierRect.right - 64, m_longSoldierRect.bottom - 20, D3DXVECTOR2(0, 0));
 
 
 	if (m_rightFieldHits == true)
@@ -207,8 +208,8 @@ void LongSoldier::Attack()
 
 void LongSoldier::Search()
 {
-	m_playerPosX = DataManager::GetInstance().GetPlayerPositionXData();
-	m_playerPosY = DataManager::GetInstance().GetPlayerPositionYData();
+	m_playerPosX = DataManager::GetInstance()->GetPlayerPositionXData();
+	m_playerPosY = DataManager::GetInstance()->GetPlayerPositionYData();
 
 	m_playerDistance = pow((m_playerPosX - m_posX)*(m_playerPosX - m_posX) + (m_playerPosY - m_posY)*(m_playerPosY - m_posY), 0.5);
 

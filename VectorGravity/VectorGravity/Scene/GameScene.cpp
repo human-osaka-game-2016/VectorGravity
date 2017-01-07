@@ -12,12 +12,15 @@
 #include <InputKey.h>
 
 GameScene::GameScene() :
-m_pObjectManager(new ObjectManager),
 m_pInputKey(&InputKey::Instance()),
-m_pauses(false),
-m_pSoundManager(new SoundManager),
-m_pDataManager(&DataManager::GetInstance())
+m_pauses(false)
 {
+	DataManager::Create();
+	m_pDataManager = DataManager::GetInstance();
+
+	m_pObjectManager = new ObjectManager;
+	m_pSoundManager = new SoundManager;
+
 	m_pSoundManager->LoadSoundFile(GAME_BGM, "Resource/Sound/BG_Gamescene.wav");
 	m_pSoundManager->SoundState(GAME_BGM, Sound::LOOP);
 }
@@ -27,6 +30,7 @@ GameScene::~GameScene()
 	m_pSoundManager->SoundState(GAME_BGM, Sound::STOP);
 	delete m_pObjectManager;
 	delete m_pSoundManager;
+	DataManager::Delete();
 
 }
 

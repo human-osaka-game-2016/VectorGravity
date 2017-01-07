@@ -15,7 +15,7 @@ m_alpha(NULL),
 m_logoState(FADE_IN),
 m_startTimer(NULL)
 {
-	m_pTexture->LoadTexture("Resource/Texture/TeamLogo.jpg");
+	m_pTexture->LoadTexture("Resource/Texture/TeamLogo.png");
 	m_pVertex->SetTextureSize(LOGO_WIDTH, LOGO_HEIGHT);
 }
 
