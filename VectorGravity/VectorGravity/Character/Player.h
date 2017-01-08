@@ -77,6 +77,7 @@ private:
 	InputContlloer*	m_pInputContlloer;
 	SoundManager*	m_pSoundManager;
 	D3DXVECTOR2		m_stagePos;
+	float posY;
 
 	MyRect m_playerRect;
 

@@ -25,8 +25,8 @@ m_pCollider(pcollider_)
 	//m_playerPos.x = DataManager::GetInstance()->GetPlayerInitPos().x;
 	//m_playerPos.y = DataManager::GetInstance()->GetPlayerInitPos().y;
 
-	m_posX = m_playerPos.x;;
-	m_posY = m_playerPos.y;;
+	m_posX = m_playerPos.x + 50;
+	m_posY = m_playerPos.y + 45;
 	m_normalBulletRect = { m_posX, m_posY, m_posX + NORMALBULLET_SIZE, m_posY + NORMALBULLET_SIZE };
 	m_pVertex->SetTextureSize(NORMALBULLET_SIZE, NORMALBULLET_SIZE);
 	m_hits = false;

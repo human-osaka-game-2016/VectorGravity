@@ -169,6 +169,10 @@ void Player::Control()
 	{
 		m_isDeath = true;
 	}
+	else if (DataManager::GetInstance()->GetBasePointDistance().y > 1300)
+	{
+		m_isDeath = true;
+	}
 
 	//GP‰ñ•œˆ—
 	if (m_Gp < 300)
