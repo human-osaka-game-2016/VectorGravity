@@ -8,7 +8,7 @@
 #define TITLEBACKGROUND_H
 
 #define BACKGROUND_WIDHT		1280
-#define BACKGROUND_HEIGHT		500
+#define BACKGROUND_HEIGHT		720
 #define BACKGROUND_POSITIONX	1280
 #define BACKGROUND_POSITIONY	720
 
@@ -22,7 +22,6 @@ public:
 	TitleBackground();
 	~TitleBackground();
 
-	void Control();
 	void Draw();
 
 private:

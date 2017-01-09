@@ -7,8 +7,8 @@
 #ifndef TEAMLOGO_H
 #define TEAMLOGO_H
 
-#define LOGO_WIDTH			256
-#define LOGO_HEIGHT			256
+#define LOGO_WIDTH			512
+#define LOGO_HEIGHT			512
 #define LOGO_POSITIONX		640
 #define LOGO_POSITIONY		360
 #define ALPHA_MAX			255

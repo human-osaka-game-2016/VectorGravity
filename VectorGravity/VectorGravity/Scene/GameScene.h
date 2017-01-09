@@ -13,7 +13,11 @@ class ObjectManager;
 class SoundManager;
 class DataManager;
 class InputKey;
-
+class Texture;
+class Vertex;
+class Pause;
+class StateManager;
+class InputContlloer;
 
 enum GameSceneSound
 {
@@ -38,6 +42,12 @@ private:
 	SoundManager*		m_pSoundManager;
 	DataManager*		m_pDataManager;
 	InputKey*			m_pInputKey;
+	InputContlloer*		m_pInputContlloer;
+	Texture*			m_pTexture;
+	Vertex*				m_pVertex;
+	Pause*				m_pPause;
+	StateManager*		m_pStateManager;
+
 	bool				m_pauses;
 };
 

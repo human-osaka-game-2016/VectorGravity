@@ -8,12 +8,18 @@
 #include "SceneFactory.h"
 #include "../ObjectManager/ObjectManager.h"
 #include "../DataManager/DataManager.h"
+#include "../StateManager/StateManager.h"
+#include "Pause.h"
 #include <SoundManager.h>
 #include <InputKey.h>
+#include <InputContlloer.h>
 
 GameScene::GameScene() :
 m_pInputKey(&InputKey::Instance()),
-m_pauses(false)
+m_pInputContlloer(&InputContlloer::Instance()),
+m_pauses(false),
+m_pPause(new Pause),
+m_pStateManager(&StateManager::Instance())
 {
 	DataManager::Create();
 	m_pDataManager = DataManager::GetInstance();
@@ -30,8 +36,8 @@ GameScene::~GameScene()
 	m_pSoundManager->SoundState(GAME_BGM, Sound::STOP);
 	delete m_pObjectManager;
 	delete m_pSoundManager;
+	delete m_pPause;
 	DataManager::Delete();
-
 }
 
 SceneID GameScene::Control()
@@ -40,28 +46,25 @@ SceneID GameScene::Control()
 
 	m_pInputKey->CheckKey(DIK_Q, Q);
 
-	if (!m_pauses)
+	m_pInputContlloer->CheckButton(XINPUT_GAMEPAD_START, START_BUTTON);
+
+	if (!m_pStateManager->GetPauses())
 	{
+		if (m_pInputKey->m_key[Q] == PUSH || m_pInputContlloer->m_padButton[CONTLLOER_1][START_BUTTON] == PAD_PUSH)
+		{
+			m_pauses = true;
+			m_pStateManager->SetPauses(m_pauses);
+		}
 		m_pObjectManager->Control();
 	}
 	else
 	{
-		ControlPause();
+		nextScene = m_pPause->Control();
 	}
 
-	if (m_pDataManager->GetPlayerDead())
+	if (DataManager::GetInstance()->GetPlayerDead() || DataManager::GetInstance()->GetStageClear())
 	{
-		nextScene = GAME_OVER_SCENE;
-	}
-
-	if (m_pDataManager->GetStageClear())
-	{
-		nextScene = GAME_CLEAR_SCENE;
-	}
-
-	if (m_pInputKey->m_key[Q] == ON)
-	{
-		nextScene = TITLE_SCENE;
+		nextScene = RESULT_SCENE;
 	}
 
 	return nextScene;
@@ -69,22 +72,10 @@ SceneID GameScene::Control()
 
 void GameScene::Draw()
 {
-	if (!m_pauses)
+	m_pObjectManager->Draw();
+
+	if (m_pStateManager->GetPauses())
 	{
-		m_pObjectManager->Draw();
+		m_pPause->Draw();
 	}
-	else
-	{
-		DrawPause();
-	}
-}
-
-void GameScene::ControlPause()
-{
-
-}
-
-void GameScene::DrawPause()
-{
-
 }

@@ -10,8 +10,8 @@
 #include "Scene.h"
 
 class TitleBackground;
-class InputKey;
-class InputContlloer;
+class TitleLogo;
+class MenuButton;
 class SoundManager;
 
 enum TitleSound
@@ -31,9 +31,9 @@ public:
 
 private:
 
-	InputKey*			m_pInputKey;
-	InputContlloer*		m_pInputContlloer;
 	TitleBackground*	m_pTitleBackground;
+	TitleLogo*			m_pTitleLogo;
+	MenuButton*			m_pMenuButton;
 	SoundManager*		m_pSoundManager;
 
 };

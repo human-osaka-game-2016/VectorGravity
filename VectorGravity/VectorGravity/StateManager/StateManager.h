@@ -34,11 +34,6 @@ public:
 		m_playerGpState = playerGp_;
 	}
 
-	void PlayerRest(int playerRest_)
-	{
-		m_playerRestState = playerRest_;
-	}
-
 	void SetVectorDirection(VectorDirection vectorDirection_)
 	{
 		m_vectorDirectionState = vectorDirection_;
@@ -47,6 +42,16 @@ public:
 	void SetVectorOperation(bool operation_)
 	{
 		m_bulltOperationState = operation_;
+	}
+
+	void SetUpDwon(bool buttonstate_)
+	{
+		m_onUpDown = buttonstate_;
+	}
+
+	void SetPauses(bool pauses_)
+	{
+		m_isPause = pauses_;
 	}
 
 	int GetPlayerHp()
@@ -59,14 +64,20 @@ public:
 		return m_playerGpState;
 	}
 
-	int GetPlayerRest()
-	{
-		return m_playerRestState;
-	}
 
 	VectorDirection GetVectorDirection()
 	{
 		return m_vectorDirectionState;
+	}
+
+	bool GetUpDown()
+	{
+		return m_onUpDown;
+	}
+
+	bool GetPauses()
+	{
+		return m_isPause;
 	}
 
 private:
@@ -83,6 +94,8 @@ private:
 	int					m_playerRestState;
 	int					m_scoreState;
 	int					m_bossHpState;
+	bool				m_onUpDown;
+	bool				m_isPause;
 
 };
 
