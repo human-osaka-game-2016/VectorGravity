@@ -52,7 +52,10 @@ SceneID Pause::Control()
 	{
 		if (m_pPauseSelectButton->GetUpOrDown())
 		{
-			return TITLE_SCENE;
+			m_isPause = false;
+			m_pStateManager->SetPauses(m_isPause);
+
+			return LOGO_SCENE;
 		}
 		else
 		{
@@ -61,7 +64,6 @@ SceneID Pause::Control()
 		}
 	}
 
-	
 
 	return GAME_SCENE;
 
