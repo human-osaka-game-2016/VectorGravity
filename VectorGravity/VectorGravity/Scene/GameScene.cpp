@@ -37,7 +37,6 @@ GameScene::~GameScene()
 	delete m_pObjectManager;
 	delete m_pSoundManager;
 	delete m_pPause;
-	DataManager::Delete();
 }
 
 SceneID GameScene::Control()

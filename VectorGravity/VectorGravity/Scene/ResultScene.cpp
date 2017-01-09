@@ -21,7 +21,6 @@ m_pInputKey(&InputKey::Instance()),
 m_pInputContlloer(&InputContlloer::Instance()),
 m_startControlTime(NULL)
 {
-	DataManager::Create();
 	m_pDataManager = DataManager::GetInstance();
 
 	m_pSoundManager = new SoundManager;
@@ -44,7 +43,6 @@ ResultScene::~ResultScene()
 	delete m_pTitleMenuButton;
 	delete m_pCreditMenuButton;
 	DataManager::Delete();
-
 }
 
 SceneID ResultScene::Control()
@@ -54,12 +52,12 @@ SceneID ResultScene::Control()
 	m_pInputKey->CheckKey(DIK_RETURN, ENTER);
 	m_pInputContlloer->CheckButton(XINPUT_GAMEPAD_A, A_BUTTON);
 
-	if (DataManager::GetInstance()->GetStageClear())
+	if (m_pDataManager->GetStageClear())
 	{
 		m_pClearLogo->Control();
 		m_pSoundManager->SoundState(CLEAR_SOUND, Sound::PLAY);
 	}
-	if (DataManager::GetInstance()->GetPlayerDead())
+	if (m_pDataManager->GetPlayerDead())
 	{
 		m_pGameOverLogo->Control();
 		m_pSoundManager->SoundState(GAMEOVER_SOUND, Sound::PLAY);
@@ -95,11 +93,11 @@ SceneID ResultScene::Control()
 
 void ResultScene::Draw()
 {
-	if (DataManager::GetInstance()->GetStageClear())
+	if (m_pDataManager->GetStageClear())
 	{
 		m_pClearLogo->Draw();
 	}
-	if (DataManager::GetInstance()->GetPlayerDead())
+	if (m_pDataManager->GetPlayerDead())
 	{
 		m_pGameOverLogo->Draw();
 	}
