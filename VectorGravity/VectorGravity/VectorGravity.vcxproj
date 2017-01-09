@@ -87,10 +87,6 @@
     <ClCompile Include="Character\LongSoldier.cpp" />
     <ClCompile Include="Character\Player.cpp" />
     <ClCompile Include="Character\Tank.cpp" />
-    <ClCompile Include="Scene\CreditLogo.cpp" />
-    <ClCompile Include="Scene\CreditRoll.cpp" />
-    <ClCompile Include="Scene\CreditSelectButton.cpp" />
-    <ClCompile Include="Scene\CreditTitleButton.cpp" />
     <ClCompile Include="Scene\PauseSelectButton.cpp" />
     <ClCompile Include="Scene\Pausebackground.cpp" />
     <ClCompile Include="Scene\ContinuButton.cpp" />
@@ -145,10 +141,6 @@
     <ClInclude Include="Character\LongSoldier.h" />
     <ClInclude Include="Character\Player.h" />
     <ClInclude Include="Character\Tank.h" />
-    <ClInclude Include="Scene\CreditLogo.h" />
-    <ClInclude Include="Scene\CreditRoll.h" />
-    <ClInclude Include="Scene\CreditSelectButton.h" />
-    <ClInclude Include="Scene\CreditTitleButton.h" />
     <ClInclude Include="Scene\PauseSelectButton.h" />
     <ClInclude Include="Scene\Pausebackground.h" />
     <ClInclude Include="Scene\ContinuButton.h" />

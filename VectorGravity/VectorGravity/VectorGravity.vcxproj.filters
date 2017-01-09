@@ -166,18 +166,6 @@
     <Filter Include="main\SceneManager\Scene\ResultScene\TitleMenuButton">
       <UniqueIdentifier>{6a3a1d0d-ed64-440b-a794-bf048d79f0ac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="main\SceneManager\Scene\CreditRollScene\CreditRoll">
-      <UniqueIdentifier>{90394826-6324-41e3-b29f-4bc86e4b54e0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="main\SceneManager\Scene\CreditRollScene\CreditLogo">
-      <UniqueIdentifier>{bb0289f5-4259-41ef-8e42-25cb3f65a48b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="main\SceneManager\Scene\CreditRollScene\CreditSelectButton">
-      <UniqueIdentifier>{01d6f17b-376a-4320-8d6b-f793abaecbec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="main\SceneManager\Scene\CreditRollScene\CreditTitleButton">
-      <UniqueIdentifier>{f2d2c0ce-a797-49bf-85b4-c04d4a3a094f}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -336,18 +324,6 @@
     <ClCompile Include="Scene\PauseSelectButton.cpp">
       <Filter>main\SceneManager\Scene\GameScene\Pause\PauseSelectButton</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\CreditLogo.cpp">
-      <Filter>main\SceneManager\Scene\CreditRollScene\CreditLogo</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\CreditRoll.cpp">
-      <Filter>main\SceneManager\Scene\CreditRollScene\CreditRoll</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\CreditSelectButton.cpp">
-      <Filter>main\SceneManager\Scene\CreditRollScene\CreditSelectButton</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\CreditTitleButton.cpp">
-      <Filter>main\SceneManager\Scene\CreditRollScene\CreditTitleButton</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene\SceneManager.h">
@@ -502,18 +478,6 @@
     </ClInclude>
     <ClInclude Include="Scene\PauseSelectButton.h">
       <Filter>main\SceneManager\Scene\GameScene\Pause\PauseSelectButton</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\CreditLogo.h">
-      <Filter>main\SceneManager\Scene\CreditRollScene\CreditLogo</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\CreditRoll.h">
-      <Filter>main\SceneManager\Scene\CreditRollScene\CreditRoll</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\CreditSelectButton.h">
-      <Filter>main\SceneManager\Scene\CreditRollScene\CreditSelectButton</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\CreditTitleButton.h">
-      <Filter>main\SceneManager\Scene\CreditRollScene\CreditTitleButton</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
