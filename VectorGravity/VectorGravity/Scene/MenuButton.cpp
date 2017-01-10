@@ -34,8 +34,10 @@ bool MenuButton::Control()
 {
 	m_pInputKey->CheckKey(DIK_RETURN, ENTER);
 	m_pInputContlloer->CheckButton(XINPUT_GAMEPAD_A, A_BUTTON);
+	m_pInputContlloer->CheckButton(XINPUT_GAMEPAD_START, START_BUTTON);
+	
 
-	if (m_pInputKey->m_key[ENTER] == ON || m_pInputContlloer->m_padButton[CONTLLOER_1][A_BUTTON] == PAD_ON)
+	if (m_pInputKey->m_key[ENTER] == ON || m_pInputContlloer->m_padButton[CONTLLOER_1][A_BUTTON] == PAD_ON || m_pInputContlloer->m_padButton[CONTLLOER_1][START_BUTTON] == PAD_ON)
 	{
 		return true;
 	}
