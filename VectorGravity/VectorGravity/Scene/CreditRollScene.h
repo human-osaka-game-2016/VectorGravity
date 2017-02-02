@@ -9,6 +9,13 @@
 
 #include "Scene.h"
 
+class InputKey;
+class InputContlloer;
+class CreditLogo;
+class CreditButton;
+class CursorButton;
+class StaffLogo;
+
 class CreditRollScene : public Scene
 {
 public:
@@ -18,6 +25,15 @@ public:
 	virtual SceneID Control();
 	virtual void Draw();
 
+private:
+	CreditLogo*		m_pCreditLogo;
+	CreditButton*	m_pCreditButton;
+	CursorButton*	m_pCursorButton;
+	StaffLogo*		m_pStaffLogo;
+	InputKey*		m_pInputKey;
+	InputContlloer*	m_pInputContlloer;
+
+	int m_inputCount;
 };
 
 #endif // !CREDITROLLSCENE_H

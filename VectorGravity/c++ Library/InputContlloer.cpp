@@ -19,6 +19,18 @@ m_ktriggerDeadZone(TRIGGER_DEADZONE)
 			m_padButton[i][j] = { PAD_OFF };
 		}
 	}
+
+
+	for (int i = 0; i < CONTLLOER_MAX; i++)
+	{
+		for (int j = 0; j < DIRECTION_MAX; j++)
+		{
+			for (int k = 0; k < BUTTON_MAX; k++)
+			{
+				m_padStick[i][j][k] = { PAD_OFF };
+			}
+		}
+	}
 }
 
 InputContlloer::~InputContlloer()

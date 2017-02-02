@@ -80,6 +80,7 @@ bool TeamLogo::Fade()
 		else
 		{
 			FadeFinish = true;
+			m_logoState = FADE_IN;
 		}
 
 		break;

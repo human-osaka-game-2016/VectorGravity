@@ -87,6 +87,9 @@
     <ClCompile Include="Character\LongSoldier.cpp" />
     <ClCompile Include="Character\Player.cpp" />
     <ClCompile Include="Character\Tank.cpp" />
+    <ClCompile Include="Scene\CreditButton.cpp" />
+    <ClCompile Include="Scene\CreditLogo.cpp" />
+    <ClCompile Include="Scene\CursorButton.cpp" />
     <ClCompile Include="Scene\PauseSelectButton.cpp" />
     <ClCompile Include="Scene\Pausebackground.cpp" />
     <ClCompile Include="Scene\ContinuButton.cpp" />
@@ -110,6 +113,7 @@
     <ClCompile Include="Scene\SceneFactory.cpp" />
     <ClCompile Include="Scene\SceneManager.cpp" />
     <ClCompile Include="Scene\SelectButton.cpp" />
+    <ClCompile Include="Scene\StaffLogo.cpp" />
     <ClCompile Include="Scene\TeamLogo.cpp" />
     <ClCompile Include="Scene\TitleBackground.cpp" />
     <ClCompile Include="Scene\TitleLogo.cpp" />
@@ -141,6 +145,9 @@
     <ClInclude Include="Character\LongSoldier.h" />
     <ClInclude Include="Character\Player.h" />
     <ClInclude Include="Character\Tank.h" />
+    <ClInclude Include="Scene\CreditButton.h" />
+    <ClInclude Include="Scene\CreditLogo.h" />
+    <ClInclude Include="Scene\CursorButton.h" />
     <ClInclude Include="Scene\PauseSelectButton.h" />
     <ClInclude Include="Scene\Pausebackground.h" />
     <ClInclude Include="Scene\ContinuButton.h" />
@@ -163,6 +170,7 @@
     <ClInclude Include="Scene\SceneFactory.h" />
     <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\SelectButton.h" />
+    <ClInclude Include="Scene\StaffLogo.h" />
     <ClInclude Include="Scene\TeamLogo.h" />
     <ClInclude Include="Scene\TitleBackground.h" />
     <ClInclude Include="Scene\TitleLogo.h" />
